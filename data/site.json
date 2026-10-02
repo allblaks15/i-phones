@@ -1,0 +1,81 @@
+{
+  "brand": "i-phones",
+  "brandShort": "i-phones",
+  "tagline": "Genuine iPhones in Kenya. Order on WhatsApp in seconds.",
+  "siteUrl": "https://allblaks15.github.io/i-phones",
+  "whatsapp": "254704839296",
+  "phoneDisplay": "0704 839 296",
+  "phoneIntl": "+254704839296",
+  "shopAddress": "Nairobi CBD, Kenya",
+  "shopCity": "Nairobi",
+  "shopHours": "Mon–Sat 8:30am–7:00pm · Sun 11:00am–5:00pm",
+  "pricesUpdated": "2 October 2026",
+  "announcement": "Same-day delivery in Nairobi · Countrywide delivery · Order on WhatsApp 0704 839 296",
+  "trust": [
+    {
+      "icon": "shield",
+      "title": "100% genuine",
+      "text": "Original Apple iPhones only. IMEI checked before dispatch."
+    },
+    {
+      "icon": "truck",
+      "title": "Same-day Nairobi delivery",
+      "text": "Order before 3pm for same-day delivery within Nairobi."
+    },
+    {
+      "icon": "map",
+      "title": "Countrywide delivery",
+      "text": "Courier to Mombasa, Kisumu, Nakuru, Eldoret and every county."
+    },
+    {
+      "icon": "card",
+      "title": "Pay on delivery",
+      "text": "Inspect your phone first, then pay by M-Pesa or cash in Nairobi."
+    },
+    {
+      "icon": "badge",
+      "title": "Warranty included",
+      "text": "Every phone comes with warranty. Ask us for the terms on your model."
+    }
+  ],
+  "deliveryAreas": [
+    "Nairobi CBD",
+    "Westlands",
+    "Kilimani",
+    "Kileleshwa",
+    "Lavington",
+    "Karen",
+    "Langata",
+    "South B",
+    "South C",
+    "Parklands",
+    "Upper Hill",
+    "Ngong Road",
+    "Kasarani",
+    "Roysambu",
+    "Embakasi",
+    "Utawala",
+    "Rongai",
+    "Kitengela",
+    "Ruaka",
+    "Ruiru",
+    "Thika",
+    "Kiambu",
+    "Syokimau",
+    "Mlolongo",
+    "Juja",
+    "Ngong",
+    "Mombasa",
+    "Kisumu",
+    "Nakuru",
+    "Eldoret",
+    "Nyeri",
+    "Machakos",
+    "Meru",
+    "Kisii",
+    "Malindi",
+    "Naivasha",
+    "Nanyuki",
+    "Kakamega"
+  ]
+}

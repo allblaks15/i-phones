@@ -1,0 +1,845 @@
+[
+  {
+    "slug": "iphone-18-pro-max",
+    "name": "iPhone 18 Pro Max",
+    "series": 18,
+    "year": 2026,
+    "badge": "Just launched",
+    "tagline": "The biggest, most powerful iPhone ever made.",
+    "images": 4,
+    "colors": [
+      {"name": "Burgundy", "hex": "#6b2a35"},
+      {"name": "Black", "hex": "#2b2b2d"},
+      {"name": "Silver", "hex": "#dcdcd8"},
+      {"name": "Glacier", "hex": "#c9d6de"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": "dual", "cond": "new", "price": 239000},
+      {"storage": "256GB", "sim": "esim", "cond": "new", "price": 240000},
+      {"storage": "512GB", "sim": "dual", "cond": "new", "price": 255000},
+      {"storage": "512GB", "sim": "esim", "cond": "new", "price": 255000},
+      {"storage": "1TB", "sim": "dual", "cond": "new", "price": 355000},
+      {"storage": "1TB", "sim": "esim", "cond": "new", "price": 350000}
+    ],
+    "highlights": ["A20 Pro chip (2nm)", "6.9\" 120Hz ProMotion display", "Triple 48MP with variable aperture", "Up to 5,567 mAh battery"],
+    "specs": {
+      "Display": "6.9-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On, HDR10, Dolby Vision",
+      "Chip": "Apple A20 Pro (2 nm)",
+      "RAM": "12GB",
+      "Storage": "256GB, 512GB, 1TB",
+      "Rear camera": "48MP Fusion (wide, variable aperture) + 48MP periscope telephoto + 48MP ultra wide",
+      "Front camera": "18MP Center Stage, multi-aspect",
+      "Video": "4K 120fps Dolby Vision, ProRes, Apple Log 2, spatial video",
+      "Battery": "5,391 mAh (Nano-SIM model) / 5,567 mAh (eSIM-only model)",
+      "Charging": "USB-C fast charging, MagSafe & Qi2 wireless",
+      "Build": "Ceramic Shield 2 front, aluminium frame",
+      "Water resistance": "IP68 (6m for 30 min)",
+      "Connectivity": "5G, Wi-Fi 7, Bluetooth 6.0, NFC, USB-C 3.2 Gen 2",
+      "Size & weight": "163.4 × 78 × 8.8 mm · 249 g",
+      "Software": "iOS 27 with Apple Intelligence"
+    }
+  },
+  {
+    "slug": "iphone-18-pro",
+    "name": "iPhone 18 Pro",
+    "series": 18,
+    "year": 2026,
+    "badge": "Just launched",
+    "tagline": "Pro power in the perfect size.",
+    "images": 4,
+    "colors": [
+      {"name": "Black", "hex": "#2b2b2d"},
+      {"name": "Silver", "hex": "#dcdcd8"},
+      {"name": "Glacier", "hex": "#c9d6de"},
+      {"name": "Burgundy", "hex": "#6b2a35"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": "esim", "cond": "new", "price": 200000},
+      {"storage": "256GB", "sim": "dual", "cond": "new", "price": 205000},
+      {"storage": "512GB", "sim": "esim", "cond": "new", "price": 230000},
+      {"storage": "512GB", "sim": "dual", "cond": "new", "price": 235000}
+    ],
+    "highlights": ["A20 Pro chip (2nm)", "6.3\" 120Hz ProMotion display", "Triple 48MP camera system", "Wi-Fi 7 & Bluetooth 6"],
+    "specs": {
+      "Display": "6.3-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On, HDR10, Dolby Vision",
+      "Chip": "Apple A20 Pro (2 nm)",
+      "RAM": "12GB",
+      "Storage": "256GB, 512GB",
+      "Rear camera": "48MP Fusion (wide, variable aperture) + 48MP periscope telephoto + 48MP ultra wide",
+      "Front camera": "18MP Center Stage, multi-aspect",
+      "Video": "4K 120fps Dolby Vision, ProRes, Apple Log 2",
+      "Battery": "4,056 mAh (Nano-SIM model) / 4,288 mAh (eSIM-only model)",
+      "Charging": "USB-C fast charging, MagSafe & Qi2 wireless",
+      "Build": "Ceramic Shield 2 front, aluminium frame",
+      "Water resistance": "IP68 (6m for 30 min)",
+      "Connectivity": "5G, Wi-Fi 7, Bluetooth 6.0, NFC, USB-C 3.2 Gen 2",
+      "Software": "iOS 27 with Apple Intelligence"
+    }
+  },
+  {
+    "slug": "iphone-duo",
+    "name": "iPhone Duo",
+    "series": 18,
+    "year": 2026,
+    "badge": "Pre-order",
+    "tagline": "Apple's first foldable iPhone. Phone outside, tablet inside.",
+    "images": 2,
+    "preorder": "Ships from 23 October 2026",
+    "colors": [
+      {"name": "Night Sky", "hex": "#23262e"},
+      {"name": "Star White", "hex": "#ecebe6"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": "esim", "cond": "new", "price": 500000},
+      {"storage": "512GB", "sim": "esim", "cond": "new", "price": null},
+      {"storage": "1TB", "sim": "esim", "cond": "new", "price": null},
+      {"storage": "2TB", "sim": "esim", "cond": "new", "price": null}
+    ],
+    "highlights": ["7.6\" foldable main display", "5.4\" cover display", "A20 Pro chip", "Titanium frame & hinge"],
+    "specs": {
+      "Display": "Main: 7.6-inch LTPO Super Retina XDR OLED, 120Hz · Cover: 5.4-inch LTPO OLED",
+      "Chip": "Apple A20 Pro (2 nm)",
+      "RAM": "12GB",
+      "Storage": "256GB, 512GB, 1TB, 2TB",
+      "Rear camera": "48MP wide + 48MP ultra wide (Dual Fusion)",
+      "Front camera": "24MP inner camera + 12MP cover camera",
+      "Battery": "Dual-cell Li-Ion, 50% in 20 min wired",
+      "Charging": "USB-C (PD 3.2), 25W MagSafe / Qi2 wireless",
+      "Build": "Grade 5 titanium frame & hinge, Ceramic Shield 2",
+      "Water resistance": "IP68 (6m for 30 min)",
+      "Connectivity": "5G (dual eSIM), Wi-Fi 7, Bluetooth 6.0, NFC",
+      "Size & weight": "Unfolded 5.2 mm · Folded 11.3 mm · 254 g",
+      "Software": "iOS 27, Apple Pencil support"
+    }
+  },
+  {
+    "slug": "iphone-17-pro-max",
+    "name": "iPhone 17 Pro Max",
+    "series": 17,
+    "year": 2025,
+    "badge": "Best seller",
+    "tagline": "Bold Cosmic Orange. Monster battery. 2TB option.",
+    "images": 3,
+    "colors": [
+      {"name": "Cosmic Orange", "hex": "#e46a2c"},
+      {"name": "Deep Blue", "hex": "#2c3a57"},
+      {"name": "Silver", "hex": "#dedfdc"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": "esim", "cond": "new", "price": 166000},
+      {"storage": "256GB", "sim": "dual", "cond": "new", "price": 171000},
+      {"storage": "512GB", "sim": "esim", "cond": "new", "price": 187000},
+      {"storage": "512GB", "sim": "dual", "cond": "new", "price": 208000},
+      {"storage": "1TB", "sim": "dual", "cond": "new", "price": 222000},
+      {"storage": "2TB", "sim": "dual", "cond": "new", "price": 295000}
+    ],
+    "highlights": ["A19 Pro chip", "6.9\" 3000-nit ProMotion display", "Three 48MP cameras, 8x optical-quality zoom", "Up to 2TB storage"],
+    "specs": {
+      "Display": "6.9-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, 3000 nits peak, Always-On",
+      "Chip": "Apple A19 Pro (3 nm) with vapor-chamber cooling",
+      "RAM": "12GB",
+      "Storage": "256GB, 512GB, 1TB, 2TB",
+      "Rear camera": "48MP Fusion + 48MP ultra wide + 48MP periscope telephoto (4x, 8x optical-quality)",
+      "Front camera": "18MP Center Stage",
+      "Video": "4K 120fps Dolby Vision, ProRes RAW, Apple Log 2",
+      "Battery": "4,832 mAh (Nano-SIM model) / 5,088 mAh (eSIM-only model)",
+      "Charging": "USB-C fast charging (50% in 20 min), 25W MagSafe / Qi2",
+      "Build": "Aluminium unibody, Ceramic Shield 2 front & back",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 7, Bluetooth 6.0, NFC",
+      "Software": "iOS 26 with Apple Intelligence"
+    }
+  },
+  {
+    "slug": "iphone-17-pro",
+    "name": "iPhone 17 Pro",
+    "series": 17,
+    "year": 2025,
+    "tagline": "All the Pro, in a size that fits your hand.",
+    "images": 3,
+    "colors": [
+      {"name": "Deep Blue", "hex": "#2c3a57"},
+      {"name": "Cosmic Orange", "hex": "#e46a2c"},
+      {"name": "Silver", "hex": "#dedfdc"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": "esim", "cond": "new", "price": 154000},
+      {"storage": "256GB", "sim": "dual", "cond": "new", "price": 157000},
+      {"storage": "512GB", "sim": "esim", "cond": "new", "price": 180000},
+      {"storage": "512GB", "sim": "dual", "cond": "new", "price": 190000},
+      {"storage": "1TB", "sim": "esim", "cond": "new", "price": 208000},
+      {"storage": "1TB", "sim": "dual", "cond": "new", "price": 220000}
+    ],
+    "highlights": ["A19 Pro chip", "6.3\" 120Hz ProMotion display", "Three 48MP cameras", "12GB RAM"],
+    "specs": {
+      "Display": "6.3-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, 3000 nits peak, Always-On",
+      "Chip": "Apple A19 Pro (3 nm) with vapor-chamber cooling",
+      "RAM": "12GB",
+      "Storage": "256GB, 512GB, 1TB",
+      "Rear camera": "48MP Fusion + 48MP ultra wide + 48MP periscope telephoto (4x)",
+      "Front camera": "18MP Center Stage",
+      "Video": "4K 120fps Dolby Vision, ProRes RAW, Apple Log 2",
+      "Battery": "3,988 mAh",
+      "Charging": "USB-C fast charging, 25W MagSafe / Qi2",
+      "Build": "Aluminium unibody, Ceramic Shield 2",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 7, Bluetooth 6.0, NFC",
+      "Software": "iOS 26 with Apple Intelligence"
+    }
+  },
+  {
+    "slug": "iphone-17-air",
+    "name": "iPhone 17 Air",
+    "series": 17,
+    "year": 2025,
+    "tagline": "5.6mm thin. 165g light. Unreal.",
+    "images": 4,
+    "colors": [
+      {"name": "Sky Blue", "hex": "#bcd3e6"},
+      {"name": "Light Gold", "hex": "#e9dcc0"},
+      {"name": "Cloud White", "hex": "#f1f0ec"},
+      {"name": "Space Black", "hex": "#26272a"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": "esim", "cond": "new", "price": 124500},
+      {"storage": "512GB", "sim": "esim", "cond": "new", "price": 149000},
+      {"storage": "1TB", "sim": "esim", "cond": "new", "price": 168000}
+    ],
+    "highlights": ["Just 5.6mm thin", "A19 Pro chip", "6.5\" 120Hz ProMotion display", "48MP Fusion camera"],
+    "specs": {
+      "Display": "6.5-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, 3000 nits peak",
+      "Chip": "Apple A19 Pro (3 nm)",
+      "RAM": "12GB",
+      "Storage": "256GB, 512GB, 1TB",
+      "Rear camera": "48MP Fusion (2x optical-quality zoom)",
+      "Front camera": "18MP Center Stage",
+      "Battery": "3,149 mAh",
+      "Charging": "USB-C (50% in 20 min), 20W MagSafe / Qi2",
+      "Build": "Titanium frame, Ceramic Shield 2",
+      "Water resistance": "IP68",
+      "Connectivity": "5G (eSIM only), Wi-Fi 7, Bluetooth 6.0, NFC",
+      "Size & weight": "5.6 mm thin · 165 g",
+      "Software": "iOS 26 with Apple Intelligence"
+    }
+  },
+  {
+    "slug": "iphone-17",
+    "name": "iPhone 17",
+    "series": 17,
+    "year": 2025,
+    "tagline": "ProMotion comes to the everyday iPhone.",
+    "images": 4,
+    "colors": [
+      {"name": "Lavender", "hex": "#cfc4e3"},
+      {"name": "Sage", "hex": "#b9c5a8"},
+      {"name": "Mist Blue", "hex": "#a9bfd6"},
+      {"name": "White", "hex": "#f3f3f1"},
+      {"name": "Black", "hex": "#2a2a2c"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": "dual", "cond": "new", "price": 125000},
+      {"storage": "512GB", "sim": "esim", "cond": "new", "price": 139000},
+      {"storage": "512GB", "sim": "dual", "cond": "new", "price": 157000}
+    ],
+    "highlights": ["A19 chip", "6.3\" 120Hz ProMotion display", "Dual 48MP cameras", "256GB base storage"],
+    "specs": {
+      "Display": "6.3-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, 3000 nits peak",
+      "Chip": "Apple A19 (3 nm)",
+      "RAM": "8GB",
+      "Storage": "256GB, 512GB",
+      "Rear camera": "48MP Fusion + 48MP ultra wide",
+      "Front camera": "18MP Center Stage",
+      "Battery": "3,692 mAh",
+      "Charging": "USB-C (50% in 20 min), 25W MagSafe / Qi2",
+      "Build": "Aluminium, Ceramic Shield 2",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 7, Bluetooth 6.0, NFC",
+      "Software": "iOS 26 with Apple Intelligence"
+    }
+  },
+  {
+    "slug": "iphone-17e",
+    "name": "iPhone 17e",
+    "series": 17,
+    "year": 2026,
+    "tagline": "The latest iPhone at the friendliest price.",
+    "images": 3,
+    "colors": [
+      {"name": "Black", "hex": "#2a2a2c"},
+      {"name": "White", "hex": "#f3f3f1"},
+      {"name": "Blue", "hex": "#a7bcd4"},
+      {"name": "Pink", "hex": "#ebcfd3"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": null, "cond": "new", "price": 103000},
+      {"storage": "512GB", "sim": null, "cond": "new", "price": 135000}
+    ],
+    "highlights": ["A19 chip", "6.1\" 120Hz OLED display", "48MP main camera", "Face ID"],
+    "specs": {
+      "Display": "6.1-inch Super Retina XDR OLED, 120Hz",
+      "Chip": "Apple A19",
+      "RAM": "8GB",
+      "Storage": "256GB, 512GB",
+      "Rear camera": "48MP Fusion",
+      "Front camera": "12MP TrueDepth",
+      "Battery": "4,005 mAh",
+      "Charging": "USB-C fast charging, MagSafe wireless",
+      "Build": "Aluminium frame, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 6E, Bluetooth 5.3, NFC",
+      "Security": "Face ID"
+    }
+  },
+  {
+    "slug": "iphone-16-pro-max",
+    "name": "iPhone 16 Pro Max",
+    "series": 16,
+    "year": 2024,
+    "tagline": "Titanium flagship with a 6.9\" display.",
+    "images": 4,
+    "colors": [
+      {"name": "Desert Titanium", "hex": "#bfa48a"},
+      {"name": "Natural Titanium", "hex": "#c2bcb2"},
+      {"name": "White Titanium", "hex": "#f0efeb"},
+      {"name": "Black Titanium", "hex": "#3c3c3d"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 126000},
+      {"storage": "256GB", "sim": null, "cond": "new", "price": 153000}
+    ],
+    "highlights": ["A18 Pro chip", "6.9\" ProMotion display", "5x telephoto camera", "Camera Control button"],
+    "specs": {
+      "Display": "6.9-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On",
+      "Chip": "Apple A18 Pro (3 nm)",
+      "RAM": "8GB",
+      "Storage": "256GB, 512GB, 1TB",
+      "Rear camera": "48MP Fusion + 48MP ultra wide + 12MP 5x telephoto",
+      "Front camera": "12MP TrueDepth",
+      "Video": "4K 120fps Dolby Vision, ProRes, Log",
+      "Battery": "4,685 mAh",
+      "Charging": "USB-C, MagSafe (25W) & Qi2",
+      "Build": "Grade 5 titanium, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 7, Bluetooth 5.3, NFC",
+      "Software": "Apple Intelligence ready"
+    }
+  },
+  {
+    "slug": "iphone-16-pro",
+    "name": "iPhone 16 Pro",
+    "series": 16,
+    "year": 2024,
+    "tagline": "Titanium Pro at a smart price.",
+    "images": 4,
+    "colors": [
+      {"name": "Desert Titanium", "hex": "#bfa48a"},
+      {"name": "Natural Titanium", "hex": "#c2bcb2"},
+      {"name": "White Titanium", "hex": "#f0efeb"},
+      {"name": "Black Titanium", "hex": "#3c3c3d"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 112000}
+    ],
+    "highlights": ["A18 Pro chip", "6.3\" ProMotion display", "5x telephoto camera", "Titanium design"],
+    "specs": {
+      "Display": "6.3-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On",
+      "Chip": "Apple A18 Pro (3 nm)",
+      "RAM": "8GB",
+      "Storage": "128GB, 256GB, 512GB, 1TB",
+      "Rear camera": "48MP Fusion + 48MP ultra wide + 12MP 5x telephoto",
+      "Front camera": "12MP TrueDepth",
+      "Battery": "3,582 mAh",
+      "Charging": "USB-C, MagSafe (25W) & Qi2",
+      "Build": "Grade 5 titanium, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 7, Bluetooth 5.3, NFC",
+      "Software": "Apple Intelligence ready"
+    }
+  },
+  {
+    "slug": "iphone-16-plus",
+    "name": "iPhone 16 Plus",
+    "series": 16,
+    "year": 2024,
+    "tagline": "Big screen. Bigger battery.",
+    "images": 4,
+    "colors": [
+      {"name": "Ultramarine", "hex": "#7c8ee6"},
+      {"name": "Teal", "hex": "#8fc2bd"},
+      {"name": "Pink", "hex": "#efb7cf"},
+      {"name": "White", "hex": "#f3f3f1"},
+      {"name": "Black", "hex": "#2a2a2c"}
+    ],
+    "variants": [
+      {"storage": "128GB", "sim": null, "cond": "new", "price": 114500},
+      {"storage": "256GB", "sim": null, "cond": "new", "price": 124000}
+    ],
+    "highlights": ["A18 chip", "6.7\" Super Retina XDR", "48MP Fusion camera", "All-day battery"],
+    "specs": {
+      "Display": "6.7-inch Super Retina XDR OLED, Dynamic Island",
+      "Chip": "Apple A18 (3 nm)",
+      "RAM": "8GB",
+      "Storage": "128GB, 256GB, 512GB",
+      "Rear camera": "48MP Fusion + 12MP ultra wide (macro)",
+      "Front camera": "12MP TrueDepth",
+      "Battery": "4,674 mAh",
+      "Charging": "USB-C, MagSafe (25W) & Qi2",
+      "Build": "Aluminium, colour-infused glass back",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 7, Bluetooth 5.3, NFC",
+      "Software": "Apple Intelligence ready"
+    }
+  },
+  {
+    "slug": "iphone-16",
+    "name": "iPhone 16",
+    "series": 16,
+    "year": 2024,
+    "tagline": "Camera Control, A18 and Apple Intelligence.",
+    "images": 4,
+    "colors": [
+      {"name": "Ultramarine", "hex": "#7c8ee6"},
+      {"name": "Teal", "hex": "#8fc2bd"},
+      {"name": "Pink", "hex": "#efb7cf"},
+      {"name": "White", "hex": "#f3f3f1"},
+      {"name": "Black", "hex": "#2a2a2c"}
+    ],
+    "variants": [
+      {"storage": "128GB", "sim": null, "cond": "new", "price": 107000}
+    ],
+    "highlights": ["A18 chip", "6.1\" Super Retina XDR", "48MP Fusion camera", "Camera Control button"],
+    "specs": {
+      "Display": "6.1-inch Super Retina XDR OLED, Dynamic Island",
+      "Chip": "Apple A18 (3 nm)",
+      "RAM": "8GB",
+      "Storage": "128GB, 256GB, 512GB",
+      "Rear camera": "48MP Fusion + 12MP ultra wide (macro)",
+      "Front camera": "12MP TrueDepth",
+      "Battery": "3,561 mAh",
+      "Charging": "USB-C, MagSafe (25W) & Qi2",
+      "Build": "Aluminium, colour-infused glass back",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 7, Bluetooth 5.3, NFC",
+      "Software": "Apple Intelligence ready"
+    }
+  },
+  {
+    "slug": "iphone-16e",
+    "name": "iPhone 16e",
+    "series": 16,
+    "year": 2025,
+    "badge": "Best value",
+    "tagline": "A brand-new iPhone 16 for less.",
+    "images": 2,
+    "colors": [
+      {"name": "Black", "hex": "#2a2a2c"},
+      {"name": "White", "hex": "#f3f3f1"}
+    ],
+    "variants": [
+      {"storage": "128GB", "sim": null, "cond": "new", "price": 75000}
+    ],
+    "highlights": ["A18 chip", "6.1\" OLED display", "48MP Fusion camera", "Action button"],
+    "specs": {
+      "Display": "6.1-inch Super Retina XDR OLED",
+      "Chip": "Apple A18 (3 nm)",
+      "RAM": "8GB",
+      "Storage": "128GB, 256GB, 512GB",
+      "Rear camera": "48MP Fusion (2x optical-quality zoom)",
+      "Front camera": "12MP TrueDepth",
+      "Battery": "4,005 mAh",
+      "Charging": "USB-C fast charging, Qi wireless",
+      "Build": "Aluminium, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G (Apple C1 modem), Wi-Fi 6, Bluetooth 5.3, NFC",
+      "Security": "Face ID"
+    }
+  },
+  {
+    "slug": "iphone-15-pro-max",
+    "name": "iPhone 15 Pro Max",
+    "series": 15,
+    "year": 2023,
+    "tagline": "Titanium, A17 Pro and 5x zoom.",
+    "images": 4,
+    "colors": [
+      {"name": "Natural Titanium", "hex": "#c2bcb2"},
+      {"name": "Blue Titanium", "hex": "#4b5563"},
+      {"name": "White Titanium", "hex": "#f0efeb"},
+      {"name": "Black Titanium", "hex": "#3c3c3d"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 102000}
+    ],
+    "highlights": ["A17 Pro chip", "6.7\" ProMotion display", "5x tetraprism telephoto", "USB-C 3"],
+    "specs": {
+      "Display": "6.7-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On",
+      "Chip": "Apple A17 Pro (3 nm)",
+      "RAM": "8GB",
+      "Storage": "256GB, 512GB, 1TB",
+      "Rear camera": "48MP main + 12MP ultra wide + 12MP 5x telephoto",
+      "Front camera": "12MP TrueDepth",
+      "Battery": "4,441 mAh",
+      "Charging": "USB-C (USB 3), MagSafe & Qi2",
+      "Build": "Titanium frame, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 6E, Bluetooth 5.3, NFC",
+      "Software": "Apple Intelligence ready"
+    }
+  },
+  {
+    "slug": "iphone-15-pro",
+    "name": "iPhone 15 Pro",
+    "series": 15,
+    "year": 2023,
+    "tagline": "Pro titanium design, compact size.",
+    "images": 4,
+    "colors": [
+      {"name": "Natural Titanium", "hex": "#c2bcb2"},
+      {"name": "Blue Titanium", "hex": "#4b5563"},
+      {"name": "White Titanium", "hex": "#f0efeb"},
+      {"name": "Black Titanium", "hex": "#3c3c3d"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 89000}
+    ],
+    "highlights": ["A17 Pro chip", "6.1\" ProMotion display", "48MP main camera", "Action button"],
+    "specs": {
+      "Display": "6.1-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On",
+      "Chip": "Apple A17 Pro (3 nm)",
+      "RAM": "8GB",
+      "Storage": "128GB, 256GB, 512GB, 1TB",
+      "Rear camera": "48MP main + 12MP ultra wide + 12MP 3x telephoto",
+      "Front camera": "12MP TrueDepth",
+      "Battery": "3,274 mAh",
+      "Charging": "USB-C (USB 3), MagSafe & Qi2",
+      "Build": "Titanium frame, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 6E, Bluetooth 5.3, NFC",
+      "Software": "Apple Intelligence ready"
+    }
+  },
+  {
+    "slug": "iphone-15-plus",
+    "name": "iPhone 15 Plus",
+    "series": 15,
+    "year": 2023,
+    "tagline": "Dynamic Island, 48MP and a huge battery.",
+    "images": 4,
+    "colors": [
+      {"name": "Pink", "hex": "#f2d6dc"},
+      {"name": "Yellow", "hex": "#f1ecc6"},
+      {"name": "Green", "hex": "#d4e0cf"},
+      {"name": "Blue", "hex": "#d0dbe3"},
+      {"name": "Black", "hex": "#3a3b3d"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": null, "cond": "new", "price": 109000}
+    ],
+    "highlights": ["A16 Bionic", "6.7\" Super Retina XDR", "48MP main camera", "USB-C"],
+    "specs": {
+      "Display": "6.7-inch Super Retina XDR OLED, Dynamic Island",
+      "Chip": "Apple A16 Bionic",
+      "RAM": "6GB",
+      "Storage": "128GB, 256GB, 512GB",
+      "Rear camera": "48MP main + 12MP ultra wide",
+      "Front camera": "12MP TrueDepth",
+      "Battery": "4,383 mAh",
+      "Charging": "USB-C, MagSafe & Qi2",
+      "Build": "Aluminium, colour-infused glass",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 6, Bluetooth 5.3, NFC"
+    }
+  },
+  {
+    "slug": "iphone-15",
+    "name": "iPhone 15",
+    "series": 15,
+    "year": 2023,
+    "tagline": "Dynamic Island and a 48MP camera.",
+    "images": 4,
+    "colors": [
+      {"name": "Pink", "hex": "#f2d6dc"},
+      {"name": "Yellow", "hex": "#f1ecc6"},
+      {"name": "Green", "hex": "#d4e0cf"},
+      {"name": "Blue", "hex": "#d0dbe3"},
+      {"name": "Black", "hex": "#3a3b3d"}
+    ],
+    "variants": [
+      {"storage": "128GB", "sim": null, "cond": "new", "price": 94000},
+      {"storage": "256GB", "sim": null, "cond": "new", "price": 108000}
+    ],
+    "highlights": ["A16 Bionic", "6.1\" Super Retina XDR", "48MP main camera", "USB-C"],
+    "specs": {
+      "Display": "6.1-inch Super Retina XDR OLED, Dynamic Island",
+      "Chip": "Apple A16 Bionic",
+      "RAM": "6GB",
+      "Storage": "128GB, 256GB, 512GB",
+      "Rear camera": "48MP main + 12MP ultra wide",
+      "Front camera": "12MP TrueDepth",
+      "Battery": "3,349 mAh",
+      "Charging": "USB-C, MagSafe & Qi2",
+      "Build": "Aluminium, colour-infused glass",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 6, Bluetooth 5.3, NFC"
+    }
+  },
+  {
+    "slug": "iphone-14-pro-max",
+    "name": "iPhone 14 Pro Max",
+    "series": 14,
+    "year": 2022,
+    "tagline": "The first Dynamic Island. Still a powerhouse.",
+    "images": 4,
+    "colors": [
+      {"name": "Deep Purple", "hex": "#5b4e63"},
+      {"name": "Gold", "hex": "#f4e8ce"},
+      {"name": "Silver", "hex": "#ecebe7"},
+      {"name": "Space Black", "hex": "#3b3a3c"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 82000}
+    ],
+    "highlights": ["A16 Bionic", "6.7\" ProMotion, Always-On", "48MP main camera", "Dynamic Island"],
+    "specs": {
+      "Display": "6.7-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On",
+      "Chip": "Apple A16 Bionic",
+      "RAM": "6GB",
+      "Storage": "128GB, 256GB, 512GB, 1TB",
+      "Rear camera": "48MP main + 12MP ultra wide + 12MP 3x telephoto",
+      "Front camera": "12MP TrueDepth (autofocus)",
+      "Battery": "4,323 mAh",
+      "Charging": "Lightning, MagSafe wireless",
+      "Build": "Stainless steel, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 6, Bluetooth 5.3, NFC"
+    }
+  },
+  {
+    "slug": "iphone-14-pro",
+    "name": "iPhone 14 Pro",
+    "series": 14,
+    "year": 2022,
+    "tagline": "Pro camera and Dynamic Island, affordable.",
+    "images": 4,
+    "colors": [
+      {"name": "Deep Purple", "hex": "#5b4e63"},
+      {"name": "Gold", "hex": "#f4e8ce"},
+      {"name": "Silver", "hex": "#ecebe7"},
+      {"name": "Space Black", "hex": "#3b3a3c"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 74000}
+    ],
+    "highlights": ["A16 Bionic", "6.1\" ProMotion, Always-On", "48MP main camera", "Dynamic Island"],
+    "specs": {
+      "Display": "6.1-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On",
+      "Chip": "Apple A16 Bionic",
+      "RAM": "6GB",
+      "Storage": "128GB, 256GB, 512GB, 1TB",
+      "Rear camera": "48MP main + 12MP ultra wide + 12MP 3x telephoto",
+      "Front camera": "12MP TrueDepth (autofocus)",
+      "Battery": "3,200 mAh",
+      "Charging": "Lightning, MagSafe wireless",
+      "Build": "Stainless steel, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 6, Bluetooth 5.3, NFC"
+    }
+  },
+  {
+    "slug": "iphone-14-plus",
+    "name": "iPhone 14 Plus",
+    "series": 14,
+    "year": 2022,
+    "tagline": "Big 6.7\" screen on a budget.",
+    "images": 4,
+    "colors": [
+      {"name": "Purple", "hex": "#e3dbeb"},
+      {"name": "Blue", "hex": "#a6b9cf"},
+      {"name": "Midnight", "hex": "#2e333b"},
+      {"name": "Starlight", "hex": "#f3eee6"},
+      {"name": "(PRODUCT)RED", "hex": "#c8102e"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 67000, "stock": false}
+    ],
+    "highlights": ["A15 Bionic (5-core GPU)", "6.7\" Super Retina XDR", "Dual 12MP cameras", "Crash Detection"],
+    "specs": {
+      "Display": "6.7-inch Super Retina XDR OLED",
+      "Chip": "Apple A15 Bionic (5-core GPU)",
+      "RAM": "6GB",
+      "Storage": "128GB, 256GB, 512GB",
+      "Rear camera": "12MP main + 12MP ultra wide",
+      "Front camera": "12MP TrueDepth (autofocus)",
+      "Battery": "4,325 mAh",
+      "Charging": "Lightning, MagSafe wireless",
+      "Build": "Aluminium, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 6, Bluetooth 5.3, NFC"
+    }
+  },
+  {
+    "slug": "iphone-14",
+    "name": "iPhone 14",
+    "series": 14,
+    "year": 2022,
+    "tagline": "Reliable, fast and great value.",
+    "images": 4,
+    "colors": [
+      {"name": "Purple", "hex": "#e3dbeb"},
+      {"name": "Blue", "hex": "#a6b9cf"},
+      {"name": "Midnight", "hex": "#2e333b"},
+      {"name": "Starlight", "hex": "#f3eee6"},
+      {"name": "(PRODUCT)RED", "hex": "#c8102e"}
+    ],
+    "variants": [
+      {"storage": "128GB", "sim": null, "cond": "refurb", "price": 52000},
+      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 57000}
+    ],
+    "highlights": ["A15 Bionic (5-core GPU)", "6.1\" Super Retina XDR", "Dual 12MP cameras", "Crash Detection"],
+    "specs": {
+      "Display": "6.1-inch Super Retina XDR OLED",
+      "Chip": "Apple A15 Bionic (5-core GPU)",
+      "RAM": "6GB",
+      "Storage": "128GB, 256GB, 512GB",
+      "Rear camera": "12MP main + 12MP ultra wide",
+      "Front camera": "12MP TrueDepth (autofocus)",
+      "Battery": "3,279 mAh",
+      "Charging": "Lightning, MagSafe wireless",
+      "Build": "Aluminium, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 6, Bluetooth 5.3, NFC"
+    }
+  },
+  {
+    "slug": "iphone-13-pro-max",
+    "name": "iPhone 13 Pro Max",
+    "series": 13,
+    "year": 2021,
+    "tagline": "Legendary battery life and ProMotion.",
+    "images": 4,
+    "colors": [
+      {"name": "Sierra Blue", "hex": "#a7c1d9"},
+      {"name": "Alpine Green", "hex": "#576856"},
+      {"name": "Gold", "hex": "#f6e6c9"},
+      {"name": "Silver", "hex": "#ecebe7"},
+      {"name": "Graphite", "hex": "#545454"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 70000}
+    ],
+    "highlights": ["A15 Bionic", "6.7\" ProMotion display", "Triple 12MP Pro cameras", "Huge battery"],
+    "specs": {
+      "Display": "6.7-inch Super Retina XDR OLED, 120Hz ProMotion",
+      "Chip": "Apple A15 Bionic (5-core GPU)",
+      "RAM": "6GB",
+      "Storage": "128GB, 256GB, 512GB, 1TB",
+      "Rear camera": "12MP main + 12MP ultra wide + 12MP 3x telephoto",
+      "Front camera": "12MP TrueDepth",
+      "Battery": "4,352 mAh",
+      "Charging": "Lightning, MagSafe wireless",
+      "Build": "Stainless steel, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 6, Bluetooth 5.0, NFC"
+    }
+  },
+  {
+    "slug": "iphone-13-pro",
+    "name": "iPhone 13 Pro",
+    "series": 13,
+    "year": 2021,
+    "tagline": "Pro cameras and ProMotion for less.",
+    "images": 4,
+    "colors": [
+      {"name": "Sierra Blue", "hex": "#a7c1d9"},
+      {"name": "Alpine Green", "hex": "#576856"},
+      {"name": "Gold", "hex": "#f6e6c9"},
+      {"name": "Silver", "hex": "#ecebe7"},
+      {"name": "Graphite", "hex": "#545454"}
+    ],
+    "variants": [
+      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 62000}
+    ],
+    "highlights": ["A15 Bionic", "6.1\" ProMotion display", "Triple 12MP Pro cameras", "Stainless steel"],
+    "specs": {
+      "Display": "6.1-inch Super Retina XDR OLED, 120Hz ProMotion",
+      "Chip": "Apple A15 Bionic (5-core GPU)",
+      "RAM": "6GB",
+      "Storage": "128GB, 256GB, 512GB, 1TB",
+      "Rear camera": "12MP main + 12MP ultra wide + 12MP 3x telephoto",
+      "Front camera": "12MP TrueDepth",
+      "Battery": "3,095 mAh",
+      "Charging": "Lightning, MagSafe wireless",
+      "Build": "Stainless steel, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 6, Bluetooth 5.0, NFC"
+    }
+  },
+  {
+    "slug": "iphone-13",
+    "name": "iPhone 13",
+    "series": 13,
+    "year": 2021,
+    "badge": "Lowest price",
+    "tagline": "The smartest way into iPhone.",
+    "images": 4,
+    "colors": [
+      {"name": "Midnight", "hex": "#2e333b"},
+      {"name": "Starlight", "hex": "#f3eee6"},
+      {"name": "Blue", "hex": "#3f6f9a"},
+      {"name": "Pink", "hex": "#f6dfe0"},
+      {"name": "Green", "hex": "#3d5244"},
+      {"name": "(PRODUCT)RED", "hex": "#c8102e"}
+    ],
+    "variants": [
+      {"storage": "128GB", "sim": null, "cond": "refurb", "price": 46000}
+    ],
+    "highlights": ["A15 Bionic", "6.1\" Super Retina XDR", "Dual 12MP cameras", "5G"],
+    "specs": {
+      "Display": "6.1-inch Super Retina XDR OLED",
+      "Chip": "Apple A15 Bionic",
+      "RAM": "4GB",
+      "Storage": "128GB, 256GB, 512GB",
+      "Rear camera": "12MP main + 12MP ultra wide",
+      "Front camera": "12MP TrueDepth",
+      "Battery": "3,240 mAh",
+      "Charging": "Lightning, MagSafe wireless",
+      "Build": "Aluminium, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 6, Bluetooth 5.0, NFC"
+    }
+  },
+  {
+    "slug": "iphone-13-mini",
+    "name": "iPhone 13 mini",
+    "series": 13,
+    "year": 2021,
+    "tagline": "Full power, pocket size.",
+    "images": 4,
+    "colors": [
+      {"name": "Midnight", "hex": "#2e333b"},
+      {"name": "Starlight", "hex": "#f3eee6"},
+      {"name": "Blue", "hex": "#3f6f9a"},
+      {"name": "Pink", "hex": "#f6dfe0"},
+      {"name": "Green", "hex": "#3d5244"},
+      {"name": "(PRODUCT)RED", "hex": "#c8102e"}
+    ],
+    "variants": [
+      {"storage": "128GB", "sim": null, "cond": "new", "price": 110000, "stock": false},
+      {"storage": "256GB", "sim": null, "cond": "new", "price": 123000, "stock": false}
+    ],
+    "highlights": ["A15 Bionic", "5.4\" Super Retina XDR", "Dual 12MP cameras", "Compact & light"],
+    "specs": {
+      "Display": "5.4-inch Super Retina XDR OLED",
+      "Chip": "Apple A15 Bionic",
+      "RAM": "4GB",
+      "Storage": "128GB, 256GB, 512GB",
+      "Rear camera": "12MP main + 12MP ultra wide",
+      "Front camera": "12MP TrueDepth",
+      "Battery": "2,438 mAh",
+      "Charging": "Lightning, MagSafe wireless",
+      "Build": "Aluminium, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 6, Bluetooth 5.0, NFC"
+    }
+  }
+]
