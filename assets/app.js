@@ -88,6 +88,7 @@
       if (state.mode === "pickup") lines.push("🏬 I will *pick it up from your shop*.");
       else lines.push("🚚 Please *deliver* to: " + (state.area ? state.area : "(I'll share my location)"));
       if (state.name) lines.push("👤 Name: " + state.name);
+      if (state.phone) lines.push("📞 Call me on: " + state.phone);
       lines.push("");
       lines.push((product.preorder ? "When can I get it? " : "Is it available? ") + SITE.siteUrl + "/" + product.slug + "/");
       return lines.join("\n");
@@ -122,8 +123,8 @@
       if (state.mode === "delivery") {
         h += '<label class="field"><span>Delivery location (town / estate)</span><input name="area" list="kl-areas" autocomplete="address-level2" placeholder="e.g. Westlands, Nairobi" value="' + esc(state.area) + '"></label>';
       }
+      h += '<label class="field"><span>Phone number to call you on</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 0712 345 678" value="' + esc(state.phone) + '"></label>';
       h += '<label class="field"><span>Your name <small style="color:var(--muted);font-weight:500">(optional)</small></span><input name="name" autocomplete="given-name" placeholder="e.g. Wanjiku" value="' + esc(state.name) + '"></label>';
-      h += '<label class="field"><span>Phone number <small style="color:var(--muted);font-weight:500">(optional, so we can call you back)</small></span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 0712 345 678" value="' + esc(state.phone) + '"></label>';
       h += '<input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">';
       h += '<a class="btn btn-wa btn-block" data-wa target="_blank" rel="noopener" href="#">' + WA_ICON + (oos ? "Ask availability on WhatsApp" : "Order on WhatsApp · " + ksh(v && v.price)) + "</a>";
       h += '<p class="order-note">No payment now. Confirm with us on WhatsApp first.</p></div>';
