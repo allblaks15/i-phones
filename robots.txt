@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://allblaks15.github.io/i-phones/sitemap.xml
+Sitemap: https://i-phones-gules.vercel.app/sitemap.xml
