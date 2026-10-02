@@ -470,6 +470,12 @@ def build_brand_assets():
     d.text((100, 437), f"WhatsApp {SITE['phoneDisplay']}", font=font(30), fill=(255, 255, 255))
     og.save(os.path.join(ROOT, "images", "og.jpg"), "JPEG", quality=86)
 
+def build_catalog():
+    # read by api/order.js so emailed prices come from our data, not the browser
+    cat = {p["slug"]: {"name": p["name"], "colors": [c["name"] for c in p["colors"]],
+                       "variants": [{k: v.get(k) for k in ("storage", "sim", "cond", "price")} for v in p["variants"]]} for p in PRODUCTS}
+    write("api/_catalog.json", json.dumps(cat, ensure_ascii=False, separators=(",", ":")))
+
 def write(rel, content):
     path = os.path.join(ROOT, rel)
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -487,4 +493,5 @@ if __name__ == "__main__":
     for p in PRODUCTS: build_product(p)
     build_wallpapers()
     build_misc()
+    build_catalog()
     print(f"Built {len(PRODUCTS)} product pages + home, wallpapers, sitemap.")

@@ -44,7 +44,7 @@
       color: product.colors[0].name,
       storage: start.storage, sim: start.sim, cond: start.cond,
       mode: store("kl_mode") || "delivery",
-      area: store("kl_area"), name: store("kl_name")
+      area: store("kl_area"), name: store("kl_name"), phone: store("kl_phone")
     };
     var listeners = [];
 
@@ -123,6 +123,8 @@
         h += '<label class="field"><span>Delivery location (town / estate)</span><input name="area" list="kl-areas" autocomplete="address-level2" placeholder="e.g. Westlands, Nairobi" value="' + esc(state.area) + '"></label>';
       }
       h += '<label class="field"><span>Your name <small style="color:var(--muted);font-weight:500">(optional)</small></span><input name="name" autocomplete="given-name" placeholder="e.g. Wanjiku" value="' + esc(state.name) + '"></label>';
+      h += '<label class="field"><span>Phone number <small style="color:var(--muted);font-weight:500">(optional, so we can call you back)</small></span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 0712 345 678" value="' + esc(state.phone) + '"></label>';
+      h += '<input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">';
       h += '<a class="btn btn-wa btn-block" data-wa target="_blank" rel="noopener" href="#">' + WA_ICON + (oos ? "Ask availability on WhatsApp" : "Order on WhatsApp · " + ksh(v && v.price)) + "</a>";
       h += '<p class="order-note">No payment now. Confirm with us on WhatsApp first.</p></div>';
       mount.innerHTML = h;
@@ -132,6 +134,22 @@
     function updateLink() {
       var a = $("[data-wa]", mount);
       if (a) a.href = waLink(message());
+    }
+
+    var lastSent = 0;
+    function sendOrder() {
+      if (Date.now() - lastSent < 4000) return; // ignore double taps
+      lastSent = Date.now();
+      var payload = JSON.stringify({
+        slug: product.slug, color: state.color, storage: state.storage, sim: state.sim, cond: state.cond,
+        mode: state.mode, area: state.area, name: state.name, phone: state.phone, website: state.website || ""
+      });
+      try {
+        fetch("/api/order/", { method: "POST", headers: { "Content-Type": "application/json" }, body: payload, keepalive: true })
+          .catch(function () {});
+      } catch (err) {
+        try { navigator.sendBeacon("/api/order/", new Blob([payload], { type: "application/json" })); } catch (e2) {}
+      }
     }
 
     mount.addEventListener("click", function (e) {
@@ -144,17 +162,20 @@
     mount.addEventListener("input", function (e) {
       if (e.target.name === "area") { state.area = e.target.value; store("kl_area", state.area); }
       if (e.target.name === "name") { state.name = e.target.value; store("kl_name", state.name); }
+      if (e.target.name === "phone") { state.phone = e.target.value; store("kl_phone", state.phone); }
+      if (e.target.name === "website") state.website = e.target.value;
       updateLink();
     });
     mount.addEventListener("click", function (e) {
-      if (e.target.closest("[data-wa]")) { updateLink(); track(product); }
+      if (e.target.closest("[data-wa]")) { updateLink(); track(product); sendOrder(); }
     });
 
     ensureAreaList();
     render();
     return {
       onChange: function (fn) { listeners.push(fn); fn(current(), state); },
-      link: function () { return waLink(message()); }
+      link: function () { return waLink(message()); },
+      send: sendOrder
     };
   }
 
@@ -267,7 +288,7 @@
       if (bbSub) bbSub.textContent = product.name + " · " + s.storage + " · " + s.color;
       if (bbBtn) bbBtn.href = cfg.link();
     });
-    if (bbBtn) bbBtn.addEventListener("click", function () { bbBtn.href = cfg.link(); track(product); });
+    if (bbBtn) bbBtn.addEventListener("click", function () { bbBtn.href = cfg.link(); track(product); cfg.send(); });
 
     // gallery
     var main = $("#gallery-main");

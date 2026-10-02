@@ -18,3 +18,10 @@ Netlify, Cloudflare Pages, Vercel or cPanel hosting. Then:
 - Create a Google Business Profile for the shop with the same name, phone and address.
 
 Wallpapers can be regenerated with `python tools/wallpapers.py` (needs Pillow).
+
+## Order emails
+Every "Order on WhatsApp" tap also POSTs to `api/order.js`, which emails a copy of the order.
+SMTP login and the recipient address are Vercel environment variables (Project → Settings →
+Environment Variables): `SMTP_HOST`, `SMTP_SERVERNAME`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`,
+`ORDER_EMAIL_TO`, `SITE_URL`. Never put the password in this repo; it is public.
+After changing a variable, redeploy for it to take effect.
