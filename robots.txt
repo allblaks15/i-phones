@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://i-phones-gules.vercel.app/sitemap.xml
+Sitemap: https://www.i-phones.co.ke/sitemap.xml
