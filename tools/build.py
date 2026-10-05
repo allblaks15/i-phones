@@ -64,7 +64,7 @@ def img(p, i=1): return f"images/phones/{p['slug']}-{i}.webp"
 def layout(*, base, title, desc, path, body, schema, og_image, page_js="", robots="index,follow"):
     canonical = f"{URL}/{path}"
     schema_tags = "\n".join(f'<script type="application/ld+json">{json.dumps(s, ensure_ascii=False)}</script>' for s in schema)
-    site_js = json.dumps({k: SITE[k] for k in ("brand", "whatsapp", "siteUrl", "shopCity", "deliveryAreas")}, ensure_ascii=False)
+    site_js = json.dumps({k: SITE[k] for k in ("brand", "whatsapp", "siteUrl", "shopCity", "shopAddress", "shopContact", "phoneDisplay", "payment", "deliveryAreas")}, ensure_ascii=False)
     products_js = json.dumps([{k: p.get(k) for k in ("slug", "name", "colors", "variants", "preorder")} for p in PRODUCTS], ensure_ascii=False, separators=(",", ":"))
     return f"""<!doctype html>
 <html lang="en-KE" data-base="{base}">
@@ -104,6 +104,10 @@ def layout(*, base, title, desc, path, body, schema, og_image, page_js="", robot
 </main>
 {footer(base)}
 <a class="wa-float" href="{wa('Hello ' + SITE['brand'] + ', I would like to enquire about an iPhone.')}" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">{ICONS['wa']}</a>
+<div class="inv-modal" id="invoice" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Your invoice">
+  <div class="modal-bg" data-inv-close></div>
+  <div class="inv-wrap"><div class="inv-card"><button class="modal-close" data-inv-close aria-label="Close invoice">{ICONS['close']}</button><div class="inv"></div></div></div>
+</div>
 <div class="modal" id="quick-order" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Quick order">
   <div class="modal-bg" data-close></div>
   <div class="modal-panel">
@@ -144,7 +148,7 @@ def footer(base):
 <div class="footer-grid">
 <div><a class="logo" href="{base or './'}"><span class="logo-mark">{ICONS['apple']}</span><span>{e(SITE['brandShort'])}<small style="color:#77777e">Kenya</small></span></a>
 <p style="max-width:320px;margin:0 0 14px">{e(SITE['tagline'])}</p>
-<p style="margin:0"><b style="color:#fff">WhatsApp / Call:</b> <a href="tel:{SITE['phoneIntl']}">{e(SITE['phoneDisplay'])}</a><br>{e(SITE['shopAddress'])}<br>{e(SITE['shopHours'])}</p></div>
+<p style="margin:0"><b style="color:#fff">WhatsApp / Call:</b> <a href="tel:{SITE['phoneIntl']}">{e(SITE['phoneDisplay'])}</a><br>{e(SITE['shopAddress'])} (ask for {e(SITE['shopContact'])})<br>Pay: M-Pesa Paybill {e(SITE['payment']['paybill'])}, Acc {e(SITE['payment']['account'])}<br>{e(SITE['shopHours'])}</p></div>
 <div><h4>Popular</h4><ul>{series}</ul></div>
 <div><h4>Shop</h4><ul>
 <li><a href="{base}?series=18#shop">iPhone 18 series</a></li><li><a href="{base}?series=17#shop">iPhone 17 series</a></li>
@@ -180,7 +184,7 @@ def org_schema():
     return {
         "@context": "https://schema.org", "@type": "MobilePhoneStore", "@id": URL + "/#store",
         "name": SITE["brand"], "url": URL + "/", "telephone": SITE["phoneIntl"], "image": f"{URL}/images/og.jpg",
-        "priceRange": "KSh 46,000 – KSh 500,000", "currenciesAccepted": "KES", "paymentAccepted": "Cash, M-Pesa",
+        "priceRange": "KSh 46,000 – KSh 500,000", "currenciesAccepted": "KES", "paymentAccepted": "M-Pesa Paybill",
         "address": {"@type": "PostalAddress", "streetAddress": SITE["shopAddress"], "addressLocality": SITE["shopCity"], "addressCountry": "KE"},
         "areaServed": {"@type": "Country", "name": "Kenya"},
         "openingHours": ["Mo-Sa 08:30-19:00", "Su 11:00-17:00"],
@@ -195,13 +199,13 @@ def faq_html(items):
     return "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in items)
 
 HOME_FAQ = [
-    ("How do I order an iPhone from " + SITE["brand"] + "?", f"Pick your iPhone, colour and storage, choose delivery or shop pickup, then tap 'Order on WhatsApp'. Your order details are sent to us on WhatsApp ({SITE['phoneDisplay']}) and we confirm availability within minutes."),
+    ("How do I order an iPhone from " + SITE["brand"] + "?", f"Pick your iPhone, colour and storage, choose delivery or shop pickup, then tap 'Order on WhatsApp'. You get an invoice on WhatsApp ({SITE['phoneDisplay']}) with the total and M-Pesa Paybill details, and we confirm availability within minutes."),
     ("Do you deliver iPhones outside Nairobi?", "Yes. We deliver countrywide by courier to Mombasa, Kisumu, Nakuru, Eldoret, Nyeri, Machakos and all 47 counties, usually within 24 hours. Nairobi orders placed before 3pm are delivered the same day."),
-    ("Can I pay on delivery?", "In Nairobi you can inspect your phone and pay on delivery by M-Pesa or cash. For upcountry orders we share secure M-Pesa payment details on WhatsApp before dispatch."),
+    ("How do I pay for my iPhone?", f"Once we confirm availability on WhatsApp, pay via M-Pesa: Lipa na M-Pesa › Pay Bill › business number {SITE['payment']['paybill']}, account number {SITE['payment']['account']} ({SITE['payment']['accountName']}, {SITE['payment']['bank']}). Send us the M-Pesa message and your iPhone is delivered to you, or you can pick it up from our shop."),
     ("Are your iPhones original?", "Yes. We sell only genuine Apple iPhones. Every phone is IMEI-checked, and brand-new units come sealed in the original box."),
     ("What is the difference between Brand New and Ex-UK iPhones?", "Brand New iPhones are sealed and unused. Ex-UK (refurbished) iPhones are pre-owned phones from the UK, tested and graded, and they cost much less. We tell you the battery health before you buy."),
     ("Should I choose eSIM only or Physical SIM + eSIM?", "Safaricom and Airtel Kenya both support eSIM. If you want to keep using a normal SIM card, choose the Physical SIM + eSIM version. eSIM-only models are usually a little cheaper."),
-    ("Can I pick up my iPhone from your shop?", f"Yes. Choose 'Shop pickup' when ordering and we will reserve the phone for you at our shop in {SITE['shopAddress']}."),
+    ("Can I pick up my iPhone from your shop?", f"Yes. Choose 'Shop pickup' when ordering and collect your iPhone at {SITE['shopAddress']}. Ask for {SITE['shopContact']}."),
     ("Do your iPhones come with a warranty?", "Yes, every iPhone comes with warranty. The cover depends on the model and condition, and we confirm the exact terms on WhatsApp before you pay."),
 ]
 
@@ -215,13 +219,17 @@ def build_home():
         f'<button class="chip" data-filter="series:{s}" aria-pressed="false">iPhone {s}</button>' for s in (18, 17, 16, 15, 14, 13))
     trust = "".join(f'<div class="trust-item">{ICONS[t["icon"]]}<div><b>{e(t["title"])}</b><span>{e(t["text"])}</span></div></div>' for t in SITE["trust"])
     walls = "".join(f'<a class="wall reveal" href="wallpapers/#{s}"><img src="images/wallpapers/{s}-thumb.webp" alt="{e(n)} iPhone wallpaper" width="360" height="780" loading="lazy"><span class="wall-time">9:41</span><span class="wall-name">{e(n)}{ICONS["download"]}</span></a>' for s, n in WALLS[:6])
-    sample = f"""Hello {SITE['brand']} 👋
-I'm interested in ordering:
-📱 <b>iPhone 17 Pro Max</b>
-• Colour: Cosmic Orange
-• Storage: 256GB
-• Price: KSh 171,000
-🚚 Please deliver to: Westlands"""
+    pay = SITE["payment"]
+    sample = f"""🧾 <b>INVOICE IPH-261005-K7QD</b>
+📱 <b>iPhone 17 Pro Max</b> · Cosmic Orange · 256GB
+💰 <b>Total: KSh 171,000</b>
+🚚 Deliver to: Westlands
+📞 Call me on: 0712 345 678
+
+<b>HOW TO PAY (M-Pesa)</b>
+• Business no: <b>{pay['paybill']}</b>
+• Account no: <b>{pay['account']}</b>
+• Paid to: {e(pay['accountName'])} ({e(pay['bank'])})"""
     body = f"""
 <section class="hero"><div class="wrap">
   <div>
@@ -268,10 +276,10 @@ I'm interested in ordering:
   <div class="section-head"><div><span class="eyebrow">How it works</span><h2>Ordering takes under a minute.</h2><p>No accounts, no checkout forms, no card details. Just WhatsApp.</p></div></div>
   <div class="steps">
     <div class="step reveal"><div class="step-n">01</div><h3>Pick your iPhone</h3><p>Choose a model, then your colour, storage and SIM type. See full specs and the exact price.</p></div>
-    <div class="step reveal"><div class="step-n">02</div><h3>Delivery or pickup</h3><p>Tell us where to deliver, or choose to collect from our shop in {e(SITE['shopCity'])}.</p></div>
-    <div class="step reveal"><div class="step-n">03</div><h3>Tap "Order on WhatsApp"</h3><p>Your order details go straight to us. We confirm availability in minutes and arrange delivery.</p></div>
+    <div class="step reveal"><div class="step-n">02</div><h3>Delivery or pickup</h3><p>Tell us where to deliver, or collect from our shop at {e(SITE['shopAddress'])} (ask for {e(SITE['shopContact'])}).</p></div>
+    <div class="step reveal"><div class="step-n">03</div><h3>Get your invoice &amp; pay</h3><p>Tap "Order on WhatsApp" to get your invoice. Once we confirm stock, pay via M-Pesa Paybill <b>{e(SITE['payment']['paybill'])}</b>, account <b>{e(SITE['payment']['account'])}</b>, and your iPhone is on its way.</p></div>
   </div>
-  <div class="wa-preview reveal"><div class="wa-ic">{ICONS['wa']}</div><div><h4>Here's what we receive</h4><p>Your full order arrives ready to confirm, so there's no back-and-forth.</p></div><div class="wa-bubble">{sample}</div></div>
+  <div class="wa-preview reveal"><div class="wa-ic">{ICONS['wa']}</div><div><h4>Your invoice, right in WhatsApp</h4><p>Every order comes with an invoice number, the total and the Paybill details, so paying takes seconds.</p></div><div class="wa-bubble">{sample}</div></div>
 </div></section>
 
 <section class="section"><div class="wrap">
@@ -359,7 +367,7 @@ def build_product(p):
     <div id="configurator"><noscript><a class="btn btn-wa btn-block" href="{wa('Hello ' + SITE['brand'] + ', I am interested in the ' + p['name'] + '.')}">Order {e(p['name'])} on WhatsApp</a></noscript></div>
     <div class="perks">
       <div>{ICONS['shield']}100% genuine Apple</div><div>{ICONS['truck']}Same-day Nairobi delivery</div>
-      <div>{ICONS['card']}Pay on delivery (Nairobi)</div><div>{ICONS['badge']}Warranty included</div>
+      <div>{ICONS['card']}M-Pesa Paybill {e(SITE['payment']['paybill'])}</div><div>{ICONS['badge']}Warranty included</div>
     </div>
   </div>
 </div>

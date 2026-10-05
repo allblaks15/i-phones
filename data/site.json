@@ -6,7 +6,7 @@
   "whatsapp": "254704839296",
   "phoneDisplay": "0704 839 296",
   "phoneIntl": "+254704839296",
-  "shopAddress": "Nairobi CBD, Kenya",
+  "shopAddress": "The Bazaar, Mac Arena, 1st Floor, Room B03, Nairobi",
   "shopCity": "Nairobi",
   "shopHours": "Mon–Sat 8:30am–7:00pm · Sun 11:00am–5:00pm",
   "pricesUpdated": "2 October 2026",
@@ -29,8 +29,8 @@
     },
     {
       "icon": "card",
-      "title": "Pay on delivery",
-      "text": "Inspect your phone first, then pay by M-Pesa or cash in Nairobi."
+      "title": "Pay via M-Pesa Paybill",
+      "text": "Paybill 880100, Account 747328 (Protech Consulting, NCBA). We deliver once paid."
     },
     {
       "icon": "badge",
@@ -77,5 +77,13 @@
     "Naivasha",
     "Nanyuki",
     "Kakamega"
-  ]
+  ],
+  "shopContact": "Jeffrey",
+  "payment": {
+    "method": "M-Pesa Paybill",
+    "paybill": "880100",
+    "account": "747328",
+    "accountName": "Protech Consulting",
+    "bank": "NCBA Bank"
+  }
 }
