@@ -8,20 +8,129 @@
     "tagline": "The biggest, most powerful iPhone ever made.",
     "images": 4,
     "colors": [
-      {"name": "Burgundy", "hex": "#6b2a35"},
-      {"name": "Black", "hex": "#2b2b2d"},
-      {"name": "Silver", "hex": "#dcdcd8"},
-      {"name": "Glacier", "hex": "#c9d6de"}
+      {
+        "name": "Burgundy",
+        "hex": "#6b2a35"
+      },
+      {
+        "name": "Black",
+        "hex": "#2b2b2d"
+      },
+      {
+        "name": "Ocean Blue",
+        "hex": "#2f4f6f"
+      },
+      {
+        "name": "Silver",
+        "hex": "#dcdcd8"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": "dual", "cond": "new", "price": 239000},
-      {"storage": "256GB", "sim": "esim", "cond": "new", "price": 240000},
-      {"storage": "512GB", "sim": "dual", "cond": "new", "price": 255000},
-      {"storage": "512GB", "sim": "esim", "cond": "new", "price": 255000},
-      {"storage": "1TB", "sim": "dual", "cond": "new", "price": 355000},
-      {"storage": "1TB", "sim": "esim", "cond": "new", "price": 350000}
+      {
+        "storage": "256GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 245000,
+        "color": "Burgundy"
+      },
+      {
+        "storage": "256GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 235000,
+        "color": "Black"
+      },
+      {
+        "storage": "256GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 235000,
+        "color": "Ocean Blue"
+      },
+      {
+        "storage": "256GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 235000,
+        "color": "Silver"
+      },
+      {
+        "storage": "512GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 275000,
+        "color": "Burgundy"
+      },
+      {
+        "storage": "512GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 255000,
+        "color": "Ocean Blue"
+      },
+      {
+        "storage": "512GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 255000,
+        "color": "Black"
+      },
+      {
+        "storage": "1TB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 345000,
+        "color": "Burgundy"
+      },
+      {
+        "storage": "256GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 265000,
+        "color": "Burgundy"
+      },
+      {
+        "storage": "256GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 260000,
+        "color": "Black"
+      },
+      {
+        "storage": "256GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 260000,
+        "color": "Ocean Blue"
+      },
+      {
+        "storage": "512GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 280000,
+        "color": "Burgundy"
+      },
+      {
+        "storage": "512GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 270000,
+        "color": "Silver"
+      },
+      {
+        "storage": "512GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 270000,
+        "color": "Black"
+      }
     ],
-    "highlights": ["A20 Pro chip (2nm)", "6.9\" 120Hz ProMotion display", "Triple 48MP with variable aperture", "Up to 5,567 mAh battery"],
+    "highlights": [
+      "A20 Pro chip (2nm)",
+      "6.9\" 120Hz ProMotion display",
+      "Triple 48MP with variable aperture",
+      "Up to 5,567 mAh battery"
+    ],
     "specs": {
       "Display": "6.9-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On, HDR10, Dolby Vision",
       "Chip": "Apple A20 Pro (2 nm)",
@@ -48,18 +157,87 @@
     "tagline": "Pro power in the perfect size.",
     "images": 4,
     "colors": [
-      {"name": "Black", "hex": "#2b2b2d"},
-      {"name": "Silver", "hex": "#dcdcd8"},
-      {"name": "Glacier", "hex": "#c9d6de"},
-      {"name": "Burgundy", "hex": "#6b2a35"}
+      {
+        "name": "Burgundy",
+        "hex": "#6b2a35"
+      },
+      {
+        "name": "Black",
+        "hex": "#2b2b2d"
+      },
+      {
+        "name": "Ocean Blue",
+        "hex": "#2f4f6f"
+      },
+      {
+        "name": "Silver",
+        "hex": "#dcdcd8"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": "esim", "cond": "new", "price": 200000},
-      {"storage": "256GB", "sim": "dual", "cond": "new", "price": 205000},
-      {"storage": "512GB", "sim": "esim", "cond": "new", "price": 230000},
-      {"storage": "512GB", "sim": "dual", "cond": "new", "price": 235000}
+      {
+        "storage": "256GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 209000,
+        "color": "Burgundy"
+      },
+      {
+        "storage": "256GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 205000,
+        "color": "Black"
+      },
+      {
+        "storage": "256GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 205000,
+        "color": "Ocean Blue"
+      },
+      {
+        "storage": "512GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 245000,
+        "color": "Burgundy"
+      },
+      {
+        "storage": "256GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 218000,
+        "color": "Burgundy"
+      },
+      {
+        "storage": "256GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 210000,
+        "color": "Black"
+      },
+      {
+        "storage": "256GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 210000,
+        "color": "Ocean Blue"
+      },
+      {
+        "storage": "512GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 245000,
+        "color": "Burgundy"
+      }
     ],
-    "highlights": ["A20 Pro chip (2nm)", "6.3\" 120Hz ProMotion display", "Triple 48MP camera system", "Wi-Fi 7 & Bluetooth 6"],
+    "highlights": [
+      "A20 Pro chip (2nm)",
+      "6.3\" 120Hz ProMotion display",
+      "Triple 48MP camera system",
+      "Wi-Fi 7 & Bluetooth 6"
+    ],
     "specs": {
       "Display": "6.3-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On, HDR10, Dolby Vision",
       "Chip": "Apple A20 Pro (2 nm)",
@@ -81,21 +259,55 @@
     "name": "iPhone Duo",
     "series": 18,
     "year": 2026,
-    "badge": "Pre-order",
+    "badge": "Coming soon",
     "tagline": "Apple's first foldable iPhone. Phone outside, tablet inside.",
     "images": 2,
-    "preorder": "Ships from 23 October 2026",
     "colors": [
-      {"name": "Night Sky", "hex": "#23262e"},
-      {"name": "Star White", "hex": "#ecebe6"}
+      {
+        "name": "Night Sky",
+        "hex": "#23262e"
+      },
+      {
+        "name": "Star White",
+        "hex": "#ecebe6"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": "esim", "cond": "new", "price": 500000},
-      {"storage": "512GB", "sim": "esim", "cond": "new", "price": null},
-      {"storage": "1TB", "sim": "esim", "cond": "new", "price": null},
-      {"storage": "2TB", "sim": "esim", "cond": "new", "price": null}
+      {
+        "storage": "256GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 500000,
+        "stock": false
+      },
+      {
+        "storage": "512GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": null,
+        "stock": false
+      },
+      {
+        "storage": "1TB",
+        "sim": "esim",
+        "cond": "new",
+        "price": null,
+        "stock": false
+      },
+      {
+        "storage": "2TB",
+        "sim": "esim",
+        "cond": "new",
+        "price": null,
+        "stock": false
+      }
     ],
-    "highlights": ["7.6\" foldable main display", "5.4\" cover display", "A20 Pro chip", "Titanium frame & hinge"],
+    "highlights": [
+      "7.6\" foldable main display",
+      "5.4\" cover display",
+      "A20 Pro chip",
+      "Titanium frame & hinge"
+    ],
     "specs": {
       "Display": "Main: 7.6-inch LTPO Super Retina XDR OLED, 120Hz · Cover: 5.4-inch LTPO OLED",
       "Chip": "Apple A20 Pro (2 nm)",
@@ -118,27 +330,71 @@
     "series": 17,
     "year": 2025,
     "badge": "Best seller",
-    "tagline": "Bold Cosmic Orange. Monster battery. 2TB option.",
+    "tagline": "Bold Cosmic Orange. Monster battery. Up to 1TB.",
     "images": 3,
     "colors": [
-      {"name": "Cosmic Orange", "hex": "#e46a2c"},
-      {"name": "Deep Blue", "hex": "#2c3a57"},
-      {"name": "Silver", "hex": "#dedfdc"}
+      {
+        "name": "Cosmic Orange",
+        "hex": "#e46a2c"
+      },
+      {
+        "name": "Deep Blue",
+        "hex": "#2c3a57"
+      },
+      {
+        "name": "Silver",
+        "hex": "#dedfdc"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": "esim", "cond": "new", "price": 166000},
-      {"storage": "256GB", "sim": "dual", "cond": "new", "price": 171000},
-      {"storage": "512GB", "sim": "esim", "cond": "new", "price": 187000},
-      {"storage": "512GB", "sim": "dual", "cond": "new", "price": 208000},
-      {"storage": "1TB", "sim": "dual", "cond": "new", "price": 222000},
-      {"storage": "2TB", "sim": "dual", "cond": "new", "price": 295000}
+      {
+        "storage": "256GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 180000
+      },
+      {
+        "storage": "256GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 200000
+      },
+      {
+        "storage": "512GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 215000
+      },
+      {
+        "storage": "512GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 230000
+      },
+      {
+        "storage": "1TB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 240000
+      },
+      {
+        "storage": "1TB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 265000
+      }
     ],
-    "highlights": ["A19 Pro chip", "6.9\" 3000-nit ProMotion display", "Three 48MP cameras, 8x optical-quality zoom", "Up to 2TB storage"],
+    "highlights": [
+      "A19 Pro chip",
+      "6.9\" 3000-nit ProMotion display",
+      "Three 48MP cameras, 8x optical-quality zoom",
+      "Up to 1TB storage"
+    ],
     "specs": {
       "Display": "6.9-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, 3000 nits peak, Always-On",
       "Chip": "Apple A19 Pro (3 nm) with vapor-chamber cooling",
       "RAM": "12GB",
-      "Storage": "256GB, 512GB, 1TB, 2TB",
+      "Storage": "256GB, 512GB, 1TB",
       "Rear camera": "48MP Fusion + 48MP ultra wide + 48MP periscope telephoto (4x, 8x optical-quality)",
       "Front camera": "18MP Center Stage",
       "Video": "4K 120fps Dolby Vision, ProRes RAW, Apple Log 2",
@@ -158,19 +414,63 @@
     "tagline": "All the Pro, in a size that fits your hand.",
     "images": 3,
     "colors": [
-      {"name": "Deep Blue", "hex": "#2c3a57"},
-      {"name": "Cosmic Orange", "hex": "#e46a2c"},
-      {"name": "Silver", "hex": "#dedfdc"}
+      {
+        "name": "Deep Blue",
+        "hex": "#2c3a57"
+      },
+      {
+        "name": "Cosmic Orange",
+        "hex": "#e46a2c"
+      },
+      {
+        "name": "Silver",
+        "hex": "#dedfdc"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": "esim", "cond": "new", "price": 154000},
-      {"storage": "256GB", "sim": "dual", "cond": "new", "price": 157000},
-      {"storage": "512GB", "sim": "esim", "cond": "new", "price": 180000},
-      {"storage": "512GB", "sim": "dual", "cond": "new", "price": 190000},
-      {"storage": "1TB", "sim": "esim", "cond": "new", "price": 208000},
-      {"storage": "1TB", "sim": "dual", "cond": "new", "price": 220000}
+      {
+        "storage": "256GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 170000
+      },
+      {
+        "storage": "256GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 185000
+      },
+      {
+        "storage": "512GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 200000
+      },
+      {
+        "storage": "512GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 215000
+      },
+      {
+        "storage": "1TB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 235000
+      },
+      {
+        "storage": "1TB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 240000
+      }
     ],
-    "highlights": ["A19 Pro chip", "6.3\" 120Hz ProMotion display", "Three 48MP cameras", "12GB RAM"],
+    "highlights": [
+      "A19 Pro chip",
+      "6.3\" 120Hz ProMotion display",
+      "Three 48MP cameras",
+      "12GB RAM"
+    ],
     "specs": {
       "Display": "6.3-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, 3000 nits peak, Always-On",
       "Chip": "Apple A19 Pro (3 nm) with vapor-chamber cooling",
@@ -195,17 +495,52 @@
     "tagline": "5.6mm thin. 165g light. Unreal.",
     "images": 4,
     "colors": [
-      {"name": "Sky Blue", "hex": "#bcd3e6"},
-      {"name": "Light Gold", "hex": "#e9dcc0"},
-      {"name": "Cloud White", "hex": "#f1f0ec"},
-      {"name": "Space Black", "hex": "#26272a"}
+      {
+        "name": "Sky Blue",
+        "hex": "#bcd3e6"
+      },
+      {
+        "name": "Light Gold",
+        "hex": "#e9dcc0"
+      },
+      {
+        "name": "Cloud White",
+        "hex": "#f1f0ec"
+      },
+      {
+        "name": "Space Black",
+        "hex": "#26272a"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": "esim", "cond": "new", "price": 124500},
-      {"storage": "512GB", "sim": "esim", "cond": "new", "price": 149000},
-      {"storage": "1TB", "sim": "esim", "cond": "new", "price": 168000}
+      {
+        "storage": "256GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 124500,
+        "stock": false
+      },
+      {
+        "storage": "512GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 149000,
+        "stock": false
+      },
+      {
+        "storage": "1TB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 168000,
+        "stock": false
+      }
     ],
-    "highlights": ["Just 5.6mm thin", "A19 Pro chip", "6.5\" 120Hz ProMotion display", "48MP Fusion camera"],
+    "highlights": [
+      "Just 5.6mm thin",
+      "A19 Pro chip",
+      "6.5\" 120Hz ProMotion display",
+      "48MP Fusion camera"
+    ],
     "specs": {
       "Display": "6.5-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, 3000 nits peak",
       "Chip": "Apple A19 Pro (3 nm)",
@@ -230,18 +565,56 @@
     "tagline": "ProMotion comes to the everyday iPhone.",
     "images": 4,
     "colors": [
-      {"name": "Lavender", "hex": "#cfc4e3"},
-      {"name": "Sage", "hex": "#b9c5a8"},
-      {"name": "Mist Blue", "hex": "#a9bfd6"},
-      {"name": "White", "hex": "#f3f3f1"},
-      {"name": "Black", "hex": "#2a2a2c"}
+      {
+        "name": "Lavender",
+        "hex": "#cfc4e3"
+      },
+      {
+        "name": "Sage",
+        "hex": "#b9c5a8"
+      },
+      {
+        "name": "Mist Blue",
+        "hex": "#a9bfd6"
+      },
+      {
+        "name": "White",
+        "hex": "#f3f3f1"
+      },
+      {
+        "name": "Black",
+        "hex": "#2a2a2c"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": "dual", "cond": "new", "price": 125000},
-      {"storage": "512GB", "sim": "esim", "cond": "new", "price": 139000},
-      {"storage": "512GB", "sim": "dual", "cond": "new", "price": 157000}
+      {
+        "storage": "256GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 125000,
+        "stock": false
+      },
+      {
+        "storage": "512GB",
+        "sim": "esim",
+        "cond": "new",
+        "price": 139000,
+        "stock": false
+      },
+      {
+        "storage": "512GB",
+        "sim": "dual",
+        "cond": "new",
+        "price": 157000,
+        "stock": false
+      }
     ],
-    "highlights": ["A19 chip", "6.3\" 120Hz ProMotion display", "Dual 48MP cameras", "256GB base storage"],
+    "highlights": [
+      "A19 chip",
+      "6.3\" 120Hz ProMotion display",
+      "Dual 48MP cameras",
+      "256GB base storage"
+    ],
     "specs": {
       "Display": "6.3-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, 3000 nits peak",
       "Chip": "Apple A19 (3 nm)",
@@ -265,16 +638,45 @@
     "tagline": "The latest iPhone at the friendliest price.",
     "images": 3,
     "colors": [
-      {"name": "Black", "hex": "#2a2a2c"},
-      {"name": "White", "hex": "#f3f3f1"},
-      {"name": "Blue", "hex": "#a7bcd4"},
-      {"name": "Pink", "hex": "#ebcfd3"}
+      {
+        "name": "Black",
+        "hex": "#2a2a2c"
+      },
+      {
+        "name": "White",
+        "hex": "#f3f3f1"
+      },
+      {
+        "name": "Blue",
+        "hex": "#a7bcd4"
+      },
+      {
+        "name": "Pink",
+        "hex": "#ebcfd3"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": null, "cond": "new", "price": 103000},
-      {"storage": "512GB", "sim": null, "cond": "new", "price": 135000}
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "new",
+        "price": 103000,
+        "stock": false
+      },
+      {
+        "storage": "512GB",
+        "sim": null,
+        "cond": "new",
+        "price": 135000,
+        "stock": false
+      }
     ],
-    "highlights": ["A19 chip", "6.1\" 120Hz OLED display", "48MP main camera", "Face ID"],
+    "highlights": [
+      "A19 chip",
+      "6.1\" 120Hz OLED display",
+      "48MP main camera",
+      "Face ID"
+    ],
     "specs": {
       "Display": "6.1-inch Super Retina XDR OLED, 120Hz",
       "Chip": "Apple A19",
@@ -298,16 +700,45 @@
     "tagline": "Titanium flagship with a 6.9\" display.",
     "images": 4,
     "colors": [
-      {"name": "Desert Titanium", "hex": "#bfa48a"},
-      {"name": "Natural Titanium", "hex": "#c2bcb2"},
-      {"name": "White Titanium", "hex": "#f0efeb"},
-      {"name": "Black Titanium", "hex": "#3c3c3d"}
+      {
+        "name": "Desert Titanium",
+        "hex": "#bfa48a"
+      },
+      {
+        "name": "Natural Titanium",
+        "hex": "#c2bcb2"
+      },
+      {
+        "name": "White Titanium",
+        "hex": "#f0efeb"
+      },
+      {
+        "name": "Black Titanium",
+        "hex": "#3c3c3d"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 126000},
-      {"storage": "256GB", "sim": null, "cond": "new", "price": 153000}
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "refurb",
+        "price": 126000,
+        "stock": false
+      },
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "new",
+        "price": 153000,
+        "stock": false
+      }
     ],
-    "highlights": ["A18 Pro chip", "6.9\" ProMotion display", "5x telephoto camera", "Camera Control button"],
+    "highlights": [
+      "A18 Pro chip",
+      "6.9\" ProMotion display",
+      "5x telephoto camera",
+      "Camera Control button"
+    ],
     "specs": {
       "Display": "6.9-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On",
       "Chip": "Apple A18 Pro (3 nm)",
@@ -332,15 +763,38 @@
     "tagline": "Titanium Pro at a smart price.",
     "images": 4,
     "colors": [
-      {"name": "Desert Titanium", "hex": "#bfa48a"},
-      {"name": "Natural Titanium", "hex": "#c2bcb2"},
-      {"name": "White Titanium", "hex": "#f0efeb"},
-      {"name": "Black Titanium", "hex": "#3c3c3d"}
+      {
+        "name": "Desert Titanium",
+        "hex": "#bfa48a"
+      },
+      {
+        "name": "Natural Titanium",
+        "hex": "#c2bcb2"
+      },
+      {
+        "name": "White Titanium",
+        "hex": "#f0efeb"
+      },
+      {
+        "name": "Black Titanium",
+        "hex": "#3c3c3d"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 112000}
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "refurb",
+        "price": 112000,
+        "stock": false
+      }
     ],
-    "highlights": ["A18 Pro chip", "6.3\" ProMotion display", "5x telephoto camera", "Titanium design"],
+    "highlights": [
+      "A18 Pro chip",
+      "6.3\" ProMotion display",
+      "5x telephoto camera",
+      "Titanium design"
+    ],
     "specs": {
       "Display": "6.3-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On",
       "Chip": "Apple A18 Pro (3 nm)",
@@ -364,17 +818,49 @@
     "tagline": "Big screen. Bigger battery.",
     "images": 4,
     "colors": [
-      {"name": "Ultramarine", "hex": "#7c8ee6"},
-      {"name": "Teal", "hex": "#8fc2bd"},
-      {"name": "Pink", "hex": "#efb7cf"},
-      {"name": "White", "hex": "#f3f3f1"},
-      {"name": "Black", "hex": "#2a2a2c"}
+      {
+        "name": "Ultramarine",
+        "hex": "#7c8ee6"
+      },
+      {
+        "name": "Teal",
+        "hex": "#8fc2bd"
+      },
+      {
+        "name": "Pink",
+        "hex": "#efb7cf"
+      },
+      {
+        "name": "White",
+        "hex": "#f3f3f1"
+      },
+      {
+        "name": "Black",
+        "hex": "#2a2a2c"
+      }
     ],
     "variants": [
-      {"storage": "128GB", "sim": null, "cond": "new", "price": 114500},
-      {"storage": "256GB", "sim": null, "cond": "new", "price": 124000}
+      {
+        "storage": "128GB",
+        "sim": null,
+        "cond": "new",
+        "price": 114500,
+        "stock": false
+      },
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "new",
+        "price": 124000,
+        "stock": false
+      }
     ],
-    "highlights": ["A18 chip", "6.7\" Super Retina XDR", "48MP Fusion camera", "All-day battery"],
+    "highlights": [
+      "A18 chip",
+      "6.7\" Super Retina XDR",
+      "48MP Fusion camera",
+      "All-day battery"
+    ],
     "specs": {
       "Display": "6.7-inch Super Retina XDR OLED, Dynamic Island",
       "Chip": "Apple A18 (3 nm)",
@@ -398,16 +884,42 @@
     "tagline": "Camera Control, A18 and Apple Intelligence.",
     "images": 4,
     "colors": [
-      {"name": "Ultramarine", "hex": "#7c8ee6"},
-      {"name": "Teal", "hex": "#8fc2bd"},
-      {"name": "Pink", "hex": "#efb7cf"},
-      {"name": "White", "hex": "#f3f3f1"},
-      {"name": "Black", "hex": "#2a2a2c"}
+      {
+        "name": "Ultramarine",
+        "hex": "#7c8ee6"
+      },
+      {
+        "name": "Teal",
+        "hex": "#8fc2bd"
+      },
+      {
+        "name": "Pink",
+        "hex": "#efb7cf"
+      },
+      {
+        "name": "White",
+        "hex": "#f3f3f1"
+      },
+      {
+        "name": "Black",
+        "hex": "#2a2a2c"
+      }
     ],
     "variants": [
-      {"storage": "128GB", "sim": null, "cond": "new", "price": 107000}
+      {
+        "storage": "128GB",
+        "sim": null,
+        "cond": "new",
+        "price": 107000,
+        "stock": false
+      }
     ],
-    "highlights": ["A18 chip", "6.1\" Super Retina XDR", "48MP Fusion camera", "Camera Control button"],
+    "highlights": [
+      "A18 chip",
+      "6.1\" Super Retina XDR",
+      "48MP Fusion camera",
+      "Camera Control button"
+    ],
     "specs": {
       "Display": "6.1-inch Super Retina XDR OLED, Dynamic Island",
       "Chip": "Apple A18 (3 nm)",
@@ -432,13 +944,30 @@
     "tagline": "A brand-new iPhone 16 for less.",
     "images": 2,
     "colors": [
-      {"name": "Black", "hex": "#2a2a2c"},
-      {"name": "White", "hex": "#f3f3f1"}
+      {
+        "name": "Black",
+        "hex": "#2a2a2c"
+      },
+      {
+        "name": "White",
+        "hex": "#f3f3f1"
+      }
     ],
     "variants": [
-      {"storage": "128GB", "sim": null, "cond": "new", "price": 75000}
+      {
+        "storage": "128GB",
+        "sim": null,
+        "cond": "new",
+        "price": 75000,
+        "stock": false
+      }
     ],
-    "highlights": ["A18 chip", "6.1\" OLED display", "48MP Fusion camera", "Action button"],
+    "highlights": [
+      "A18 chip",
+      "6.1\" OLED display",
+      "48MP Fusion camera",
+      "Action button"
+    ],
     "specs": {
       "Display": "6.1-inch Super Retina XDR OLED",
       "Chip": "Apple A18 (3 nm)",
@@ -462,15 +991,37 @@
     "tagline": "Titanium, A17 Pro and 5x zoom.",
     "images": 4,
     "colors": [
-      {"name": "Natural Titanium", "hex": "#c2bcb2"},
-      {"name": "Blue Titanium", "hex": "#4b5563"},
-      {"name": "White Titanium", "hex": "#f0efeb"},
-      {"name": "Black Titanium", "hex": "#3c3c3d"}
+      {
+        "name": "Natural Titanium",
+        "hex": "#c2bcb2"
+      },
+      {
+        "name": "Blue Titanium",
+        "hex": "#4b5563"
+      },
+      {
+        "name": "White Titanium",
+        "hex": "#f0efeb"
+      },
+      {
+        "name": "Black Titanium",
+        "hex": "#3c3c3d"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 102000}
+      {
+        "storage": "256GB",
+        "sim": "esim",
+        "cond": "refurb",
+        "price": 105000
+      }
     ],
-    "highlights": ["A17 Pro chip", "6.7\" ProMotion display", "5x tetraprism telephoto", "USB-C 3"],
+    "highlights": [
+      "A17 Pro chip",
+      "6.7\" ProMotion display",
+      "5x tetraprism telephoto",
+      "USB-C 3"
+    ],
     "specs": {
       "Display": "6.7-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On",
       "Chip": "Apple A17 Pro (3 nm)",
@@ -494,15 +1045,38 @@
     "tagline": "Pro titanium design, compact size.",
     "images": 4,
     "colors": [
-      {"name": "Natural Titanium", "hex": "#c2bcb2"},
-      {"name": "Blue Titanium", "hex": "#4b5563"},
-      {"name": "White Titanium", "hex": "#f0efeb"},
-      {"name": "Black Titanium", "hex": "#3c3c3d"}
+      {
+        "name": "Natural Titanium",
+        "hex": "#c2bcb2"
+      },
+      {
+        "name": "Blue Titanium",
+        "hex": "#4b5563"
+      },
+      {
+        "name": "White Titanium",
+        "hex": "#f0efeb"
+      },
+      {
+        "name": "Black Titanium",
+        "hex": "#3c3c3d"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 89000}
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "refurb",
+        "price": 89000,
+        "stock": false
+      }
     ],
-    "highlights": ["A17 Pro chip", "6.1\" ProMotion display", "48MP main camera", "Action button"],
+    "highlights": [
+      "A17 Pro chip",
+      "6.1\" ProMotion display",
+      "48MP main camera",
+      "Action button"
+    ],
     "specs": {
       "Display": "6.1-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On",
       "Chip": "Apple A17 Pro (3 nm)",
@@ -526,16 +1100,42 @@
     "tagline": "Dynamic Island, 48MP and a huge battery.",
     "images": 4,
     "colors": [
-      {"name": "Pink", "hex": "#f2d6dc"},
-      {"name": "Yellow", "hex": "#f1ecc6"},
-      {"name": "Green", "hex": "#d4e0cf"},
-      {"name": "Blue", "hex": "#d0dbe3"},
-      {"name": "Black", "hex": "#3a3b3d"}
+      {
+        "name": "Pink",
+        "hex": "#f2d6dc"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#f1ecc6"
+      },
+      {
+        "name": "Green",
+        "hex": "#d4e0cf"
+      },
+      {
+        "name": "Blue",
+        "hex": "#d0dbe3"
+      },
+      {
+        "name": "Black",
+        "hex": "#3a3b3d"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": null, "cond": "new", "price": 109000}
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "new",
+        "price": 109000,
+        "stock": false
+      }
     ],
-    "highlights": ["A16 Bionic", "6.7\" Super Retina XDR", "48MP main camera", "USB-C"],
+    "highlights": [
+      "A16 Bionic",
+      "6.7\" Super Retina XDR",
+      "48MP main camera",
+      "USB-C"
+    ],
     "specs": {
       "Display": "6.7-inch Super Retina XDR OLED, Dynamic Island",
       "Chip": "Apple A16 Bionic",
@@ -558,17 +1158,49 @@
     "tagline": "Dynamic Island and a 48MP camera.",
     "images": 4,
     "colors": [
-      {"name": "Pink", "hex": "#f2d6dc"},
-      {"name": "Yellow", "hex": "#f1ecc6"},
-      {"name": "Green", "hex": "#d4e0cf"},
-      {"name": "Blue", "hex": "#d0dbe3"},
-      {"name": "Black", "hex": "#3a3b3d"}
+      {
+        "name": "Pink",
+        "hex": "#f2d6dc"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#f1ecc6"
+      },
+      {
+        "name": "Green",
+        "hex": "#d4e0cf"
+      },
+      {
+        "name": "Blue",
+        "hex": "#d0dbe3"
+      },
+      {
+        "name": "Black",
+        "hex": "#3a3b3d"
+      }
     ],
     "variants": [
-      {"storage": "128GB", "sim": null, "cond": "new", "price": 94000},
-      {"storage": "256GB", "sim": null, "cond": "new", "price": 108000}
+      {
+        "storage": "128GB",
+        "sim": null,
+        "cond": "new",
+        "price": 94000,
+        "stock": false
+      },
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "new",
+        "price": 108000,
+        "stock": false
+      }
     ],
-    "highlights": ["A16 Bionic", "6.1\" Super Retina XDR", "48MP main camera", "USB-C"],
+    "highlights": [
+      "A16 Bionic",
+      "6.1\" Super Retina XDR",
+      "48MP main camera",
+      "USB-C"
+    ],
     "specs": {
       "Display": "6.1-inch Super Retina XDR OLED, Dynamic Island",
       "Chip": "Apple A16 Bionic",
@@ -591,15 +1223,37 @@
     "tagline": "The first Dynamic Island. Still a powerhouse.",
     "images": 4,
     "colors": [
-      {"name": "Deep Purple", "hex": "#5b4e63"},
-      {"name": "Gold", "hex": "#f4e8ce"},
-      {"name": "Silver", "hex": "#ecebe7"},
-      {"name": "Space Black", "hex": "#3b3a3c"}
+      {
+        "name": "Deep Purple",
+        "hex": "#5b4e63"
+      },
+      {
+        "name": "Gold",
+        "hex": "#f4e8ce"
+      },
+      {
+        "name": "Silver",
+        "hex": "#ecebe7"
+      },
+      {
+        "name": "Space Black",
+        "hex": "#3b3a3c"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 82000}
+      {
+        "storage": "256GB",
+        "sim": "esim",
+        "cond": "refurb",
+        "price": 95000
+      }
     ],
-    "highlights": ["A16 Bionic", "6.7\" ProMotion, Always-On", "48MP main camera", "Dynamic Island"],
+    "highlights": [
+      "A16 Bionic",
+      "6.7\" ProMotion, Always-On",
+      "48MP main camera",
+      "Dynamic Island"
+    ],
     "specs": {
       "Display": "6.7-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On",
       "Chip": "Apple A16 Bionic",
@@ -622,15 +1276,37 @@
     "tagline": "Pro camera and Dynamic Island, affordable.",
     "images": 4,
     "colors": [
-      {"name": "Deep Purple", "hex": "#5b4e63"},
-      {"name": "Gold", "hex": "#f4e8ce"},
-      {"name": "Silver", "hex": "#ecebe7"},
-      {"name": "Space Black", "hex": "#3b3a3c"}
+      {
+        "name": "Deep Purple",
+        "hex": "#5b4e63"
+      },
+      {
+        "name": "Gold",
+        "hex": "#f4e8ce"
+      },
+      {
+        "name": "Silver",
+        "hex": "#ecebe7"
+      },
+      {
+        "name": "Space Black",
+        "hex": "#3b3a3c"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 74000}
+      {
+        "storage": "256GB",
+        "sim": "esim",
+        "cond": "refurb",
+        "price": 88000
+      }
     ],
-    "highlights": ["A16 Bionic", "6.1\" ProMotion, Always-On", "48MP main camera", "Dynamic Island"],
+    "highlights": [
+      "A16 Bionic",
+      "6.1\" ProMotion, Always-On",
+      "48MP main camera",
+      "Dynamic Island"
+    ],
     "specs": {
       "Display": "6.1-inch LTPO Super Retina XDR OLED, 120Hz ProMotion, Always-On",
       "Chip": "Apple A16 Bionic",
@@ -653,16 +1329,42 @@
     "tagline": "Big 6.7\" screen on a budget.",
     "images": 4,
     "colors": [
-      {"name": "Purple", "hex": "#e3dbeb"},
-      {"name": "Blue", "hex": "#a6b9cf"},
-      {"name": "Midnight", "hex": "#2e333b"},
-      {"name": "Starlight", "hex": "#f3eee6"},
-      {"name": "(PRODUCT)RED", "hex": "#c8102e"}
+      {
+        "name": "Purple",
+        "hex": "#e3dbeb"
+      },
+      {
+        "name": "Blue",
+        "hex": "#a6b9cf"
+      },
+      {
+        "name": "Midnight",
+        "hex": "#2e333b"
+      },
+      {
+        "name": "Starlight",
+        "hex": "#f3eee6"
+      },
+      {
+        "name": "(PRODUCT)RED",
+        "hex": "#c8102e"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 67000, "stock": false}
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "refurb",
+        "price": 67000,
+        "stock": false
+      }
     ],
-    "highlights": ["A15 Bionic (5-core GPU)", "6.7\" Super Retina XDR", "Dual 12MP cameras", "Crash Detection"],
+    "highlights": [
+      "A15 Bionic (5-core GPU)",
+      "6.7\" Super Retina XDR",
+      "Dual 12MP cameras",
+      "Crash Detection"
+    ],
     "specs": {
       "Display": "6.7-inch Super Retina XDR OLED",
       "Chip": "Apple A15 Bionic (5-core GPU)",
@@ -685,17 +1387,49 @@
     "tagline": "Reliable, fast and great value.",
     "images": 4,
     "colors": [
-      {"name": "Purple", "hex": "#e3dbeb"},
-      {"name": "Blue", "hex": "#a6b9cf"},
-      {"name": "Midnight", "hex": "#2e333b"},
-      {"name": "Starlight", "hex": "#f3eee6"},
-      {"name": "(PRODUCT)RED", "hex": "#c8102e"}
+      {
+        "name": "Purple",
+        "hex": "#e3dbeb"
+      },
+      {
+        "name": "Blue",
+        "hex": "#a6b9cf"
+      },
+      {
+        "name": "Midnight",
+        "hex": "#2e333b"
+      },
+      {
+        "name": "Starlight",
+        "hex": "#f3eee6"
+      },
+      {
+        "name": "(PRODUCT)RED",
+        "hex": "#c8102e"
+      }
     ],
     "variants": [
-      {"storage": "128GB", "sim": null, "cond": "refurb", "price": 52000},
-      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 57000}
+      {
+        "storage": "128GB",
+        "sim": null,
+        "cond": "refurb",
+        "price": 52000,
+        "stock": false
+      },
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "refurb",
+        "price": 57000,
+        "stock": false
+      }
     ],
-    "highlights": ["A15 Bionic (5-core GPU)", "6.1\" Super Retina XDR", "Dual 12MP cameras", "Crash Detection"],
+    "highlights": [
+      "A15 Bionic (5-core GPU)",
+      "6.1\" Super Retina XDR",
+      "Dual 12MP cameras",
+      "Crash Detection"
+    ],
     "specs": {
       "Display": "6.1-inch Super Retina XDR OLED",
       "Chip": "Apple A15 Bionic (5-core GPU)",
@@ -718,16 +1452,41 @@
     "tagline": "Legendary battery life and ProMotion.",
     "images": 4,
     "colors": [
-      {"name": "Sierra Blue", "hex": "#a7c1d9"},
-      {"name": "Alpine Green", "hex": "#576856"},
-      {"name": "Gold", "hex": "#f6e6c9"},
-      {"name": "Silver", "hex": "#ecebe7"},
-      {"name": "Graphite", "hex": "#545454"}
+      {
+        "name": "Sierra Blue",
+        "hex": "#a7c1d9"
+      },
+      {
+        "name": "Alpine Green",
+        "hex": "#576856"
+      },
+      {
+        "name": "Gold",
+        "hex": "#f6e6c9"
+      },
+      {
+        "name": "Silver",
+        "hex": "#ecebe7"
+      },
+      {
+        "name": "Graphite",
+        "hex": "#545454"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 70000}
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "refurb",
+        "price": 80000
+      }
     ],
-    "highlights": ["A15 Bionic", "6.7\" ProMotion display", "Triple 12MP Pro cameras", "Huge battery"],
+    "highlights": [
+      "A15 Bionic",
+      "6.7\" ProMotion display",
+      "Triple 12MP Pro cameras",
+      "Huge battery"
+    ],
     "specs": {
       "Display": "6.7-inch Super Retina XDR OLED, 120Hz ProMotion",
       "Chip": "Apple A15 Bionic (5-core GPU)",
@@ -750,16 +1509,41 @@
     "tagline": "Pro cameras and ProMotion for less.",
     "images": 4,
     "colors": [
-      {"name": "Sierra Blue", "hex": "#a7c1d9"},
-      {"name": "Alpine Green", "hex": "#576856"},
-      {"name": "Gold", "hex": "#f6e6c9"},
-      {"name": "Silver", "hex": "#ecebe7"},
-      {"name": "Graphite", "hex": "#545454"}
+      {
+        "name": "Sierra Blue",
+        "hex": "#a7c1d9"
+      },
+      {
+        "name": "Alpine Green",
+        "hex": "#576856"
+      },
+      {
+        "name": "Gold",
+        "hex": "#f6e6c9"
+      },
+      {
+        "name": "Silver",
+        "hex": "#ecebe7"
+      },
+      {
+        "name": "Graphite",
+        "hex": "#545454"
+      }
     ],
     "variants": [
-      {"storage": "256GB", "sim": null, "cond": "refurb", "price": 62000}
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "refurb",
+        "price": 75000
+      }
     ],
-    "highlights": ["A15 Bionic", "6.1\" ProMotion display", "Triple 12MP Pro cameras", "Stainless steel"],
+    "highlights": [
+      "A15 Bionic",
+      "6.1\" ProMotion display",
+      "Triple 12MP Pro cameras",
+      "Stainless steel"
+    ],
     "specs": {
       "Display": "6.1-inch Super Retina XDR OLED, 120Hz ProMotion",
       "Chip": "Apple A15 Bionic (5-core GPU)",
@@ -779,21 +1563,48 @@
     "name": "iPhone 13",
     "series": 13,
     "year": 2021,
-    "badge": "Lowest price",
     "tagline": "The smartest way into iPhone.",
     "images": 4,
     "colors": [
-      {"name": "Midnight", "hex": "#2e333b"},
-      {"name": "Starlight", "hex": "#f3eee6"},
-      {"name": "Blue", "hex": "#3f6f9a"},
-      {"name": "Pink", "hex": "#f6dfe0"},
-      {"name": "Green", "hex": "#3d5244"},
-      {"name": "(PRODUCT)RED", "hex": "#c8102e"}
+      {
+        "name": "Midnight",
+        "hex": "#2e333b"
+      },
+      {
+        "name": "Starlight",
+        "hex": "#f3eee6"
+      },
+      {
+        "name": "Blue",
+        "hex": "#3f6f9a"
+      },
+      {
+        "name": "Pink",
+        "hex": "#f6dfe0"
+      },
+      {
+        "name": "Green",
+        "hex": "#3d5244"
+      },
+      {
+        "name": "(PRODUCT)RED",
+        "hex": "#c8102e"
+      }
     ],
     "variants": [
-      {"storage": "128GB", "sim": null, "cond": "refurb", "price": 46000}
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "refurb",
+        "price": 62000
+      }
     ],
-    "highlights": ["A15 Bionic", "6.1\" Super Retina XDR", "Dual 12MP cameras", "5G"],
+    "highlights": [
+      "A15 Bionic",
+      "6.1\" Super Retina XDR",
+      "Dual 12MP cameras",
+      "5G"
+    ],
     "specs": {
       "Display": "6.1-inch Super Retina XDR OLED",
       "Chip": "Apple A15 Bionic",
@@ -816,18 +1627,53 @@
     "tagline": "Full power, pocket size.",
     "images": 4,
     "colors": [
-      {"name": "Midnight", "hex": "#2e333b"},
-      {"name": "Starlight", "hex": "#f3eee6"},
-      {"name": "Blue", "hex": "#3f6f9a"},
-      {"name": "Pink", "hex": "#f6dfe0"},
-      {"name": "Green", "hex": "#3d5244"},
-      {"name": "(PRODUCT)RED", "hex": "#c8102e"}
+      {
+        "name": "Midnight",
+        "hex": "#2e333b"
+      },
+      {
+        "name": "Starlight",
+        "hex": "#f3eee6"
+      },
+      {
+        "name": "Blue",
+        "hex": "#3f6f9a"
+      },
+      {
+        "name": "Pink",
+        "hex": "#f6dfe0"
+      },
+      {
+        "name": "Green",
+        "hex": "#3d5244"
+      },
+      {
+        "name": "(PRODUCT)RED",
+        "hex": "#c8102e"
+      }
     ],
     "variants": [
-      {"storage": "128GB", "sim": null, "cond": "new", "price": 110000, "stock": false},
-      {"storage": "256GB", "sim": null, "cond": "new", "price": 123000, "stock": false}
+      {
+        "storage": "128GB",
+        "sim": null,
+        "cond": "new",
+        "price": 110000,
+        "stock": false
+      },
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "new",
+        "price": 123000,
+        "stock": false
+      }
     ],
-    "highlights": ["A15 Bionic", "5.4\" Super Retina XDR", "Dual 12MP cameras", "Compact & light"],
+    "highlights": [
+      "A15 Bionic",
+      "5.4\" Super Retina XDR",
+      "Dual 12MP cameras",
+      "Compact & light"
+    ],
     "specs": {
       "Display": "5.4-inch Super Retina XDR OLED",
       "Chip": "Apple A15 Bionic",
@@ -840,6 +1686,507 @@
       "Build": "Aluminium, Ceramic Shield",
       "Water resistance": "IP68",
       "Connectivity": "5G, Wi-Fi 6, Bluetooth 5.0, NFC"
+    }
+  },
+  {
+    "slug": "iphone-12-pro-max",
+    "name": "iPhone 12 Pro Max",
+    "series": 12,
+    "year": 2020,
+    "tagline": "Big 6.7\" Pro iPhone at a bargain price.",
+    "images": 4,
+    "colors": [
+      {
+        "name": "Pacific Blue",
+        "hex": "#2f4c63"
+      },
+      {
+        "name": "Gold",
+        "hex": "#f4e8ce"
+      },
+      {
+        "name": "Silver",
+        "hex": "#ecebe7"
+      },
+      {
+        "name": "Graphite",
+        "hex": "#545454"
+      }
+    ],
+    "variants": [
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "refurb",
+        "price": 65000
+      }
+    ],
+    "highlights": [
+      "A14 Bionic",
+      "6.7\" Super Retina XDR",
+      "Triple 12MP + LiDAR",
+      "5G & MagSafe"
+    ],
+    "specs": {
+      "Display": "6.7-inch Super Retina XDR OLED, HDR10, Dolby Vision",
+      "Chip": "Apple A14 Bionic",
+      "RAM": "6GB",
+      "Storage": "256GB",
+      "Rear camera": "12MP wide (sensor-shift OIS) + 12MP ultra wide + 12MP 2.5x telephoto + LiDAR",
+      "Front camera": "12MP TrueDepth",
+      "Battery": "3,687 mAh",
+      "Charging": "Lightning, MagSafe wireless",
+      "Build": "Stainless steel, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 6, Bluetooth 5.0, NFC (Nano-SIM + eSIM)"
+    }
+  },
+  {
+    "slug": "iphone-12-pro",
+    "name": "iPhone 12 Pro",
+    "series": 12,
+    "year": 2020,
+    "badge": "Lowest price",
+    "tagline": "Pro cameras and stainless steel for less.",
+    "images": 4,
+    "colors": [
+      {
+        "name": "Pacific Blue",
+        "hex": "#2f4c63"
+      },
+      {
+        "name": "Gold",
+        "hex": "#f4e8ce"
+      },
+      {
+        "name": "Silver",
+        "hex": "#ecebe7"
+      },
+      {
+        "name": "Graphite",
+        "hex": "#545454"
+      }
+    ],
+    "variants": [
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "refurb",
+        "price": 62000
+      }
+    ],
+    "highlights": [
+      "A14 Bionic",
+      "6.1\" Super Retina XDR",
+      "Triple 12MP + LiDAR",
+      "5G & MagSafe"
+    ],
+    "specs": {
+      "Display": "6.1-inch Super Retina XDR OLED, HDR10, Dolby Vision",
+      "Chip": "Apple A14 Bionic",
+      "RAM": "6GB",
+      "Storage": "256GB",
+      "Rear camera": "12MP wide + 12MP ultra wide + 12MP 2x telephoto + LiDAR",
+      "Front camera": "12MP TrueDepth",
+      "Battery": "2,815 mAh",
+      "Charging": "Lightning, MagSafe wireless",
+      "Build": "Stainless steel, Ceramic Shield",
+      "Water resistance": "IP68",
+      "Connectivity": "5G, Wi-Fi 6, Bluetooth 5.0, NFC (Nano-SIM + eSIM)"
+    }
+  },
+  {
+    "category": "ipad",
+    "series": "ipad",
+    "slug": "ipad-pro-13-m5",
+    "name": "iPad Pro 13\" (M5)",
+    "year": 2025,
+    "badge": "New",
+    "images": 1,
+    "colors": [
+      {
+        "name": "Space Black",
+        "hex": "#2e2e30"
+      },
+      {
+        "name": "Silver",
+        "hex": "#e3e4e1"
+      }
+    ],
+    "tagline": "The ultimate iPad. Tandem OLED and M5 power.",
+    "variants": [
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "new",
+        "price": 185000,
+        "conn": "wifi"
+      },
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "new",
+        "price": 190000,
+        "conn": "5g"
+      },
+      {
+        "storage": "512GB",
+        "sim": null,
+        "cond": "new",
+        "price": 223000,
+        "conn": "5g"
+      }
+    ],
+    "highlights": [
+      "Apple M5 chip",
+      "13\" Ultra Retina XDR OLED",
+      "Apple Pencil Pro support",
+      "Thunderbolt / USB 4"
+    ],
+    "specs": {
+      "Display": "13-inch Ultra Retina XDR (tandem OLED), 120Hz ProMotion, 1600 nits peak",
+      "Chip": "Apple M5",
+      "RAM": "12GB",
+      "Storage": "256GB, 512GB",
+      "Rear camera": "12MP wide with LiDAR",
+      "Front camera": "12MP landscape Center Stage",
+      "Battery": "10,290 mAh, all-day battery",
+      "Connectivity": "Wi-Fi 7 or Wi-Fi + 5G, Bluetooth 6.0, Thunderbolt / USB 4",
+      "Security": "Face ID",
+      "Accessories": "Apple Pencil Pro, Magic Keyboard",
+      "Software": "iPadOS 26"
+    }
+  },
+  {
+    "category": "ipad",
+    "series": "ipad",
+    "slug": "ipad-pro-11-m5",
+    "name": "iPad Pro 11\" (M5)",
+    "year": 2025,
+    "images": 2,
+    "colors": [
+      {
+        "name": "Space Black",
+        "hex": "#2e2e30"
+      },
+      {
+        "name": "Silver",
+        "hex": "#e3e4e1"
+      }
+    ],
+    "tagline": "Pro performance in a thin, light 11-inch design.",
+    "variants": [
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "new",
+        "price": 170000,
+        "conn": "wifi"
+      },
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "new",
+        "price": 180000,
+        "conn": "5g"
+      },
+      {
+        "storage": "512GB",
+        "sim": null,
+        "cond": "new",
+        "price": 220000,
+        "conn": "5g"
+      }
+    ],
+    "highlights": [
+      "Apple M5 chip",
+      "11\" Ultra Retina XDR OLED",
+      "Apple Pencil Pro support",
+      "Face ID"
+    ],
+    "specs": {
+      "Display": "11-inch Ultra Retina XDR (tandem OLED), 120Hz ProMotion, 1600 nits peak",
+      "Chip": "Apple M5",
+      "RAM": "12GB",
+      "Storage": "256GB, 512GB",
+      "Rear camera": "12MP wide with LiDAR",
+      "Front camera": "12MP landscape Center Stage",
+      "Battery": "8,160 mAh, all-day battery",
+      "Connectivity": "Wi-Fi 7 or Wi-Fi + 5G, Bluetooth 6.0, Thunderbolt / USB 4",
+      "Security": "Face ID",
+      "Accessories": "Apple Pencil Pro, Magic Keyboard",
+      "Software": "iPadOS 26"
+    }
+  },
+  {
+    "category": "ipad",
+    "series": "ipad",
+    "slug": "ipad-air-11-m4",
+    "name": "iPad Air 11\" (M4)",
+    "year": 2026,
+    "badge": "New",
+    "images": 2,
+    "colors": [
+      {
+        "name": "Space Gray",
+        "hex": "#5b5d61"
+      },
+      {
+        "name": "Blue",
+        "hex": "#a9bdd1"
+      },
+      {
+        "name": "Purple",
+        "hex": "#cbc0dc"
+      },
+      {
+        "name": "Starlight",
+        "hex": "#efe8dc"
+      }
+    ],
+    "tagline": "Serious power, light design, great price.",
+    "variants": [
+      {
+        "storage": "128GB",
+        "sim": null,
+        "cond": "new",
+        "price": 120000,
+        "conn": "wifi"
+      },
+      {
+        "storage": "128GB",
+        "sim": null,
+        "cond": "new",
+        "price": 135000,
+        "conn": "5g"
+      },
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "new",
+        "price": 135000,
+        "conn": "wifi"
+      },
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "new",
+        "price": 155000,
+        "conn": "5g"
+      }
+    ],
+    "highlights": [
+      "Apple M4 chip",
+      "11\" Liquid Retina display",
+      "12GB RAM",
+      "Apple Pencil Pro support"
+    ],
+    "specs": {
+      "Display": "11-inch Liquid Retina, 500 nits",
+      "Chip": "Apple M4",
+      "RAM": "12GB",
+      "Storage": "128GB, 256GB",
+      "Rear camera": "12MP wide",
+      "Front camera": "12MP landscape Center Stage",
+      "Battery": "7,606 mAh (28.93 Wh)",
+      "Connectivity": "Wi-Fi or Wi-Fi + 5G, Bluetooth, USB-C",
+      "Security": "Touch ID (top button)",
+      "Accessories": "Apple Pencil Pro, Magic Keyboard",
+      "Software": "iPadOS 26"
+    }
+  },
+  {
+    "category": "ipad",
+    "series": "ipad",
+    "slug": "ipad-air-11-m3",
+    "name": "iPad Air 11\" (M3)",
+    "year": 2025,
+    "images": 1,
+    "colors": [
+      {
+        "name": "Space Gray",
+        "hex": "#5b5d61"
+      },
+      {
+        "name": "Blue",
+        "hex": "#a9bdd1"
+      },
+      {
+        "name": "Purple",
+        "hex": "#cbc0dc"
+      },
+      {
+        "name": "Starlight",
+        "hex": "#efe8dc"
+      }
+    ],
+    "tagline": "Fast M3 performance for study and work.",
+    "variants": [
+      {
+        "storage": "128GB",
+        "sim": null,
+        "cond": "new",
+        "price": 110000,
+        "conn": "wifi"
+      }
+    ],
+    "highlights": [
+      "Apple M3 chip",
+      "11\" Liquid Retina display",
+      "8GB RAM",
+      "Apple Pencil Pro support"
+    ],
+    "specs": {
+      "Display": "11-inch Liquid Retina, 500 nits",
+      "Chip": "Apple M3",
+      "RAM": "8GB",
+      "Storage": "128GB",
+      "Rear camera": "12MP wide",
+      "Front camera": "12MP landscape Center Stage",
+      "Battery": "All-day battery (28.93 Wh)",
+      "Connectivity": "Wi-Fi 6E, Bluetooth 5.3, USB-C",
+      "Security": "Touch ID (top button)",
+      "Accessories": "Apple Pencil Pro, Magic Keyboard",
+      "Software": "iPadOS"
+    }
+  },
+  {
+    "category": "ipad",
+    "series": "ipad",
+    "slug": "ipad-11th-gen-a16",
+    "name": "iPad 11th Gen (A16)",
+    "year": 2025,
+    "badge": "Best value",
+    "images": 2,
+    "colors": [
+      {
+        "name": "Blue",
+        "hex": "#a9c3dc"
+      },
+      {
+        "name": "Pink",
+        "hex": "#f0c3cf"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#f3e3a1"
+      },
+      {
+        "name": "Silver",
+        "hex": "#e3e4e1"
+      }
+    ],
+    "tagline": "The everyday iPad for school, work and fun.",
+    "variants": [
+      {
+        "storage": "128GB",
+        "sim": null,
+        "cond": "new",
+        "price": 80000,
+        "conn": "wifi"
+      },
+      {
+        "storage": "128GB",
+        "sim": null,
+        "cond": "new",
+        "price": 85000,
+        "conn": "5g"
+      },
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "new",
+        "price": 90000,
+        "conn": "wifi"
+      },
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "new",
+        "price": 125000,
+        "conn": "5g"
+      }
+    ],
+    "highlights": [
+      "A16 chip",
+      "11\" Liquid Retina display",
+      "12MP front & back",
+      "Touch ID"
+    ],
+    "specs": {
+      "Display": "11-inch Liquid Retina, 500 nits",
+      "Chip": "Apple A16",
+      "RAM": "6GB",
+      "Storage": "128GB, 256GB",
+      "Rear camera": "12MP wide",
+      "Front camera": "12MP landscape Center Stage",
+      "Battery": "All-day battery (28.93 Wh)",
+      "Connectivity": "Wi-Fi 6 or Wi-Fi + 5G (eSIM), USB-C",
+      "Security": "Touch ID (top button)",
+      "Accessories": "Apple Pencil (USB-C), Magic Keyboard Folio",
+      "Software": "iPadOS"
+    }
+  },
+  {
+    "category": "ipad",
+    "series": "ipad",
+    "slug": "ipad-mini-7",
+    "name": "iPad mini 7",
+    "year": 2024,
+    "images": 1,
+    "colors": [
+      {
+        "name": "Space Gray",
+        "hex": "#5b5d61"
+      },
+      {
+        "name": "Blue",
+        "hex": "#a9bdd1"
+      },
+      {
+        "name": "Purple",
+        "hex": "#cbc0dc"
+      },
+      {
+        "name": "Starlight",
+        "hex": "#efe8dc"
+      }
+    ],
+    "tagline": "Full iPad power that fits in one hand.",
+    "variants": [
+      {
+        "storage": "128GB",
+        "sim": null,
+        "cond": "new",
+        "price": 120000,
+        "conn": "5g"
+      },
+      {
+        "storage": "256GB",
+        "sim": null,
+        "cond": "new",
+        "price": 125000,
+        "conn": "5g"
+      }
+    ],
+    "highlights": [
+      "A17 Pro chip",
+      "8.3\" Liquid Retina display",
+      "5G cellular",
+      "Apple Pencil Pro support"
+    ],
+    "specs": {
+      "Display": "8.3-inch Liquid Retina, 500 nits",
+      "Chip": "Apple A17 Pro (3 nm)",
+      "RAM": "8GB",
+      "Storage": "128GB, 256GB",
+      "Rear camera": "12MP wide",
+      "Front camera": "12MP Center Stage",
+      "Battery": "5,078 mAh (19.3 Wh)",
+      "Connectivity": "Wi-Fi 6E + 5G, Bluetooth 5.3, USB-C",
+      "Security": "Touch ID (top button)",
+      "Accessories": "Apple Pencil Pro",
+      "Software": "iPadOS"
     }
   }
 ]

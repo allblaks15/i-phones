@@ -9,7 +9,8 @@
 
   var LABELS = {
     sim: { dual: "Physical SIM + eSIM", esim: "eSIM only" },
-    cond: { "new": "Brand New", refurb: "Ex-UK (Refurbished)" }
+    cond: { "new": "Brand New", refurb: "Ex-UK (Refurbished)" },
+    conn: { wifi: "Wi-Fi", "5g": "Wi-Fi + 5G" }
   };
   var STORAGE_ORDER = { "64GB": 0, "128GB": 1, "256GB": 2, "512GB": 3, "1TB": 4, "2TB": 5 };
 
@@ -36,12 +37,15 @@
   function Configurator(product, mount, opts) {
     opts = opts || {};
     var dims = ["storage"];
+    if (product.variants.some(function (v) { return v.conn; })) dims.push("conn");
     if (product.variants.some(function (v) { return v.sim; })) dims.push("sim");
     var conds = uniq(product.variants.map(function (v) { return v.cond; }));
     if (conds.length > 1) dims.push("cond");
+    var colorPriced = product.variants.some(function (v) { return v.color; });
+    if (colorPriced) dims.push("color");
     var start = cheapest(product.variants);
     var state = {
-      color: product.colors[0].name,
+      color: colorPriced ? start.color : product.colors[0].name, conn: start.conn,
       storage: start.storage, sim: start.sim, cond: start.cond,
       mode: store("kl_mode") || "delivery",
       area: store("kl_area"), name: store("kl_name"), phone: store("kl_phone")
@@ -59,7 +63,19 @@
     function choose(d, val) {
       state[d] = val;
       if (!current()) {
-        var pick = cheapest(product.variants.filter(function (v) { return v[d] === val; }));
+        // keep as many of the customer's other choices as possible (colour first), then cheapest
+        var pref = ["color", "storage", "sim", "conn", "cond"];
+        var cands = product.variants.filter(function (v) { return v[d] === val; });
+        cands.sort(function (a, b) {
+          for (var i = 0; i < pref.length; i++) {
+            var k = pref[i];
+            if (k === d || dims.indexOf(k) < 0) continue;
+            var am = a[k] === state[k], bm = b[k] === state[k];
+            if (am !== bm) return am ? -1 : 1;
+          }
+          return (available(b) - available(a)) || ((a.price || 9e9) - (b.price || 9e9));
+        });
+        var pick = cands[0];
         dims.forEach(function (k) { state[k] = pick[k]; });
       }
       render();
@@ -83,6 +99,7 @@
         "• Colour: " + state.color,
         "• Storage: " + state.storage
       ];
+      if (dims.indexOf("conn") > -1) lines.push("• Connectivity: " + LABELS.conn[state.conn]);
       if (dims.indexOf("sim") > -1) lines.push("• SIM: " + LABELS.sim[state.sim]);
       lines.push("• Condition: " + LABELS.cond[state.cond]);
       lines.push("💰 *Total: " + ksh(price) + "*");
@@ -110,13 +127,17 @@
       var v = current();
       var oos = v && v.stock === false;
       var h = "";
-      h += '<div class="opt"><div class="opt-label">Colour <span data-k="color">' + esc(state.color) + '</span></div><div class="swatches" role="radiogroup" aria-label="Colour">';
+      h += '<div class="opt"><div class="opt-label">Colour <span data-k="color">' + esc(state.color) + (colorPriced && v ? " · " + ksh(v.price) : "") + '</span></div><div class="swatches" role="radiogroup" aria-label="Colour">';
       product.colors.forEach(function (c) {
-        h += '<button type="button" class="swatch" role="radio" aria-checked="' + (c.name === state.color) + '" aria-label="' + esc(c.name) + '" title="' + esc(c.name) + '" data-color="' + esc(c.name) + '"><i style="background:' + c.hex + '"></i></button>';
+        var cp = colorPriced ? optionPrice("color", c.name) : null;
+        var tip = c.name + (cp && cp.v ? (cp.exact ? " · " : " · from ") + ksh(cp.v.price) : "");
+        h += '<button type="button" class="swatch' + (cp && !cp.exact ? " dim" : "") + '" role="radio" aria-checked="' + (c.name === state.color) + '" aria-label="' + esc(tip) + '" title="' + esc(tip) + '" data-color="' + esc(c.name) + '"><i style="background:' + c.hex + '"></i></button>';
       });
+      if (colorPriced) h += '<small class="swatch-note">Price depends on colour. Faded colours aren\'t in stock for this option.</small>';
       h += "</div></div>";
       dims.forEach(function (d) {
-        var title = { storage: "Storage", sim: "SIM type", cond: "Condition" }[d];
+        if (d === "color") return;
+        var title = { storage: "Storage", sim: "SIM type", cond: "Condition", conn: "Connectivity" }[d];
         h += '<div class="opt"><div class="opt-label">' + title + '</div><div class="options" role="radiogroup" aria-label="' + title + '">';
         values(d).forEach(function (val) {
           var op = optionPrice(d, val);
@@ -171,7 +192,7 @@
       if (Date.now() - lastSent < 4000) return; // ignore double taps
       lastSent = Date.now();
       var payload = JSON.stringify({
-        slug: product.slug, color: state.color, storage: state.storage, sim: state.sim, cond: state.cond,
+        slug: product.slug, color: state.color, storage: state.storage, sim: state.sim, cond: state.cond, conn: state.conn,
         mode: state.mode, area: state.area, name: state.name, phone: state.phone, invoice: state.invoice, website: state.website || ""
       });
       try {
@@ -185,7 +206,7 @@
     mount.addEventListener("click", function (e) {
       var b = e.target.closest("button");
       if (!b || !mount.contains(b)) return;
-      if (b.dataset.color) { state.color = b.dataset.color; render(); }
+      if (b.dataset.color) { if (colorPriced) choose("color", b.dataset.color); else { state.color = b.dataset.color; render(); } }
       else if (b.dataset.dim) choose(b.dataset.dim, b.dataset.val === "null" ? null : b.dataset.val);
       else if (b.dataset.mode) { state.mode = b.dataset.mode; store("kl_mode", state.mode); render(); }
     });
@@ -221,6 +242,7 @@
     var pay = SITE.payment || {}, price = v && v.price;
     var date = new Date().toLocaleDateString("en-KE", { day: "numeric", month: "long", year: "numeric" });
     var details = [s.color, s.storage];
+    if (dims.indexOf("conn") > -1) details.push(LABELS.conn[s.conn]);
     if (dims.indexOf("sim") > -1) details.push(LABELS.sim[s.sim]);
     details.push(LABELS.cond[s.cond]);
     var billTo = [s.name, s.phone].filter(Boolean).map(esc).join("<br>") || "Customer";

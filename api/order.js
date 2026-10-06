@@ -110,6 +110,7 @@ module.exports = async (req, res) => {
     color: clean(body.color, 40),
     storage: clean(body.storage, 10),
     sim: product.variants.some((v) => v.sim) ? clean(body.sim, 10) : null,
+    conn: product.variants.some((v) => v.conn) ? clean(body.conn, 10) : null,
     cond: clean(body.cond, 10),
     mode: body.mode === "pickup" ? "pickup" : "delivery",
     area: clean(body.area, 120),
@@ -119,7 +120,8 @@ module.exports = async (req, res) => {
   };
   if (!product.colors.includes(o.color)) o.color = product.colors[0];
   // price is looked up server-side so the email can't be spoofed
-  const variant = product.variants.find((v) => v.storage === o.storage && v.cond === o.cond && (o.sim == null || v.sim === o.sim));
+  const variant = product.variants.find((v) => v.storage === o.storage && v.cond === o.cond &&
+    (o.sim == null || v.sim === o.sim) && (o.conn == null || v.conn === o.conn) && (!v.color || v.color === o.color));
   const price = variant ? variant.price : null;
   const page = `${process.env.SITE_URL || "https://www.i-phones.co.ke"}/${clean(body.slug, 60)}/`;
   const wa = kePhone(o.phone);
@@ -129,6 +131,7 @@ module.exports = async (req, res) => {
     ["Model", product.name],
     ["Colour", o.color],
     ["Storage", o.storage],
+    ...(o.conn ? [["Connectivity", o.conn === "5g" ? "Wi-Fi + 5G" : "Wi-Fi"]] : []),
     ...(o.sim ? [["SIM", SIM[o.sim] || o.sim]] : []),
     ["Condition", COND[o.cond] || o.cond],
     ["Price", ksh(price)],

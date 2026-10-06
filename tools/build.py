@@ -59,6 +59,9 @@ def conds(p): return sorted({v["cond"] for v in p["variants"]})
 def cond_label(p):
     c = conds(p)
     return "New & Ex-UK" if len(c) > 1 else COND[c[0]]
+CONN = {"wifi": "Wi-Fi", "5g": "Wi-Fi + 5G", None: "—"}
+def is_ipad(p): return p.get("category") == "ipad"
+def series_label(p): return "iPad" if is_ipad(p) else f"iPhone {p['series']} series"
 def img(p, i=1): return f"images/phones/{p['slug']}-{i}.webp"
 
 def layout(*, base, title, desc, path, body, schema, og_image, page_js="", robots="index,follow"):
@@ -153,7 +156,7 @@ def footer(base):
 <div><h4>Shop</h4><ul>
 <li><a href="{base}?series=18#shop">iPhone 18 series</a></li><li><a href="{base}?series=17#shop">iPhone 17 series</a></li>
 <li><a href="{base}?series=16#shop">iPhone 16 series</a></li><li><a href="{base}?series=15#shop">iPhone 15 series</a></li>
-<li><a href="{base}?series=14#shop">iPhone 14 series</a></li><li><a href="{base}?series=13#shop">iPhone 13 series</a></li>
+<li><a href="{base}?series=14#shop">iPhone 14 series</a></li><li><a href="{base}?series=13#shop">iPhone 13 series</a></li><li><a href="{base}?series=12#shop">iPhone 12 series</a></li><li><a href="{base}?series=ipad#shop">iPads</a></li>
 <li><a href="{base}?budget=under-80k#shop">iPhones under 80K</a></li><li><a href="{base}wallpapers/">Free iPhone wallpapers</a></li></ul></div>
 <div><h4>We deliver to</h4><p class="areas">{e(', '.join(SITE['deliveryAreas']))} and all 47 counties.</p></div>
 </div>
@@ -214,9 +217,9 @@ def build_home():
     base = ""
     hero = next(p for p in PRODUCTS if p["slug"] == "iphone-18-pro-max")
     lowest = min(from_price(p) for p in PRODUCTS if from_price(p))
-    cards = "\n".join(card(p, base, i) for i, p in enumerate(PRODUCTS))
+    cards = "\n".join(card(p, base, i + (0 if in_stock(p) else 1000)) for i, p in enumerate(PRODUCTS))
     series_chips = '<button class="chip" data-filter="series:all" aria-pressed="true">All iPhones</button>' + "".join(
-        f'<button class="chip" data-filter="series:{s}" aria-pressed="false">iPhone {s}</button>' for s in (18, 17, 16, 15, 14, 13))
+        f'<button class="chip" data-filter="series:{s}" aria-pressed="false">iPhone {s}</button>' for s in (18, 17, 16, 15, 14, 13, 12)) + '<button class="chip" data-filter="series:ipad" aria-pressed="false">iPad</button>'
     trust = "".join(f'<div class="trust-item">{ICONS[t["icon"]]}<div><b>{e(t["title"])}</b><span>{e(t["text"])}</span></div></div>' for t in SITE["trust"])
     walls = "".join(f'<a class="wall reveal" href="wallpapers/#{s}"><img src="images/wallpapers/{s}-thumb.webp" alt="{e(n)} iPhone wallpaper" width="360" height="780" loading="lazy"><span class="wall-time">9:41</span><span class="wall-name">{e(n)}{ICONS["download"]}</span></a>' for s, n in WALLS[:6])
     pay = SITE["payment"]
@@ -235,13 +238,13 @@ def build_home():
   <div>
     <span class="eyebrow">New · iPhone 18 Pro Max in Kenya</span>
     <h1>The best iPhones.<br><span class="serif">Delivered</span> today.</h1>
-    <p class="lead">Every iPhone from 13 to the new 18 Pro Max and iPhone Duo. Genuine, with warranty, and the best prices in Kenya. Pick your phone and order on WhatsApp in under a minute.</p>
+    <p class="lead">iPhone 12 to the new 18 Pro Max, plus the latest iPads. Genuine, with warranty, and the best prices in Kenya. Pick your phone and order on WhatsApp in under a minute.</p>
     <div class="hero-price"><span class="from">iPhones from</span><strong>{ksh(lowest)}</strong></div>
     <div class="hero-ctas">
       <a class="btn btn-wa" href="#shop">{ICONS['wa']}Shop &amp; order</a>
       <a class="btn btn-ghost" href="{hero['slug']}/">Explore iPhone 18 Pro Max</a>
     </div>
-    <div class="hero-stats"><div><b>25+</b>iPhone models</div><div><b>Same-day</b>Nairobi delivery</div><div><b>47</b>counties served</div></div>
+    <div class="hero-stats"><div><b>{len(PRODUCTS)}</b>iPhone &amp; iPad models</div><div><b>Same-day</b>Nairobi delivery</div><div><b>47</b>counties served</div></div>
   </div>
   <a class="hero-visual" href="{hero['slug']}/" aria-label="iPhone 18 Pro Max"><img src="{img(hero)}" alt="iPhone 18 Pro Max in Burgundy, price in Kenya" width="800" height="800" fetchpriority="high"></a>
 </div></section>
@@ -266,9 +269,9 @@ def build_home():
 <section class="section" style="padding-top:0"><div class="wrap">
   <div class="section-head"><div><span class="eyebrow">Shop by budget</span><h2>An iPhone for every budget.</h2></div></div>
   <div class="budget">
-    <a href="?budget=under-80k#shop" data-filter="budget:under-80k" class="reveal"><div><small>Under KSh 80K</small><h3>Smart &amp; affordable</h3></div><p>iPhone 13, 14, 14 Pro, 16e and more.</p><span class="go">Shop now →</span></a>
-    <a href="?budget=80k-150k#shop" data-filter="budget:80k-150k" class="reveal"><div><small>KSh 80K – 150K</small><h3>The sweet spot</h3></div><p>iPhone 15 Pro, 16, 17, 17 Air and 17e.</p><span class="go">Shop now →</span></a>
-    <a href="?budget=over-150k#shop" data-filter="budget:over-150k" class="reveal"><div><small>KSh 150K+</small><h3>The very best</h3></div><p>iPhone 17 Pro Max, 18 Pro, 18 Pro Max and Duo.</p><span class="go">Shop now →</span></a>
+    <a href="?budget=under-80k#shop" data-filter="budget:under-80k" class="reveal"><div><small>Under KSh 80K</small><h3>Smart &amp; affordable</h3></div><p>iPhone 12 Pro, 12 Pro Max, 13 and 13 Pro.</p><span class="go">Shop now →</span></a>
+    <a href="?budget=80k-150k#shop" data-filter="budget:80k-150k" class="reveal"><div><small>KSh 80K – 150K</small><h3>The sweet spot</h3></div><p>iPhone 14 Pro, 15 Pro Max, iPad Air, iPad mini and more.</p><span class="go">Shop now →</span></a>
+    <a href="?budget=over-150k#shop" data-filter="budget:over-150k" class="reveal"><div><small>KSh 150K+</small><h3>The very best</h3></div><p>iPhone 17 Pro, 17 Pro Max, 18 Pro, 18 Pro Max and iPad Pro.</p><span class="go">Shop now →</span></a>
   </div>
 </div></section>
 
@@ -290,7 +293,7 @@ def build_home():
 <section class="section" style="padding-top:0"><div class="wrap prose">
   <span class="eyebrow">Buy iPhones in Kenya</span>
   <h2>Latest iPhone prices in Kenya ({datetime.date.today().year})</h2>
-  <p>{e(SITE['brand'])} sells genuine Apple iPhones in Kenya, from the iPhone 13 and iPhone 14 up to the iPhone 17 Pro Max, the new <a href="iphone-18-pro-max/"><b>iPhone 18 Pro Max</b></a>, <a href="iphone-18-pro/"><b>iPhone 18 Pro</b></a> and the foldable <a href="iphone-duo/"><b>iPhone Duo</b></a>. Choose brand-new sealed iPhones or carefully tested Ex-UK iPhones to fit your budget, with prices starting at {ksh(lowest)}.</p>
+  <p>{e(SITE['brand'])} sells genuine Apple iPhones in Kenya, from the iPhone 12 Pro and iPhone 13 up to the iPhone 17 Pro Max, the new <a href="iphone-18-pro-max/"><b>iPhone 18 Pro Max</b></a>, <a href="iphone-18-pro/"><b>iPhone 18 Pro</b></a> and the foldable <a href="iphone-duo/"><b>iPhone Duo</b></a>. Choose brand-new sealed iPhones or carefully tested Ex-UK iPhones to fit your budget, with prices starting at {ksh(lowest)}.</p>
   <p>We deliver the same day in Nairobi, including Westlands, Kilimani, Karen, Kasarani, Rongai, Ruaka and Syokimau, and countrywide to Mombasa, Kisumu, Nakuru, Eldoret and every county. You can also order on WhatsApp and pick up from our shop in {e(SITE['shopAddress'])}.</p>
   <table class="price-table"><thead><tr><th>iPhone model</th><th>Condition</th><th>Price in Kenya (from)</th></tr></thead><tbody>
   {''.join(f'<tr><td><a href="{p["slug"]}/">{e(p["name"])}</a></td><td>{e(cond_label(p))}</td><td><b>{ksh(from_price(p))}</b></td></tr>' for p in PRODUCTS)}
@@ -312,7 +315,7 @@ def build_home():
         faq_schema(HOME_FAQ),
     ]
     out = layout(base=base, path="",
-                 title=f"iPhone Prices in Kenya {datetime.date.today().year} | Buy iPhone 13 to 18 Pro Max | {SITE['brand']}",
+                 title=f"iPhone Prices in Kenya {datetime.date.today().year} | Buy iPhone 12 to 18 Pro Max & iPad | {SITE['brand']}",
                  desc=f"Buy genuine iPhones in Kenya: iPhone 18 Pro Max, 17 Pro Max, 16, 15, 14 and 13 from {ksh(lowest)}. Same-day Nairobi delivery, countrywide shipping. Order on WhatsApp {SITE['phoneDisplay']}.",
                  body=body, schema=schema, og_image="images/og.jpg")
     write("index.html", out)
@@ -329,7 +332,7 @@ def cta_band(base, p):
 def build_product(p):
     base = "../"
     fp, mp = from_price(p), max_price(p)
-    variants_sorted = sorted(p["variants"], key=lambda v: (STORAGE_ORDER.get(v["storage"], 9), v["cond"], v.get("sim") or ""))
+    variants_sorted = sorted(p["variants"], key=lambda v: (STORAGE_ORDER.get(v["storage"], 9), v["cond"], v.get("conn") or "", v.get("sim") or "", v.get("price") or 0))
     thumbs = "".join(f'<button type="button" aria-current="{"true" if i == 1 else "false"}" data-src="{base}{img(p, i)}" aria-label="Photo {i}"><img src="{base}{img(p, i)}" alt="" width="76" height="76" loading="lazy"></button>' for i in range(1, p["images"] + 1))
     pills = f'<span class="pill {"green" if "new" in conds(p) else ""}">{e(cond_label(p))}</span> '
     if p.get("preorder"): pills += f'<span class="pill">{e(p["preorder"])}</span> '
@@ -338,12 +341,22 @@ def build_product(p):
     hls = "".join(f'<div class="hl reveal">{ICONS[HL_ICONS[i % 4]]}<b>{e(h)}</b></div>' for i, h in enumerate(p["highlights"]))
     specs = "".join(f"<tr><th>{e(k)}</th><td>{e(v)}</td></tr>" for k, v in p["specs"].items())
     has_sim = any(v.get("sim") for v in p["variants"])
+    has_conn = any(v.get("conn") for v in p["variants"])
+    has_color = any(v.get("color") for v in p["variants"])
     prow = "".join(
-        f'<tr><td>{e(p["name"])} {e(v["storage"])}</td>{"<td>" + e(SIM[v.get("sim")]) + "</td>" if has_sim else ""}<td>{e(COND[v["cond"]])}</td><td><b>{ksh(v.get("price"))}</b>{" <small>(on request)</small>" if v.get("stock") is False else ""}</td></tr>'
+        f'<tr><td>{e(p["name"])} {e(v["storage"])}</td>'
+        + ("<td>" + e(v.get("color", "")) + "</td>" if has_color else "")
+        + ("<td>" + e(CONN[v.get("conn")]) + "</td>" if has_conn else "")
+        + ("<td>" + e(SIM[v.get("sim")]) + "</td>" if has_sim else "")
+        + f'<td>{e(COND[v["cond"]])}</td><td><b>{ksh(v.get("price"))}</b>{" <small>(on request)</small>" if v.get("stock") is False else ""}</td></tr>'
         for v in variants_sorted)
     colors = ", ".join(c["name"] for c in p["colors"])
     storages = ", ".join(sorted({v["storage"] for v in p["variants"]}, key=lambda s: STORAGE_ORDER.get(s, 9)))
-    related = [q for q in PRODUCTS if q["slug"] != p["slug"] and abs(q["series"] - p["series"]) <= 1][:4]
+    if is_ipad(p):
+        related = [q for q in PRODUCTS if q["slug"] != p["slug"] and is_ipad(q)][:4]
+    else:
+        related = [q for q in PRODUCTS if q["slug"] != p["slug"] and not is_ipad(q) and in_stock(q) and abs(q["series"] - p["series"]) <= 1][:4]
+        related += [q for q in PRODUCTS if q not in related and q["slug"] != p["slug"] and not is_ipad(q) and abs(q["series"] - p["series"]) <= 1][:4 - len(related)]
     faq = [
         (f"What is the price of the {p['name']} in Kenya?", f"The {p['name']} costs from {ksh(fp)} in Kenya at {SITE['brand']}" + (f", up to {ksh(mp)} for the highest storage." if mp and mp != fp else ".") + f" Prices updated {SITE['pricesUpdated']}."),
         (f"Which colours does the {p['name']} come in?", f"The {p['name']} is available in {colors}. Pick your colour above and we will confirm stock on WhatsApp."),
@@ -352,14 +365,14 @@ def build_product(p):
     ]
     body = f"""
 <div class="wrap">
-<nav class="crumbs" aria-label="Breadcrumb"><a href="{base}">Home</a><span>›</span><a href="{base}?series={p['series']}#shop">iPhone {p['series']} series</a><span>›</span><span>{e(p['name'])}</span></nav>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="{base}">Home</a><span>›</span><a href="{base}?series={p['series']}#shop">{series_label(p)}</a><span>›</span><span>{e(p['name'])}</span></nav>
 <div class="pdp">
   <div class="gallery">
     <div class="gallery-main">{'<span class="badge gold">' + e(p['badge']) + '</span>' if p.get('badge') else ''}<img id="gallery-main" src="{base}{img(p)}" alt="{e(p['name'])} price in Kenya" width="800" height="800" fetchpriority="high"></div>
     <div class="thumbs">{thumbs}</div>
   </div>
   <div class="pdp-info">
-    <span class="eyebrow">iPhone {p['series']} series · {p['year']}</span>
+    <span class="eyebrow">{series_label(p)} · {p['year']}</span>
     <h1>{e(p['name'])}</h1>
     <p class="tagline">{e(p['tagline'])}</p>
     <div>{pills}</div>
@@ -380,7 +393,7 @@ def build_product(p):
 <section class="section prose" style="padding-top:0">
 <h2>{e(p['name'])} price in Kenya</h2>
 <p>The <b>{e(p['name'])}</b> price in Kenya starts at <b>{ksh(fp)}</b> at {e(SITE['brand'])}. It is available in {e(storages)} storage and comes in {e(colors)}. {e(p['tagline'])}</p>
-<table class="price-table"><thead><tr><th>Version</th>{'<th>SIM</th>' if has_sim else ''}<th>Condition</th><th>Price</th></tr></thead><tbody>{prow}</tbody></table>
+<table class="price-table"><thead><tr><th>Version</th>{'<th>Colour</th>' if has_color else ''}{'<th>Connectivity</th>' if has_conn else ''}{'<th>SIM</th>' if has_sim else ''}<th>Condition</th><th>Price</th></tr></thead><tbody>{prow}</tbody></table>
 <p>Order your {e(p['name'])} on WhatsApp at <a href="tel:{SITE['phoneIntl']}"><b>{e(SITE['phoneDisplay'])}</b></a>. We deliver the same day in Nairobi and countrywide to Mombasa, Kisumu, Nakuru, Eldoret and all counties, or you can pick it up from our shop in {e(SITE['shopAddress'])}.</p>
 </section>
 
@@ -396,7 +409,7 @@ def build_product(p):
     offers = []
     for v in p["variants"]:
         if v.get("price") is None: continue
-        offers.append({"@type": "Offer", "name": f"{p['name']} {v['storage']}" + (f" {SIM[v['sim']]}" if v.get("sim") else "") + f" {COND[v['cond']]}",
+        offers.append({"@type": "Offer", "name": f"{p['name']} {v['storage']}" + (f" {v['color']}" if v.get("color") else "") + (f" {CONN[v['conn']]}" if v.get("conn") else "") + (f" {SIM[v['sim']]}" if v.get("sim") else "") + f" {COND[v['cond']]}",
                        "price": v["price"], "priceCurrency": "KES",
                        "availability": "https://schema.org/PreOrder" if p.get("preorder") else ("https://schema.org/InStock" if v.get("stock", True) else "https://schema.org/BackOrder"),
                        "itemCondition": "https://schema.org/NewCondition" if v["cond"] == "new" else "https://schema.org/RefurbishedCondition",
@@ -411,7 +424,7 @@ def build_product(p):
     }
     crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": URL + "/"},
-        {"@type": "ListItem", "position": 2, "name": f"iPhone {p['series']} series", "item": f"{URL}/?series={p['series']}"},
+        {"@type": "ListItem", "position": 2, "name": series_label(p), "item": f"{URL}/?series={p['series']}"},
         {"@type": "ListItem", "position": 3, "name": p["name"], "item": f"{URL}/{p['slug']}/"}]}
     title = f"{p['name']} Price in Kenya – {ksh(fp)} | {SITE['brand']}"
     desc = f"{p['name']} price in Kenya from {ksh(fp)}. {cond_label(p)}, {storages}, in {colors}. Full specs, same-day Nairobi delivery. Order on WhatsApp {SITE['phoneDisplay']}."
@@ -471,7 +484,7 @@ def build_brand_assets():
         return ImageFont.load_default()
     d.text((70, 120), SITE["brand"].upper(), font=font(26), fill=(168, 131, 79))
     d.text((70, 170), "iPhones in Kenya", font=font(68), fill=(13, 13, 15))
-    d.text((70, 250), "iPhone 13 to 18 Pro Max", font=font(40, False), fill=(61, 61, 66))
+    d.text((70, 250), "iPhone 12 to 18 Pro Max & iPad", font=font(40, False), fill=(61, 61, 66))
     lowest = min(from_price(p) for p in PRODUCTS if from_price(p))
     d.text((70, 320), f"From {ksh(lowest)}", font=font(44), fill=(13, 13, 15))
     d.rounded_rectangle((70, 420, 470, 490), radius=35, fill=(31, 174, 85))
@@ -481,7 +494,7 @@ def build_brand_assets():
 def build_catalog():
     # read by api/order.js so emailed prices come from our data, not the browser
     cat = {p["slug"]: {"name": p["name"], "colors": [c["name"] for c in p["colors"]],
-                       "variants": [{k: v.get(k) for k in ("storage", "sim", "cond", "price")} for v in p["variants"]]} for p in PRODUCTS}
+                       "variants": [{k: v.get(k) for k in ("storage", "sim", "cond", "price", "color", "conn") if k in ("storage", "sim", "cond", "price") or v.get(k)} for v in p["variants"]]} for p in PRODUCTS}
     write("api/_catalog.json", json.dumps(cat, ensure_ascii=False, separators=(",", ":")))
 
 def write(rel, content):
