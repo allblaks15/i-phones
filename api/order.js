@@ -143,10 +143,10 @@ module.exports = async (req, res) => {
   const subject = `New order ${o.invoice}: ${product.name} ${o.storage} – ${ksh(price)}` + (o.mode === "pickup" ? " (pickup)" : o.area ? ` (${o.area})` : "");
   const text = "New WhatsApp order from i-phones.co.ke\n\n" + rows.map(([k, v]) => `${k}: ${v}`).join("\n") +
     `\n\nProduct page: ${page}\n` + (wa ? `Reply on WhatsApp: https://wa.me/${wa}\n` : "") +
-    "\nThe customer was sent to WhatsApp 0704 839 296 with this invoice and the M-Pesa Paybill details.";
+    "\nThe customer was sent to WhatsApp 0704 839 296 with this invoice and told to visit the shop to pick & pay.";
   const html = `<div style="font-family:Arial,sans-serif;max-width:560px;margin:auto;color:#111">
 <h2 style="margin:0 0 4px">New iPhone order</h2>
-<p style="margin:0 0 16px;color:#666">Sent from i-phones.co.ke. The customer has the invoice and Paybill details and is opening WhatsApp.</p>
+<p style="margin:0 0 16px;color:#666">Sent from i-phones.co.ke. The customer has the invoice and was told to visit the shop to pick &amp; pay.</p>
 <table style="width:100%;border-collapse:collapse">${rows.map(([k, v]) =>
     `<tr><td style="padding:9px 12px;border-bottom:1px solid #eee;color:#666;width:38%">${esc(k)}</td><td style="padding:9px 12px;border-bottom:1px solid #eee;font-weight:bold">${esc(v)}</td></tr>`).join("")}</table>
 <p style="margin:20px 0 0"><a href="${esc(page)}" style="color:#a8834f">View product page</a>${wa ? ` &nbsp;·&nbsp; <a href="https://wa.me/${wa}" style="color:#1fae55;font-weight:bold">Reply to customer on WhatsApp</a>` : ""}</p>

@@ -88,7 +88,7 @@
     }
 
     function message() {
-      var v = current(), price = v && v.price, pay = SITE.payment || {};
+      var v = current(), price = v && v.price;
       var lines = [
         "Hello " + SITE.brand + " 👋",
         product.preorder ? "I'd like to *pre-order*. Here is my invoice:" : "I'd like to order. Here is my invoice:",
@@ -104,22 +104,16 @@
       lines.push("• Condition: " + LABELS.cond[state.cond]);
       lines.push("💰 *Total: " + ksh(price) + "*");
       lines.push("");
-      if (state.mode === "pickup") lines.push("🏬 *Shop pickup* at " + SITE.shopAddress + " (ask for " + SITE.shopContact + ")");
+      if (state.mode === "pickup") lines.push("🏬 *I'll visit your shop to pick & pay.*");
       else lines.push("🚚 *Deliver to:* " + (state.area ? state.area : "(I'll share my location)"));
       if (state.phone) lines.push("📞 Call me on: " + state.phone);
       if (state.name) lines.push("👤 Name: " + state.name);
       lines.push("");
-      lines.push("*HOW TO PAY (M-Pesa)*");
-      lines.push("Lipa na M-Pesa › Pay Bill");
-      lines.push("• Business no: *" + pay.paybill + "*");
-      lines.push("• Account no: *" + pay.account + "*");
-      if (price != null) lines.push("• Amount: *" + ksh(price) + "*");
-      lines.push("• Paid to: " + pay.accountName + " (" + pay.bank + ")");
+      lines.push("📍 *Visit our shop to pick & pay:*");
+      lines.push(SITE.shopAddress);
+      lines.push("Ask for " + SITE.shopContact);
       lines.push("");
-      lines.push(state.mode === "pickup"
-        ? "Once paid, I'll collect my iPhone from the shop."
-        : "Once paid, my iPhone will be delivered to me.");
-      lines.push("Please confirm availability so I can pay. " + SITE.siteUrl + "/" + product.slug + "/");
+      lines.push("Please confirm availability. " + SITE.siteUrl + "/" + product.slug + "/");
       return lines.join("\n");
     }
 
@@ -163,7 +157,7 @@
       h += '<label class="field"><span>Your name <small style="color:var(--muted);font-weight:500">(optional)</small></span><input name="name" autocomplete="given-name" placeholder="e.g. Wanjiku" value="' + esc(state.name) + '"></label>';
       h += '<input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">';
       h += '<a class="btn btn-wa btn-block" data-wa target="_blank" rel="noopener" href="#">' + WA_ICON + (oos ? "Ask availability on WhatsApp" : "Order on WhatsApp · " + ksh(v && v.price)) + "</a>";
-      h += '<p class="order-note">🧾 You get an invoice on WhatsApp. Pay via M-Pesa Paybill <b>' + esc((SITE.payment || {}).paybill) + '</b> once we confirm stock, and we deliver.</p></div>';
+      h += '<p class="order-note">🧾 You get an invoice on WhatsApp. Visit our shop at <b>The Bazaar, Mac Arena</b> to pick &amp; pay, or we deliver to you.</p></div>';
       mount.innerHTML = h;
       updateLink();
       listeners.forEach(function (fn) { fn(v, state); });
@@ -239,7 +233,7 @@
   function showInvoice(p, v, s, dims, link) {
     var box = $("#invoice");
     if (!box) return;
-    var pay = SITE.payment || {}, price = v && v.price;
+    var price = v && v.price;
     var date = new Date().toLocaleDateString("en-KE", { day: "numeric", month: "long", year: "numeric" });
     var details = [s.color, s.storage];
     if (dims.indexOf("conn") > -1) details.push(LABELS.conn[s.conn]);
@@ -249,9 +243,7 @@
     var where = s.mode === "pickup"
       ? "Shop pickup: " + esc(SITE.shopAddress) + " (ask for " + esc(SITE.shopContact) + ")"
       : "Delivery to: " + (s.area ? esc(s.area) : "location to be shared on WhatsApp");
-    function payRow(label, value) {
-      return '<div class="pay-row"><span>' + label + '</span><b>' + esc(value) + '</b><button type="button" class="copy" data-copy="' + esc(String(value).replace(/[^0-9]/g, "")) + '">Copy</button></div>';
-    }
+    var maps = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(SITE.shopAddress + ", Kenya");
     $(".inv", box).innerHTML =
       '<div class="inv-top"><div><div class="inv-brand">' + esc(SITE.brand) + '</div><small>' + esc(SITE.siteUrl.replace(/^https?:\/\//, "")) + " · " + esc(SITE.phoneDisplay) + '</small></div>' +
       '<div class="inv-no"><small>INVOICE</small><b>' + esc(s.invoice) + '</b><small>' + date + '</small></div></div>' +
@@ -259,14 +251,14 @@
       '<div class="inv-grid"><div><small>Bill to</small><p>' + billTo + '</p></div><div><small>Fulfilment</small><p>' + where + '</p></div></div>' +
       '<table class="inv-items"><thead><tr><th>Item</th><th>Amount</th></tr></thead><tbody><tr><td><b>' + esc(p.name) + '</b><br><small>' + esc(details.join(" · ")) + '</small></td><td>' + ksh(price) + '</td></tr></tbody>' +
       '<tfoot><tr><td>Total due</td><td>' + ksh(price) + '</td></tr></tfoot></table>' +
-      '<div class="pay-box"><h3>Pay with M-Pesa Paybill</h3>' +
-      payRow("Business no.", pay.paybill) + payRow("Account no.", pay.account) + (price != null ? payRow("Amount", ksh(price)) : "") +
-      '<p class="pay-to">Paid to <b>' + esc(pay.accountName) + '</b> via ' + esc(pay.bank) + '</p>' +
-      '<ol><li>Open M-Pesa › <b>Lipa na M-Pesa</b> › <b>Pay Bill</b></li><li>Business no. <b>' + esc(pay.paybill) + '</b>, account no. <b>' + esc(pay.account) + '</b></li><li>Enter the amount and your PIN, then send us the M-Pesa message on WhatsApp</li></ol></div>' +
+      '<div class="pay-box shop-box"><h3>📍 Visit our shop to pick &amp; pay</h3>' +
+      '<p class="shop-addr">' + esc(SITE.shopAddress) + '</p>' +
+      '<p class="pay-to">Ask for <b>' + esc(SITE.shopContact) + '</b> and quote invoice <b>' + esc(s.invoice) + '</b>. Inspect your ' + esc(p.name) + ', pay, and take it home.</p>' +
+      '<a class="shop-dir" href="' + maps + '" target="_blank" rel="noopener">Get directions →</a></div>' +
       '<p class="inv-next">' + (s.mode === "pickup"
-        ? "✅ Once paid, collect your iPhone at <b>" + esc(SITE.shopAddress) + "</b>. Ask for <b>" + esc(SITE.shopContact) + "</b>."
-        : "✅ Once paid, your iPhone will be delivered to you. You can also pick it up at <b>" + esc(SITE.shopAddress) + "</b> (ask for " + esc(SITE.shopContact) + ").") + '</p>' +
-      '<p class="inv-warn">Please pay only after we confirm availability on WhatsApp. We only accept payment to Paybill ' + esc(pay.paybill) + ', account ' + esc(pay.account) + '.</p>' +
+        ? "✅ We'll confirm on WhatsApp that your " + esc(p.name) + " is ready, then come in to pick &amp; pay."
+        : "✅ We'll confirm availability and delivery on WhatsApp. Prefer to collect? Visit our shop to pick &amp; pay.") + '</p>' +
+      '<p class="inv-warn">Please wait for our WhatsApp confirmation before coming in, so your iPhone is ready when you arrive.</p>' +
       '<div class="inv-actions"><a class="btn btn-wa" target="_blank" rel="noopener" href="' + link + '">' + WA_ICON + 'Open WhatsApp</a><button type="button" class="btn btn-ghost" data-print>Save / print invoice</button></div>';
     var qo = $("#quick-order");
     if (qo && qo.classList.contains("open")) { qo.classList.remove("open"); qo.setAttribute("aria-hidden", "true"); }
