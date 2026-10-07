@@ -427,8 +427,39 @@ input,select,textarea{font:inherit;color:inherit}
 .shop-addr{font-size:17px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1.4}
 .shop-dir{display:inline-block;margin-top:6px;font-weight:700;font-size:14px;color:#7fe0a5}
 
-/* floating shop button (replaces WhatsApp bubble) */
-.shop-float{background:var(--ink);box-shadow:0 12px 30px rgba(13,13,15,.35);flex-direction:column;gap:1px;display:flex;align-items:center;justify-content:center}
-.shop-float svg{width:24px;height:24px;color:#fff}
-.shop-float span{color:#d6b07a;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;line-height:1}
-.shop-float::after{border-color:var(--gold)}
+/* floating shop button */
+@property --fab-a{syntax:"<angle>";inherits:false;initial-value:0deg}
+.shop-fab{position:fixed;right:20px;bottom:22px;z-index:60;display:flex;align-items:center;gap:11px;padding:6px 20px 6px 6px;border-radius:999px;color:#fff;overflow:hidden;isolation:isolate;
+  background:linear-gradient(135deg,#221d17 0%,#0d0d0f 70%);
+  box-shadow:0 18px 40px -8px rgba(0,0,0,.45),0 4px 12px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.07);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,opacity .3s;animation:fab-in .6s cubic-bezier(.2,.8,.2,1) .4s both}
+.shop-fab::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;z-index:-1;
+  background:conic-gradient(from var(--fab-a),#d6b07a,#6e5129 25%,#f6e2b8 45%,#a8834f 70%,#d6b07a);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
+  animation:fab-spin 5s linear infinite}
+.shop-fab::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:45%;z-index:-1;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,230,180,.16),transparent);transform:skewX(-20deg);animation:fab-shine 5s ease-in-out 1.5s infinite}
+.fab-icon{position:relative;width:46px;height:46px;flex:none;border-radius:50%;display:grid;place-items:center;color:#14110d;
+  background:radial-gradient(circle at 35% 30%,#fbe9c4 0%,#d9b77f 45%,#9c7642 100%);box-shadow:inset 0 1px 1px rgba(255,255,255,.6),0 4px 12px rgba(168,131,79,.45)}
+.fab-icon svg{width:22px;height:22px;stroke-width:2}
+.fab-text{display:flex;flex-direction:column;line-height:1.1}
+.fab-text b{font-size:14.5px;font-weight:800;letter-spacing:-.015em;color:#fff}
+.fab-text small{font-size:11.5px;font-weight:600;color:#d6b07a;margin-top:3px;letter-spacing:.01em}
+.shop-fab:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 24px 50px -10px rgba(0,0,0,.5),0 6px 16px rgba(168,131,79,.25)}
+.shop-fab:hover .fab-icon svg{animation:fab-wiggle .6s ease}
+.shop-fab:active{transform:scale(.97)}
+.shop-fab:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.shop-fab.fab-hide{opacity:0;transform:translateY(20px) scale(.9);pointer-events:none}
+@keyframes fab-spin{to{--fab-a:360deg}}
+@keyframes fab-shine{0%,55%{left:-60%}100%{left:130%}}
+@keyframes fab-in{from{opacity:0;transform:translateY(24px) scale(.9)}}
+@keyframes fab-wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-12deg)}60%{transform:rotate(10deg)}}
+@media (max-width:860px){
+  .shop-fab{right:14px;bottom:18px;padding:5px 16px 5px 5px;gap:9px}
+  body:has(.buybar) .shop-fab{bottom:84px}
+  .fab-icon{width:42px;height:42px}
+  .fab-text b{font-size:13.5px}
+}
+@media (max-width:370px){.fab-text small{display:none}}
+@media (prefers-reduced-motion:reduce){.shop-fab,.shop-fab::before,.shop-fab::after{animation:none}}
+@media print{.shop-fab{display:none}}

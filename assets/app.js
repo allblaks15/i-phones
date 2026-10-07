@@ -420,6 +420,12 @@
     $$(".reveal").forEach(function (el) { el.classList.add("in"); });
   }
 
+  /* hide the floating shop button while the product grid is already on screen */
+  var fab = $(".shop-fab"), shopGrid = $("#grid");
+  if (fab && shopGrid && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (en) { fab.classList.toggle("fab-hide", en[0].isIntersecting); }, { threshold: 0.15 }).observe(shopGrid);
+  }
+
   /* live clock on wallpaper previews */
   var t = new Date(), hh = t.getHours() % 12 || 12, mm = ("0" + t.getMinutes()).slice(-2);
   $$(".wall-time").forEach(function (el) { el.textContent = hh + ":" + mm; });

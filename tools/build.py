@@ -107,7 +107,7 @@ def layout(*, base, title, desc, path, body, schema, og_image, page_js="", robot
 {body}
 </main>
 {footer(base)}
-<a class="wa-float shop-float" href="{'#shop' if base == '' else base + '#shop'}" aria-label="Shop iPhones" title="Shop iPhones">{ICONS['bag']}<span>Shop</span></a>
+<a class="shop-fab" href="{'#shop' if base == '' else base + '#shop'}" aria-label="Shop iPhones"><span class="fab-icon">{ICONS['bag']}</span><span class="fab-text"><b>Shop iPhones</b><small>from {ksh(min(from_price(p) for p in PRODUCTS if in_stock(p)))}</small></span></a>
 <div class="inv-modal" id="invoice" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Your invoice">
   <div class="modal-bg" data-inv-close></div>
   <div class="inv-wrap"><div class="inv-card"><button class="modal-close" data-inv-close aria-label="Close invoice">{ICONS['close']}</button><div class="inv"></div></div></div>
