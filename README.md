@@ -25,3 +25,6 @@ SMTP login and the recipient address are Vercel environment variables (Project â
 Environment Variables): `SMTP_HOST`, `SMTP_SERVERNAME`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`,
 `ORDER_EMAIL_TO`, `SITE_URL`. Never put the password in this repo; it is public.
 After changing a variable, redeploy for it to take effect.
+
+## Blog
+Articles are in `data/blog/<slug>.md`. Shop prices in them are tokens such as `{from:iphone-13}` and `{table:iphone-13}`, so they follow `products.json` on every build. Prices for models we do not sell are typed by hand with their check date, so re-check those periodically. `data/keyword-map.csv` shows which article covers each target keyword; regenerate it with `python tools/keyword_map.py keywords.xlsx`.

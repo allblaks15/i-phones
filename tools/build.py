@@ -4,7 +4,7 @@ Edit data/products.json (prices, colours, specs) or data/site.json (brand, phone
 address, trust badges), then run:   python tools/build.py
 Everything in the project root (index.html, model folders, sitemap.xml ...) is regenerated.
 """
-import json, os, html, datetime, shutil
+import json, os, re, html, datetime, shutil
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = json.load(open(os.path.join(ROOT, "data", "site.json"), encoding="utf-8"))
@@ -65,7 +65,7 @@ def is_ipad(p): return p.get("category") == "ipad"
 def series_label(p): return "iPad" if is_ipad(p) else f"iPhone {p['series']} series"
 def img(p, i=1): return f"images/phones/{p['slug']}-{i}.webp"
 
-def layout(*, base, title, desc, path, body, schema, og_image, page_js="", robots="index,follow"):
+def layout(*, base, title, desc, path, body, schema, og_image, page_js="", robots="index,follow", og_type="website", extra_head=""):
     canonical = f"{URL}/{path}"
     schema_tags = "\n".join(f'<script type="application/ld+json">{json.dumps(s, ensure_ascii=False)}</script>' for s in schema)
     site_js = json.dumps({k: SITE[k] for k in ("brand", "whatsapp", "siteUrl", "shopCity", "shopAddress", "shopContact", "phoneDisplay", "deliveryAreas")}, ensure_ascii=False)
@@ -83,7 +83,7 @@ def layout(*, base, title, desc, path, body, schema, og_image, page_js="", robot
 <meta name="geo.region" content="KE-30">
 <meta name="geo.placename" content="{e(SITE['shopCity'])}">
 <link rel="alternate" hreflang="en-KE" href="{canonical}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{og_type}">{extra_head}
 <meta property="og:site_name" content="{e(SITE['brand'])}">
 <meta property="og:locale" content="en_KE">
 <meta property="og:title" content="{e(title)}">
@@ -129,7 +129,7 @@ def layout(*, base, title, desc, path, body, schema, og_image, page_js="", robot
 
 def header(base):
     links = [("#shop" if base == "" else base + "#shop", "Shop"), (base + "iphone-18-pro-max/", "iPhone 18"),
-             (base + "iphone-17-pro-max/", "iPhone 17"), (base + "wallpapers/", "Wallpapers"),
+             (base + "iphone-17-pro-max/", "iPhone 17"), (base + "blog/", "Blog"), (base + "wallpapers/", "Wallpapers"),
              ("#faq" if base == "" else base + "#faq", "FAQ")]
     nav = "".join(f'<a href="{h}">{t}</a>' for h, t in links)
     return f"""<header class="header"><div class="wrap">
@@ -158,7 +158,7 @@ def footer(base):
 <li><a href="{base}?series=18#shop">iPhone 18 series</a></li><li><a href="{base}?series=17#shop">iPhone 17 series</a></li>
 <li><a href="{base}?series=16#shop">iPhone 16 series</a></li><li><a href="{base}?series=15#shop">iPhone 15 series</a></li>
 <li><a href="{base}?series=14#shop">iPhone 14 series</a></li><li><a href="{base}?series=13#shop">iPhone 13 series</a></li><li><a href="{base}?series=12#shop">iPhone 12 series</a></li><li><a href="{base}?series=ipad#shop">iPads</a></li>
-<li><a href="{base}?budget=under-80k#shop">iPhones under 80K</a></li><li><a href="{base}wallpapers/">Free iPhone wallpapers</a></li></ul></div>
+<li><a href="{base}?budget=under-80k#shop">iPhones under 80K</a></li><li><a href="{base}blog/">iPhone guides &amp; blog</a></li><li><a href="{base}wallpapers/">Free iPhone wallpapers</a></li></ul></div>
 <div><h4>We deliver to</h4><p class="areas">{e(', '.join(SITE['deliveryAreas']))} and all 47 counties.</p></div>
 </div>
 <div class="footer-bottom"><span>© {datetime.date.today().year} {e(SITE['brand'])}. Prices in Kenya Shillings, updated {e(SITE['pricesUpdated'])}. Prices may change, so confirm on WhatsApp.</span>
@@ -299,6 +299,8 @@ Ask for {e(SITE['shopContact'])}"""
   </tbody></table>
 </div></section>
 
+{home_guides()}
+
 <section class="section" id="faq" style="padding-top:0"><div class="wrap">
   <div class="section-head"><div><span class="eyebrow">FAQ</span><h2>Questions? Answered.</h2></div></div>
   <div class="faq">{faq_html(HOME_FAQ)}</div>
@@ -326,7 +328,7 @@ def cta_band(base, p):
 <p>Tell us your budget and what you need. We'll recommend the right iPhone and send real photos on WhatsApp.</p>
 <a class="btn btn-wa" href="{wa('Hello ' + SITE['brand'] + ', please help me choose an iPhone. My budget is KSh ')}" target="_blank" rel="noopener">{ICONS['wa']}Get advice on WhatsApp</a>
 <span class="cta-phone">Or call <b><a href="tel:{SITE['phoneIntl']}">{e(SITE['phoneDisplay'])}</a></b> · {e(SITE['shopHours'])}</span>
-</div><img src="{base}{img(p, 2)}" alt="" width="320" height="320" loading="lazy" style="mix-blend-mode:normal;border-radius:24px;background:#fff"></div>"""
+</div><img src="{base}{img(p, min(2, p['images']))}" alt="" width="320" height="320" loading="lazy" style="mix-blend-mode:normal;border-radius:24px;background:#fff"></div>"""
 
 def build_product(p):
     base = "../"
@@ -398,6 +400,8 @@ def build_product(p):
 
 <section class="section" style="padding-top:0"><div class="section-head"><div><span class="eyebrow">FAQ</span><h2>{e(p['name'])} questions.</h2></div></div><div class="faq">{faq_html(faq)}</div></section>
 
+{guide_links(p, base)}
+
 <section class="section" style="padding-top:0"><div class="section-head"><div><span class="eyebrow">You may also like</span><h2>Compare similar iPhones.</h2></div><a class="link-arrow" href="{base}#shop">All iPhones →</a></div>
 <div class="grid">{''.join(card(q, base, 10 + i) for i, q in enumerate(related))}</div></section>
 
@@ -431,6 +435,218 @@ def build_product(p):
                  schema=[product_schema, crumbs, faq_schema(faq)], og_image=img(p), page_js=f"window.PRODUCT={json.dumps(p['slug'])};")
     write(f"{p['slug']}/index.html", out)
 
+# ---------- blog ----------
+# Articles live in data/blog/<slug>.md: a small front matter block, then simple markdown.
+# Shop prices are tokens ({from:slug}, {table:slug} ...) so articles follow products.json.
+BLOG_DIR = os.path.join(ROOT, "data", "blog")
+BY_SLUG = {p["slug"]: p for p in PRODUCTS}
+
+def load_posts():
+    posts = []
+    for fn in sorted(os.listdir(BLOG_DIR)):
+        if not fn.endswith(".md"):
+            continue
+        with open(os.path.join(BLOG_DIR, fn), encoding="utf-8") as fh:
+            _, head, body = fh.read().split("---\n", 2)
+        meta = {"faq": [], "slug": fn[:-3], "body": body}
+        for line in head.splitlines():
+            k, _, v = line.partition(":")
+            k, v = k.strip(), v.strip()
+            if k == "faq":
+                q, a = v.split("||")
+                meta["faq"].append((q.strip(), a.strip()))
+            elif k:
+                meta[k] = v
+        posts.append(meta)
+    posts.sort(key=lambda b: int(b.get("order", 99)))
+    return posts
+
+POSTS = load_posts()
+POST_SLUGS = {b["slug"] for b in POSTS}
+def csv_list(v): return [x.strip() for x in (v or "").split(",") if x.strip()]
+
+def expand_text(text):
+    """Fill price and shop tokens. Used for titles, descriptions and body text."""
+    def price(m):
+        kind, slug = m.group(1), m.group(2)
+        p = BY_SLUG[slug]
+        return ksh(from_price(p) if kind == "from" else max_price(p))
+    text = re.sub(r"\{(from|max):([a-z0-9-]+)\}", price, text)
+    return (text.replace("{updated}", SITE["pricesUpdated"]).replace("{shop}", SITE["shopAddress"])
+            .replace("{contact}", SITE["shopContact"]).replace("{phone}", SITE["phoneDisplay"]))
+
+def inline(text, base):
+    text = e(expand_text(text)).replace("&#x27;", "'").replace("&quot;", '"')
+    text = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", text)
+    def link(m):
+        label, target = m.group(1), m.group(2)
+        kind, _, slug = target.partition(":")
+        if kind == "post":
+            assert slug in POST_SLUGS, f"broken post link: {slug}"
+            return f'<a href="{base}blog/{slug}/">{label}</a>'
+        if kind == "product":
+            assert slug in BY_SLUG, f"broken product link: {slug}"
+            return f'<a href="{base}{slug}/">{label}</a>'
+        if target == "shop":
+            return f'<a href="{base}#shop">{label}</a>'
+        raise ValueError(f"unknown link target: {target}")
+    return re.sub(r"\[([^\]]+)\]\(([^)]+)\)", link, text)
+
+def avail_label(p): return "In stock" if in_stock(p) else "On request"
+
+def variant_table(p, base):
+    has = {k: any(v.get(k) for v in p["variants"]) for k in ("color", "conn", "sim")}
+    rows = sorted(p["variants"], key=lambda v: (STORAGE_ORDER.get(v["storage"], 9), v["cond"], v.get("conn") or "", v.get("sim") or "", v.get("price") or 0))
+    head = "<th>Storage</th>" + ("<th>Colour</th>" if has["color"] else "") + ("<th>Connectivity</th>" if has["conn"] else "") + ("<th>SIM</th>" if has["sim"] else "") + "<th>Condition</th><th>Price</th>"
+    body = ""
+    for v in rows:
+        body += f'<tr><td>{e(v["storage"])}</td>' + (f'<td>{e(v.get("color", ""))}</td>' if has["color"] else "") + (f'<td>{e(CONN[v.get("conn")])}</td>' if has["conn"] else "") + (f'<td>{e(SIM[v.get("sim")])}</td>' if has["sim"] else "")
+        body += f'<td>{e(COND[v["cond"]])}</td><td><b>{ksh(v.get("price"))}</b>{" <small>(on request)</small>" if v.get("stock") is False else ""}</td></tr>'
+    return f'<div class="table-wrap"><table class="price-table"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>'
+
+def compare_table(items, base):
+    body = "".join(f'<tr><td><a href="{base}{p["slug"]}/">{e(p["name"])}</a></td><td>{e(cond_label(p))}</td><td><b>{ksh(from_price(p))}</b></td><td>{avail_label(p)}</td></tr>' for p in items)
+    return f'<div class="table-wrap"><table class="price-table"><thead><tr><th>Model</th><th>Condition</th><th>From</th><th>Stock</th></tr></thead><tbody>{body}</tbody></table></div>'
+
+def render_post_body(md, base):
+    out, para, items, toc = [], [], [], []
+    def flush():
+        if para:
+            out.append(f"<p>{inline(' '.join(para), base)}</p>")
+            para.clear()
+        if items:
+            out.append("<ul>" + "".join(f"<li>{inline(i, base)}</li>" for i in items) + "</ul>")
+            items.clear()
+    for line in md.splitlines():
+        t = line.strip()
+        block = re.fullmatch(r"\{(table|compare|cards):([a-z0-9,-]+)\}", t)
+        if not t:
+            flush()
+        elif t.startswith("## "):
+            flush()
+            hid = re.sub(r"[^a-z0-9]+", "-", re.sub(r"\{[^}]*\}", "", t[3:]).lower()).strip("-")
+            toc.append((hid, expand_text(t[3:])))
+            out.append(f'<h2 id="{hid}">{inline(t[3:], base)}</h2>')
+        elif t.startswith("### "):
+            flush()
+            out.append(f"<h3>{inline(t[4:], base)}</h3>")
+        elif t.startswith("- "):
+            if para:
+                flush()
+            items.append(t[2:])
+        elif t.startswith("> "):
+            flush()
+            out.append(f'<p class="note">{inline(t[2:], base)}</p>')
+        elif t == "{pricelist}":
+            flush()
+            out.append(compare_table([p for p in PRODUCTS if in_stock(p)] + [p for p in PRODUCTS if not in_stock(p)], base))
+        elif block:
+            flush()
+            kind, slugs = block.group(1), [BY_SLUG[x] for x in block.group(2).split(",")]
+            if kind == "table":
+                out.append(variant_table(slugs[0], base))
+            elif kind == "compare":
+                out.append(compare_table(slugs, base))
+            else:
+                out.append('<div class="grid post-cards">' + "".join(card(p, base, 10 + i) for i, p in enumerate(slugs)) + "</div>")
+        else:
+            para.append(t)
+    flush()
+    return "\n".join(out), toc
+
+def post_card(b, base):
+    return f"""<article class="blog-card reveal"><span class="blog-cat">{e(b.get('category', 'Guide'))}</span>
+<h3><a href="{base}blog/{b['slug']}/">{e(expand_text(b['h1']))}</a></h3>
+<p>{e(expand_text(b['description']))}</p><a class="link-arrow" href="{base}blog/{b['slug']}/" aria-hidden="true" tabindex="-1">Read guide →</a></article>"""
+
+def home_guides():
+    picks = [b for b in POSTS if b.get("featured")][:3]
+    return f"""<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="section-head"><div><span class="eyebrow">iPhone guides</span><h2>Buy smarter in Kenya.</h2><p>Prices, model comparisons and buying advice for Kenyan buyers.</p></div><a class="link-arrow" href="blog/">All guides →</a></div>
+  <div class="blog-grid">{''.join(post_card(b, '') for b in picks)}</div>
+</div></section>"""
+
+def guide_links(p, base):
+    posts = [b for b in POSTS if p["slug"] in csv_list(b.get("products"))][:3]
+    if not posts:
+        return ""
+    links = "".join(f'<li><a href="{base}blog/{b["slug"]}/">{e(expand_text(b["h1"]))}</a></li>' for b in posts)
+    return f'<section class="section prose" style="padding-top:0"><h2>Guides for this model</h2><ul>{links}</ul></section>'
+
+def build_blog():
+    target = os.path.join(ROOT, "blog")
+    if os.path.isdir(target):
+        shutil.rmtree(target)
+    base = "../../"
+    titles = set()
+    for b in POSTS:
+        title, desc = expand_text(b["title"]), expand_text(b["description"])
+        assert title not in titles, f"duplicate title: {title}"
+        titles.add(title)
+        if len(title) > 70: print(f"  long title ({len(title)}): {title}")
+        if len(desc) > 165: print(f"  long description ({len(desc)}): {b['slug']}")
+        body, toc = render_post_body(b["body"], base)
+        words = len(re.sub(r"<[^>]+>", " ", body).split())
+        hero = BY_SLUG.get(b.get("image"))
+        hero_html = f'<div class="post-hero"><img src="{base}{img(hero)}" alt="{e(hero["name"])} in Kenya" width="800" height="800" fetchpriority="high"></div>' if hero else ""
+        toc_html = '<nav class="toc" aria-label="In this guide"><b>In this guide</b><ol>' + "".join(f'<li><a href="#{h}">{e(t)}</a></li>' for h, t in toc) + "</ol></nav>" if len(toc) > 2 else ""
+        faq_html_block = f'<section class="post-faq"><h2 id="faq">Frequently asked questions</h2><div class="faq">{faq_html([(q, expand_text(a)) for q, a in b["faq"]])}</div></section>' if b["faq"] else ""
+        rel = [x for x in POSTS if x["slug"] in csv_list(b.get("related"))]
+        for r in csv_list(b.get("related")):
+            assert r in POST_SLUGS, f"{b['slug']}: unknown related post {r}"
+        rel_html = f'<section class="section" style="padding-top:20px"><div class="section-head"><div><span class="eyebrow">Keep reading</span><h2>Related guides.</h2></div><a class="link-arrow" href="{base}blog/">All guides →</a></div><div class="blog-grid">{"".join(post_card(x, base) for x in rel[:3])}</div></section>' if rel else ""
+        cta = f"""<div class="post-cta"><div><h2>Ready to choose your iPhone?</h2><p>Visit our shop to pick and pay: <b>{e(SITE['shopAddress'])}</b>. Ask for {e(SITE['shopContact'])}, or check stock on WhatsApp first.</p></div>
+<div class="post-cta-btns"><a class="btn btn-wa" href="{wa('Hello ' + SITE['brand'] + ', I read your guide: ' + expand_text(b['h1']) + '. Is this available?')}" target="_blank" rel="noopener">{ICONS['wa']}Ask on WhatsApp</a><a class="btn btn-ghost btn-light" href="{base}#shop">See all iPhones</a></div></div>"""
+        page = f"""<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="{base}">Home</a><span>›</span><a href="{base}blog/">Blog</a><span>›</span><span>{e(expand_text(b['h1']))}</span></nav>
+<article class="post">
+<header class="post-head"><span class="eyebrow">{e(b.get('category', 'Guide'))}</span><h1>{e(expand_text(b['h1']))}</h1>
+<p class="post-meta">By the {e(SITE['brand'])} team · Published <time datetime="{b['date']}">{fmt_date(b['date'])}</time> · {max(1, round(words / 200))} min read · Our prices updated {e(SITE['pricesUpdated'])}</p></header>
+{hero_html}
+{toc_html}
+<div class="post-body prose">{body}</div>
+{faq_html_block}
+{cta}
+</article>
+{rel_html}
+</div>"""
+        url = f"{URL}/blog/{b['slug']}/"
+        image = f"{URL}/{img(hero)}" if hero else f"{URL}/images/og.jpg"
+        schema = [
+            {"@context": "https://schema.org", "@type": "BlogPosting", "headline": expand_text(b["h1"]), "description": desc, "image": image,
+             "datePublished": b["date"], "dateModified": b.get("modified", b["date"]), "inLanguage": "en-KE", "mainEntityOfPage": url,
+             "author": {"@type": "Organization", "name": SITE["brand"], "url": URL + "/"},
+             "publisher": {"@type": "Organization", "name": SITE["brand"], "logo": {"@type": "ImageObject", "url": f"{URL}/assets/icon-512.png"}},
+             "about": {"@type": "Place", "name": "Kenya"}},
+            {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": URL + "/"},
+                {"@type": "ListItem", "position": 2, "name": "Blog", "item": URL + "/blog/"},
+                {"@type": "ListItem", "position": 3, "name": expand_text(b["h1"]), "item": url}]},
+        ]
+        if b["faq"]:
+            schema.append(faq_schema([(q, expand_text(a)) for q, a in b["faq"]]))
+        write(f"blog/{b['slug']}/index.html", layout(base=base, path=f"blog/{b['slug']}/", title=title, desc=desc, body=page, schema=schema,
+              og_image=(img(hero) if hero else "images/og.jpg"), og_type="article",
+              extra_head=f'\n<meta property="article:published_time" content="{b["date"]}">'))
+    # index
+    groups = []
+    for cat in ("Buying guide", "Current models", "Older models"):
+        items = [b for b in POSTS if b.get("category") == cat]
+        groups.append(f'<section class="blog-group"><h2>{e(cat + "s" if cat == "Buying guide" else cat)}</h2><div class="blog-grid">{"".join(post_card(b, "../") for b in items)}</div></section>')
+    body = f"""<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>›</span><span>Blog</span></nav>
+<section class="section" style="padding-top:28px"><div class="section-head"><div><span class="eyebrow">iPhone guides for Kenya</span><h1 class="blog-title">iPhone prices and buying advice in Kenya.</h1><p>Honest guides to iPhone prices in KSh, Ex-UK phones, older models and where to buy in Nairobi. Our prices updated {e(SITE['pricesUpdated'])}.</p></div></div>
+{''.join(groups)}</section></div>"""
+    schema = [{"@context": "https://schema.org", "@type": "Blog", "name": f"{SITE['brand']} iPhone guides for Kenya", "url": URL + "/blog/", "inLanguage": "en-KE",
+               "blogPost": [{"@type": "BlogPosting", "headline": expand_text(b["h1"]), "url": f"{URL}/blog/{b['slug']}/", "datePublished": b["date"]} for b in POSTS]}]
+    write("blog/index.html", layout(base="../", path="blog/", title=f"iPhone Prices & Buying Guides for Kenya | {SITE['brand']}",
+          desc="Guides to iPhone prices in Kenya: current and older models, Ex-UK phones, instalments, repairs and where to buy in Nairobi.", body=body, schema=schema, og_image="images/og.jpg"))
+    print(f"Built {len(POSTS)} blog posts.")
+
+def fmt_date(iso):
+    d = datetime.date.fromisoformat(iso)
+    return f"{d.day} {d.strftime('%B %Y')}"
+
 def build_wallpapers():
     base = "../"
     items = "".join(f"""<figure id="{s}" class="reveal" style="margin:0"><a class="wall" href="{base}images/wallpapers/{s}.jpg" download="{s}-iphone-wallpaper-i-phones.jpg" aria-label="Download {e(n)} wallpaper"><img src="{base}images/wallpapers/{s}-thumb.webp" alt="{e(n)} iPhone wallpaper HD" width="360" height="780" loading="lazy"><span class="wall-time">9:41</span><span class="wall-name">{e(n)}{ICONS['download']}</span></a></figure>""" for s, n in WALLS)
@@ -449,7 +665,7 @@ def build_wallpapers():
     write("wallpapers/index.html", out)
 
 def build_misc():
-    urls = [("", "1.0", "daily")] + [(f"{p['slug']}/", "0.9", "weekly") for p in PRODUCTS] + [("wallpapers/", "0.5", "monthly")]
+    urls = [("", "1.0", "daily")] + [(f"{p['slug']}/", "0.9", "weekly") for p in PRODUCTS] + [("wallpapers/", "0.5", "monthly"), ("blog/", "0.8", "weekly")] + [(f"blog/{b['slug']}/", "0.7", "monthly") for b in POSTS]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
         f"  <url><loc>{URL}/{u}</loc><lastmod>{TODAY}</lastmod><changefreq>{f}</changefreq><priority>{pr}</priority></url>\n" for u, pr, f in urls) + "</urlset>\n"
     write("sitemap.xml", sm)
@@ -512,6 +728,7 @@ if __name__ == "__main__":
     build_home()
     for p in PRODUCTS: build_product(p)
     build_wallpapers()
+    build_blog()
     build_misc()
     build_catalog()
     print(f"Built {len(PRODUCTS)} product pages + home, wallpapers, sitemap.")
