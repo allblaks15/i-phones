@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.i-phones.co.ke/sitemap.xml
+Sitemap: https://i-phones.co.ke/sitemap.xml

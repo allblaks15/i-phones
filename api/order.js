@@ -123,7 +123,7 @@ module.exports = async (req, res) => {
   const variant = product.variants.find((v) => v.storage === o.storage && v.cond === o.cond &&
     (o.sim == null || v.sim === o.sim) && (o.conn == null || v.conn === o.conn) && (!v.color || v.color === o.color));
   const price = variant ? variant.price : null;
-  const page = `${process.env.SITE_URL || "https://www.i-phones.co.ke"}/${clean(body.slug, 60)}/`;
+  const page = `${process.env.SITE_URL || "https://i-phones.co.ke"}/${clean(body.slug, 60)}/`;
   const wa = kePhone(o.phone);
 
   const rows = [
