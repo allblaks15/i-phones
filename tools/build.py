@@ -214,10 +214,41 @@ HOME_FAQ = [
 ]
 
 # ---------- pages ----------
+SERIES_GUIDE = {18: "latest-iphone-price-in-kenya", 17: "latest-iphone-price-in-kenya", 16: "iphone-16-price-in-kenya", 15: "iphone-15-price-in-kenya",
+                14: "iphone-14-pro-max-price-in-kenya", 13: "iphone-13-pro-max-price-in-kenya", 12: "iphone-12-pro-max-price-in-kenya", 11: "iphone-11-price-in-kenya"}
+
+def series_rows():
+    """One row per iPhone series 18..11: (series, models, from price, in stock?)."""
+    rows = []
+    for n in range(18, 10, -1):
+        ps = [p for p in PRODUCTS if p.get("series") == n]
+        stocked = [p for p in ps if in_stock(p)]
+        price = min((from_price(p) for p in (stocked or ps) if from_price(p)), default=None)
+        rows.append((n, ps, price, bool(stocked)))
+    return rows
+
+def series_table():
+    body = ""
+    for n, ps, price, stocked in series_rows():
+        models = ", ".join(f'<a href="{p["slug"]}/">{e(p["name"])}</a>' for p in ps) or "iPhone 11, 11 Pro, 11 Pro Max"
+        guide = f'<a href="blog/{SERIES_GUIDE[n]}/">iPhone {n} price guide</a>'
+        if not ps:
+            cell, status = "Not stocked", "Market prices in guide"
+        else:
+            cell, status = f"<b>{ksh(price)}</b>", ("In stock" if stocked else "On request")
+        body += f"<tr><td><b>iPhone {n}</b></td><td>{models}</td><td>{cell}</td><td>{status}</td><td>{guide}</td></tr>"
+    return f'<div class="table-wrap"><table class="price-table"><thead><tr><th>Series</th><th>Models</th><th>From</th><th>Stock</th><th>Guide</th></tr></thead><tbody>{body}</tbody></table></div>'
+
 def build_home():
     base = ""
+    parts = []
+    for n, ps, price, stocked in series_rows():
+        if ps and price:
+            parts.append(f"iPhone {n} from {ksh(price)}" + ("" if stocked else " (on request)"))
+    home_faq = [("How much are iPhones in Kenya?",
+                 "Our latest iPhone prices in Kenya: " + "; ".join(parts) + f". The iPhone 11 is not in our stock; see our iPhone 11 price guide for market prices. Prices were last updated on {SITE['pricesUpdated']}.")] + HOME_FAQ
     hero = next(p for p in PRODUCTS if p["slug"] == "iphone-18-pro-max")
-    lowest = min(from_price(p) for p in PRODUCTS if from_price(p))
+    lowest = min(from_price(p) for p in PRODUCTS if from_price(p) and in_stock(p))
     cards = "\n".join(card(p, base, i + (0 if in_stock(p) else 1000)) for i, p in enumerate(PRODUCTS))
     series_chips = '<button class="chip" data-filter="series:all" aria-pressed="true">All iPhones</button>' + "".join(
         f'<button class="chip" data-filter="series:{s}" aria-pressed="false">iPhone {s}</button>' for s in (18, 17, 16, 15, 14, 13, 12)) + '<button class="chip" data-filter="series:ipad" aria-pressed="false">iPad</button>'
@@ -235,9 +266,9 @@ Ask for {e(SITE['shopContact'])}"""
     body = f"""
 <section class="hero"><div class="wrap">
   <div>
-    <span class="eyebrow">New · iPhone 18 Pro Max in Kenya</span>
-    <h1>The best iPhones.<br><span class="serif">Delivered</span> today.</h1>
-    <p class="lead">iPhone 12 to the new 18 Pro Max, plus the latest iPads. Genuine, with warranty, and the best prices in Kenya. Pick your phone and order on WhatsApp in under a minute.</p>
+    <span class="eyebrow">iPhone 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18</span>
+    <h1>iPhone prices <br>in <span class="serif">Kenya.</span></h1>
+    <p class="lead">Latest prices in Kenya Shillings for the iPhone 12, 13, 14, 15, 16, 17 and the new iPhone 18, plus iPads. Brand new and Ex-UK. Visit our Nairobi shop to pick and pay, or order on WhatsApp in under a minute.</p>
     <div class="hero-price"><span class="from">iPhones from</span><strong>{ksh(lowest)}</strong></div>
     <div class="hero-ctas">
       <a class="btn btn-wa" href="#shop">{ICONS['wa']}Shop &amp; order</a>
@@ -291,9 +322,10 @@ Ask for {e(SITE['shopContact'])}"""
 
 <section class="section" style="padding-top:0"><div class="wrap prose">
   <span class="eyebrow">Buy iPhones in Kenya</span>
-  <h2>Latest iPhone prices in Kenya ({datetime.date.today().year})</h2>
-  <p>{e(SITE['brand'])} sells genuine Apple iPhones in Kenya, from the iPhone 12 Pro and iPhone 13 up to the iPhone 17 Pro Max, the new <a href="iphone-18-pro-max/"><b>iPhone 18 Pro Max</b></a>, <a href="iphone-18-pro/"><b>iPhone 18 Pro</b></a> and the foldable <a href="iphone-duo/"><b>iPhone Duo</b></a>. Choose brand-new sealed iPhones or carefully tested Ex-UK iPhones to fit your budget, with prices starting at {ksh(lowest)}.</p>
-  <p>We deliver the same day in Nairobi, including Westlands, Kilimani, Karen, Kasarani, Rongai, Ruaka and Syokimau, and countrywide to Mombasa, Kisumu, Nakuru, Eldoret and every county. You can also order on WhatsApp and pick up from our shop in {e(SITE['shopAddress'])}.</p>
+  <h2>iPhone prices in Kenya ({datetime.date.today().year}): iPhone 11 to 18</h2>
+  <p>Here are the latest iPhone prices in Kenya for every series from the iPhone 11 to the iPhone 18. {e(SITE['brand'])} sells genuine Apple iPhones, from the Ex-UK iPhone 12 Pro and iPhone 13 at {ksh(lowest)} up to the brand-new <a href="iphone-18-pro-max/"><b>iPhone 18 Pro Max</b></a> and <a href="iphone-18-pro/"><b>iPhone 18 Pro</b></a>. Prices were last updated on {e(SITE['pricesUpdated'])}.</p>
+  {series_table()}
+  <p>Visit our shop at {e(SITE['shopAddress'])} to inspect, pick and pay, or order on WhatsApp ({e(SITE['phoneDisplay'])}). For full price lists by storage, colour and SIM, open any model below or read our <a href="blog/iphone-prices-in-kenya/"><b>iPhone price list guide</b></a>.</p>
   <table class="price-table"><thead><tr><th>iPhone model</th><th>Condition</th><th>Price in Kenya (from)</th></tr></thead><tbody>
   {''.join(f'<tr><td><a href="{p["slug"]}/">{e(p["name"])}</a></td><td>{e(cond_label(p))}</td><td><b>{ksh(from_price(p))}</b></td></tr>' for p in PRODUCTS)}
   </tbody></table>
@@ -303,7 +335,7 @@ Ask for {e(SITE['shopContact'])}"""
 
 <section class="section" id="faq" style="padding-top:0"><div class="wrap">
   <div class="section-head"><div><span class="eyebrow">FAQ</span><h2>Questions? Answered.</h2></div></div>
-  <div class="faq">{faq_html(HOME_FAQ)}</div>
+  <div class="faq">{faq_html(home_faq)}</div>
 </div></section>
 
 <section class="wrap">{cta_band(base, hero)}</section>
@@ -311,13 +343,13 @@ Ask for {e(SITE['shopContact'])}"""
     schema = [
         org_schema(),
         {"@context": "https://schema.org", "@type": "WebSite", "name": SITE["brand"], "url": URL + "/", "inLanguage": "en-KE"},
-        {"@context": "https://schema.org", "@type": "ItemList", "name": "iPhones for sale in Kenya",
+        {"@context": "https://schema.org", "@type": "ItemList", "name": "iPhone prices in Kenya",
          "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{URL}/{p['slug']}/", "name": p["name"]} for i, p in enumerate(PRODUCTS)]},
-        faq_schema(HOME_FAQ),
+        faq_schema(home_faq),
     ]
     out = layout(base=base, path="",
-                 title=f"iPhone Prices in Kenya {datetime.date.today().year} | Buy iPhone 12 to 18 Pro Max & iPad | {SITE['brand']}",
-                 desc=f"Buy genuine iPhones in Kenya: iPhone 18 Pro Max, 17 Pro Max, 16, 15, 14 and 13 from {ksh(lowest)}. Same-day Nairobi delivery, countrywide shipping. Order on WhatsApp {SITE['phoneDisplay']}.",
+                 title=f"iPhone Prices in Kenya {datetime.date.today().year}: iPhone 11 to 18 | {SITE['brand']}",
+                 desc=f"iPhone prices in Kenya for iPhone 11, 12, 13, 14, 15, 16, 17 and 18. Brand new and Ex-UK from {ksh(lowest)}. Visit our Nairobi shop or WhatsApp {SITE['phoneDisplay']}.",
                  body=body, schema=schema, og_image="images/og.jpg")
     write("index.html", out)
 
@@ -700,7 +732,7 @@ def build_brand_assets():
     d.text((70, 120), SITE["brand"].upper(), font=font(26), fill=(168, 131, 79))
     d.text((70, 170), "iPhones in Kenya", font=font(68), fill=(13, 13, 15))
     d.text((70, 250), "iPhone 12 to 18 Pro Max & iPad", font=font(40, False), fill=(61, 61, 66))
-    lowest = min(from_price(p) for p in PRODUCTS if from_price(p))
+    lowest = min(from_price(p) for p in PRODUCTS if from_price(p) and in_stock(p))
     d.text((70, 320), f"From {ksh(lowest)}", font=font(44), fill=(13, 13, 15))
     d.rounded_rectangle((70, 420, 470, 490), radius=35, fill=(31, 174, 85))
     d.text((100, 437), f"WhatsApp {SITE['phoneDisplay']}", font=font(30), fill=(255, 255, 255))
