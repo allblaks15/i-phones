@@ -28,3 +28,6 @@ After changing a variable, redeploy for it to take effect.
 
 ## Blog
 Articles are in `data/blog/<slug>.md`. Shop prices in them are tokens such as `{from:iphone-13}` and `{table:iphone-13}`, so they follow `products.json` on every build. Prices for models we do not sell are typed by hand with their check date, so re-check those periodically. `data/keyword-map.csv` shows which article covers each target keyword; regenerate it with `python tools/keyword_map.py keywords.xlsx`.
+
+## Google Search Console
+`googleedc1b6f85d61f393.html` in the project root verifies the site with Google. Keep it: deleting it unverifies the property. The build never touches it.
