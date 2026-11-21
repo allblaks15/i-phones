@@ -96,7 +96,7 @@
     demo: function (p) {
       return api("admin/overview/").then(function (c) {
         p.innerHTML = "<h2>Sample data</h2><p>Sample sellers and listings show visitors how the marketplace works. They are labelled <b>Sample</b>, cannot be contacted and are hidden from Google. Remove them once real sellers are listing.</p>" +
-          "<p><b>" + c.demo + "</b> sample sellers loaded.</p>" + (c.demo ? '<button class="btn btn-dark" data-do="demo/clear" data-confirm="Remove all sample sellers and listings?">Remove all sample data</button>' : '<button class="btn btn-dark" data-do="demo/seed">Load 25 sample sellers and 15 sample dealers</button>');
+          "<p><b>" + c.demo + "</b> sample sellers loaded.</p>" + (c.demo < 40 ? '<button class="btn btn-dark" data-do="demo/seed">' + (c.demo ? "Add the remaining sample sellers and dealers" : "Load 25 sample sellers and 15 sample dealers") + "</button> " : "") + (c.demo ? '<button class="btn btn-ghost" data-do="demo/clear" data-confirm="Remove all sample sellers and listings?">Remove all sample data</button>' : "");
       });
     },
   };

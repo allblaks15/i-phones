@@ -565,8 +565,10 @@ on("POST", "admin/demo/(seed|clear)", async ({ user, m }) => {
     return { ok: true };
   }
   const DEMO = require("./_lib/demo.json"), t = now();
-  if (Number((await one("SELECT COUNT(*) AS n FROM users WHERE is_demo = 1", [])).n)) fail(400, "Sample data is already loaded.");
+  let added = 0;
   for (const s of DEMO.sellers) {
+    if (await one("SELECT id FROM users WHERE id = $1", [s.id])) continue; // already loaded
+    added++;
     await q("INSERT INTO users (id, email, name, phone, role, account_type, is_demo, created_at) VALUES ($1,$2,$3,NULL,'seller',$4,1,$5)", [s.id, s.id + "@sample.invalid", s.name, s.dealer ? "dealer" : "individual", t - s.ageDays * DAY]);
     if (s.dealer) await q("INSERT INTO subscriptions (id, user_id, plan, status, starts_at, expires_at, created_at) VALUES ($1,$2,$3,'active',$4,$5,$4)", [id(10), s.id, s.plan, t, t + 30 * DAY]);
     for (const l of s.listings) {
@@ -577,7 +579,7 @@ on("POST", "admin/demo/(seed|clear)", async ({ user, m }) => {
         s.dealer ? "dealer-" + s.plan : l.package, pkg.rank, pkg.days ? t + pkg.days * DAY : null, t - l.ageHours * 3600000]);
     }
   }
-  return { ok: true, sellers: DEMO.sellers.length };
+  return { ok: true, sellers: added };
 });
 
 // ---------- handler ----------
