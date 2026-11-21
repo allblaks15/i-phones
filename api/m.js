@@ -332,7 +332,7 @@ on("POST", "upload", async ({ user, req, raw }) => {
   if (process.env.BLOB_DEV_DIR) { require("fs").mkdirSync(process.env.BLOB_DEV_DIR, { recursive: true }); require("fs").writeFileSync(require("path").join(process.env.BLOB_DEV_DIR, name), raw); return { url: "/__blob/" + name }; }
   const token = process.env.BLOB_READ_WRITE_TOKEN;
   if (!token) fail(503, "Photo storage is not set up yet.");
-  const res = await fetch(`https://blob.vercel-storage.com/market/${name}`, { method: "PUT", body: raw,
+  const res = await fetch(`https://blob.vercel-storage.com/?pathname=${encodeURIComponent("market/" + name)}`, { method: "PUT", body: raw,
     headers: { authorization: `Bearer ${token}`, "x-api-version": "11", "x-content-type": type, "x-vercel-blob-access": "public", "x-add-random-suffix": "0", "x-cache-control-max-age": "31536000" } });
   const out = await res.json().catch(() => ({}));
   if (!res.ok || !out.url) fail(502, "Could not save the photo. Please try again.");
