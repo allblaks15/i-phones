@@ -31,3 +31,13 @@ Articles are in `data/blog/<slug>.md`. Shop prices in them are tokens such as `{
 
 ## Google Search Console
 `googleedc1b6f85d61f393.html` in the project root verifies the site with Google. Keep it: deleting it unverifies the property. The build never touches it.
+
+## Phone marketplace
+Pages: `/market/` (browse), `/m/<id>/` (listing, rendered by `api/m.js`), `/sell/` (seller accounts), `/admin/` (admin + editors).
+All marketplace logic is in `api/m.js`; settings (packages, brands, conditions) in `data/market/market.json`; counties and constituencies in `data/market/locations.json`.
+
+Environment variables (Vercel, never in this repo): `DATABASE_URL` (Neon Postgres), `BLOB_READ_WRITE_TOKEN` (Vercel Blob, listing photos), `PAYSTACK_SECRET_KEY`, `ADMIN_EMAILS`, `AUTH_SECRET`, plus the `SMTP_*` variables for login codes.
+Paystack webhook URL to set in the Paystack dashboard: `https://i-phones.co.ke/api/m/pay/webhook/`.
+
+Sample data: `python tools/demo_market.py` regenerates `data/market/demo.json`; load or remove it from the admin dashboard (Sample data tab).
+Local testing: `node tools/devserver.js` runs the whole site with SQLite, logged emails and fake payments.

@@ -1,0 +1,1559 @@
+{
+ "sellers": [
+  {
+   "id": "demo-s01",
+   "name": "Brian O.",
+   "dealer": false,
+   "ageDays": 31,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 13",
+     "title": "iPhone 13 128GB",
+     "condition": "used",
+     "storage": "128GB",
+     "color": "Blue",
+     "price": 47000,
+     "county": "Nairobi",
+     "constituency": "Kasarani",
+     "area": "Kasarani",
+     "description": "Lightly used, everything works perfectly. Selling to upgrade.",
+     "photos": [
+      "/images/phones/iphone-13-1.webp",
+      "/images/phones/iphone-13-2.webp",
+      "/images/phones/iphone-13-3.webp",
+      "/images/phones/iphone-13-4.webp"
+     ],
+     "package": "bronze",
+     "ageHours": 332
+    }
+   ]
+  },
+  {
+   "id": "demo-s02",
+   "name": "Faith W.",
+   "dealer": false,
+   "ageDays": 151,
+   "listings": [
+    {
+     "brand": "Samsung",
+     "model": "Galaxy A55",
+     "title": "Samsung Galaxy A55 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Purple",
+     "price": 46500,
+     "county": "Kiambu",
+     "constituency": "Ruiru",
+     "area": "Ruiru",
+     "description": "New and unused, full box with charger cable.",
+     "photos": [
+      "/images/market/sample-samsung-galaxy-a55.webp"
+     ],
+     "package": "silver",
+     "ageHours": 402
+    }
+   ]
+  },
+  {
+   "id": "demo-s03",
+   "name": "Kevin M.",
+   "dealer": false,
+   "ageDays": 155,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 14 Pro",
+     "title": "iPhone 14 Pro 256GB",
+     "condition": "used",
+     "storage": "256GB",
+     "color": "Gold",
+     "price": 75500,
+     "county": "Uasin Gishu",
+     "constituency": "Kapseret",
+     "area": "Eldoret",
+     "description": "Good condition, small scratch on the back. Battery holds a full day.",
+     "photos": [
+      "/images/phones/iphone-14-pro-1.webp",
+      "/images/phones/iphone-14-pro-2.webp",
+      "/images/phones/iphone-14-pro-3.webp",
+      "/images/phones/iphone-14-pro-4.webp"
+     ],
+     "package": "gold",
+     "ageHours": 385
+    }
+   ]
+  },
+  {
+   "id": "demo-s04",
+   "name": "Mercy A.",
+   "dealer": false,
+   "ageDays": 78,
+   "listings": [
+    {
+     "brand": "Samsung",
+     "model": "Galaxy A15",
+     "title": "Samsung Galaxy A15 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Blue",
+     "price": 18500,
+     "county": "Mombasa",
+     "constituency": "Nyali",
+     "area": "Nyali",
+     "description": "Brand new, sealed in the box. Comes with receipt.",
+     "photos": [
+      "/images/market/sample-samsung-galaxy-a15.webp"
+     ],
+     "package": "bronze",
+     "ageHours": 57
+    }
+   ]
+  },
+  {
+   "id": "demo-s05",
+   "name": "Dennis K.",
+   "dealer": false,
+   "ageDays": 178,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 15 Pro Max",
+     "title": "iPhone 15 Pro Max 256GB",
+     "condition": "ex-uk",
+     "storage": "256GB",
+     "color": "Natural Titanium",
+     "price": 93000,
+     "county": "Nairobi",
+     "constituency": "Kasarani",
+     "area": "Kasarani",
+     "description": "Ex-UK, minor marks on the frame. Comes with cable.",
+     "photos": [
+      "/images/phones/iphone-15-pro-max-1.webp",
+      "/images/phones/iphone-15-pro-max-2.webp",
+      "/images/phones/iphone-15-pro-max-3.webp",
+      "/images/phones/iphone-15-pro-max-4.webp"
+     ],
+     "package": "silver",
+     "ageHours": 252
+    }
+   ]
+  },
+  {
+   "id": "demo-s06",
+   "name": "Grace N.",
+   "dealer": false,
+   "ageDays": 96,
+   "listings": [
+    {
+     "brand": "Samsung",
+     "model": "Galaxy S22 Ultra",
+     "title": "Samsung Galaxy S22 Ultra 256GB",
+     "condition": "damaged",
+     "storage": "256GB",
+     "color": "Blue",
+     "price": 24000,
+     "county": "Machakos",
+     "constituency": "Mavoko",
+     "area": "Syokimau",
+     "description": "Back glass cracked, everything else works. Selling as is.",
+     "photos": [
+      "/images/market/sample-samsung-galaxy-s22-ultra.webp"
+     ],
+     "package": "gold",
+     "ageHours": 476
+    }
+   ]
+  },
+  {
+   "id": "demo-s07",
+   "name": "Collins O.",
+   "dealer": false,
+   "ageDays": 92,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 16 Pro",
+     "title": "iPhone 16 Pro 256GB",
+     "condition": "ex-uk",
+     "storage": "256GB",
+     "color": "Silver",
+     "price": 115000,
+     "county": "Kajiado",
+     "constituency": "Kajiado East",
+     "area": "Kitengela",
+     "description": "Ex-UK in very good condition, no scratches on the screen. Battery health 88%.",
+     "photos": [
+      "/images/phones/iphone-16-pro-1.webp",
+      "/images/phones/iphone-16-pro-2.webp",
+      "/images/phones/iphone-16-pro-3.webp"
+     ],
+     "package": "bronze",
+     "ageHours": 371
+    }
+   ]
+  },
+  {
+   "id": "demo-s08",
+   "name": "Esther W.",
+   "dealer": false,
+   "ageDays": 41,
+   "listings": [
+    {
+     "brand": "Tecno",
+     "model": "Spark 30",
+     "title": "Tecno Spark 30 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Purple",
+     "price": 15500,
+     "county": "Nairobi",
+     "constituency": "Kibra",
+     "area": "Kilimani",
+     "description": "New and unused, full box with charger cable.",
+     "photos": [
+      "/images/market/sample-tecno-spark-30.webp"
+     ],
+     "package": "silver",
+     "ageHours": 235
+    }
+   ]
+  },
+  {
+   "id": "demo-s09",
+   "name": "Victor K.",
+   "dealer": false,
+   "ageDays": 186,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 13 Pro",
+     "title": "iPhone 13 Pro 256GB",
+     "condition": "ex-uk",
+     "storage": "256GB",
+     "color": "Silver",
+     "price": 64500,
+     "county": "Kakamega",
+     "constituency": "Lurambi",
+     "area": "Kakamega",
+     "description": "Clean Ex-UK unit, fully tested. Face ID and cameras all working.",
+     "photos": [
+      "/images/phones/iphone-13-pro-1.webp",
+      "/images/phones/iphone-13-pro-2.webp",
+      "/images/phones/iphone-13-pro-3.webp",
+      "/images/phones/iphone-13-pro-4.webp"
+     ],
+     "package": "gold",
+     "ageHours": 13
+    }
+   ]
+  },
+  {
+   "id": "demo-s10",
+   "name": "Lucy C.",
+   "dealer": false,
+   "ageDays": 154,
+   "listings": [
+    {
+     "brand": "Infinix",
+     "model": "Note 40 Pro",
+     "title": "Infinix Note 40 Pro 256GB",
+     "condition": "new",
+     "storage": "256GB",
+     "color": "Green",
+     "price": 31000,
+     "county": "Kajiado",
+     "constituency": "Kajiado North",
+     "area": "Ngong",
+     "description": "Brand new, sealed in the box. Comes with receipt.",
+     "photos": [
+      "/images/market/sample-infinix-note-40-pro.webp"
+     ],
+     "package": "bronze",
+     "ageHours": 205
+    }
+   ]
+  },
+  {
+   "id": "demo-s11",
+   "name": "Samuel M.",
+   "dealer": false,
+   "ageDays": 197,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 16",
+     "title": "iPhone 16 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Natural Titanium",
+     "price": 110000,
+     "county": "Uasin Gishu",
+     "constituency": "Kapseret",
+     "area": "Eldoret",
+     "description": "New and unused, full box with charger cable.",
+     "photos": [
+      "/images/phones/iphone-16-1.webp",
+      "/images/phones/iphone-16-2.webp",
+      "/images/phones/iphone-16-3.webp",
+      "/images/phones/iphone-16-4.webp"
+     ],
+     "package": "silver",
+     "ageHours": 260
+    }
+   ]
+  },
+  {
+   "id": "demo-s12",
+   "name": "Diana A.",
+   "dealer": false,
+   "ageDays": 112,
+   "listings": [
+    {
+     "brand": "Infinix",
+     "model": "Zero 30",
+     "title": "Infinix Zero 30 256GB",
+     "condition": "used",
+     "storage": "256GB",
+     "color": "Silver",
+     "price": 24000,
+     "county": "Meru",
+     "constituency": "North Imenti",
+     "area": "Meru Town",
+     "description": "Lightly used, everything works perfectly. Selling to upgrade.",
+     "photos": [
+      "/images/market/sample-infinix-zero-30.webp"
+     ],
+     "package": "gold",
+     "ageHours": 133
+    }
+   ]
+  },
+  {
+   "id": "demo-s13",
+   "name": "Peter K.",
+   "dealer": false,
+   "ageDays": 62,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 15",
+     "title": "iPhone 15 128GB",
+     "condition": "ex-uk",
+     "storage": "128GB",
+     "color": "Natural Titanium",
+     "price": 72000,
+     "county": "Nyeri",
+     "constituency": "Nyeri Town",
+     "area": "Nyeri",
+     "description": "Ex-UK in very good condition, no scratches on the screen. Battery health 88%.",
+     "photos": [
+      "/images/phones/iphone-15-1.webp",
+      "/images/phones/iphone-15-2.webp",
+      "/images/phones/iphone-15-3.webp",
+      "/images/phones/iphone-15-4.webp"
+     ],
+     "package": "bronze",
+     "ageHours": 295
+    }
+   ]
+  },
+  {
+   "id": "demo-s14",
+   "name": "Joy M.",
+   "dealer": false,
+   "ageDays": 176,
+   "listings": [
+    {
+     "brand": "Xiaomi",
+     "model": "Redmi 13C",
+     "title": "Xiaomi Redmi 13C 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Black",
+     "price": 14000,
+     "county": "Nairobi",
+     "constituency": "Embakasi East",
+     "area": "Utawala",
+     "description": "Sealed box. Selling because I received two as gifts.",
+     "photos": [
+      "/images/market/sample-xiaomi-redmi-13c.webp"
+     ],
+     "package": "silver",
+     "ageHours": 455
+    }
+   ]
+  },
+  {
+   "id": "demo-s15",
+   "name": "Allan B.",
+   "dealer": false,
+   "ageDays": 128,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 13",
+     "title": "iPhone 13 128GB",
+     "condition": "used",
+     "storage": "128GB",
+     "color": "Silver",
+     "price": 47500,
+     "county": "Nairobi",
+     "constituency": "Kasarani",
+     "area": "Kasarani",
+     "description": "Good condition, small scratch on the back. Battery holds a full day.",
+     "photos": [
+      "/images/phones/iphone-13-1.webp",
+      "/images/phones/iphone-13-2.webp",
+      "/images/phones/iphone-13-3.webp",
+      "/images/phones/iphone-13-4.webp"
+     ],
+     "package": "gold",
+     "ageHours": 73
+    }
+   ]
+  },
+  {
+   "id": "demo-s16",
+   "name": "Caroline N.",
+   "dealer": false,
+   "ageDays": 125,
+   "listings": [
+    {
+     "brand": "Google",
+     "model": "Pixel 8 Pro",
+     "title": "Google Pixel 8 Pro 128GB",
+     "condition": "ex-uk",
+     "storage": "128GB",
+     "color": "Black",
+     "price": 65000,
+     "county": "Kiambu",
+     "constituency": "Ruiru",
+     "area": "Ruiru",
+     "description": "Clean Ex-UK unit, fully tested. Face ID and cameras all working.",
+     "photos": [
+      "/images/market/sample-google-pixel-8-pro.webp"
+     ],
+     "package": "bronze",
+     "ageHours": 346
+    }
+   ]
+  },
+  {
+   "id": "demo-s17",
+   "name": "Felix O.",
+   "dealer": false,
+   "ageDays": 145,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 14 Pro",
+     "title": "iPhone 14 Pro 256GB",
+     "condition": "used",
+     "storage": "256GB",
+     "color": "Blue",
+     "price": 74500,
+     "county": "Uasin Gishu",
+     "constituency": "Kapseret",
+     "area": "Eldoret",
+     "description": "Lightly used, everything works perfectly. Selling to upgrade.",
+     "photos": [
+      "/images/phones/iphone-14-pro-1.webp",
+      "/images/phones/iphone-14-pro-2.webp",
+      "/images/phones/iphone-14-pro-3.webp",
+      "/images/phones/iphone-14-pro-4.webp"
+     ],
+     "package": "silver",
+     "ageHours": 158
+    }
+   ]
+  },
+  {
+   "id": "demo-s18",
+   "name": "Sharon J.",
+   "dealer": false,
+   "ageDays": 56,
+   "listings": [
+    {
+     "brand": "Oppo",
+     "model": "Reno 12",
+     "title": "Oppo Reno 12 256GB",
+     "condition": "new",
+     "storage": "256GB",
+     "color": "Purple",
+     "price": 43000,
+     "county": "Kakamega",
+     "constituency": "Lurambi",
+     "area": "Kakamega",
+     "description": "New and unused, full box with charger cable.",
+     "photos": [
+      "/images/market/sample-oppo-reno-12.webp"
+     ],
+     "package": "gold",
+     "ageHours": 222
+    }
+   ]
+  },
+  {
+   "id": "demo-s19",
+   "name": "Ian N.",
+   "dealer": false,
+   "ageDays": 172,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 15 Pro Max",
+     "title": "iPhone 15 Pro Max 256GB",
+     "condition": "ex-uk",
+     "storage": "256GB",
+     "color": "Gold",
+     "price": 95500,
+     "county": "Kiambu",
+     "constituency": "Kiambaa",
+     "area": "Ruaka",
+     "description": "Ex-UK in very good condition, no scratches on the screen. Battery health 88%.",
+     "photos": [
+      "/images/phones/iphone-15-pro-max-1.webp",
+      "/images/phones/iphone-15-pro-max-2.webp",
+      "/images/phones/iphone-15-pro-max-3.webp",
+      "/images/phones/iphone-15-pro-max-4.webp"
+     ],
+     "package": "bronze",
+     "ageHours": 77
+    }
+   ]
+  },
+  {
+   "id": "demo-s20",
+   "name": "Purity A.",
+   "dealer": false,
+   "ageDays": 56,
+   "listings": [
+    {
+     "brand": "Huawei",
+     "model": "Nova 12",
+     "title": "Huawei Nova 12 256GB",
+     "condition": "used",
+     "storage": "256GB",
+     "color": "Silver",
+     "price": 28000,
+     "county": "Meru",
+     "constituency": "North Imenti",
+     "area": "Meru Town",
+     "description": "Good condition, small scratch on the back. Battery holds a full day.",
+     "photos": [
+      "/images/market/sample-huawei-nova-12.webp"
+     ],
+     "package": "silver",
+     "ageHours": 185
+    }
+   ]
+  },
+  {
+   "id": "demo-s21",
+   "name": "Mark W.",
+   "dealer": false,
+   "ageDays": 132,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 16 Pro",
+     "title": "iPhone 16 Pro 256GB",
+     "condition": "ex-uk",
+     "storage": "256GB",
+     "color": "Silver",
+     "price": 115000,
+     "county": "Kiambu",
+     "constituency": "Thika Town",
+     "area": "Thika",
+     "description": "Ex-UK, minor marks on the frame. Comes with cable.",
+     "photos": [
+      "/images/phones/iphone-16-pro-1.webp",
+      "/images/phones/iphone-16-pro-2.webp",
+      "/images/phones/iphone-16-pro-3.webp"
+     ],
+     "package": "gold",
+     "ageHours": 393
+    }
+   ]
+  },
+  {
+   "id": "demo-s22",
+   "name": "Naomi W.",
+   "dealer": false,
+   "ageDays": 79,
+   "listings": [
+    {
+     "brand": "OnePlus",
+     "model": "OnePlus 12",
+     "title": "OnePlus 12 256GB",
+     "condition": "ex-uk",
+     "storage": "256GB",
+     "color": "Purple",
+     "price": 79500,
+     "county": "Mombasa",
+     "constituency": "Mvita",
+     "area": "Mombasa CBD",
+     "description": "Ex-UK in very good condition, no scratches on the screen. Battery health 88%.",
+     "photos": [
+      "/images/market/sample-oneplus-oneplus-12.webp"
+     ],
+     "package": "bronze",
+     "ageHours": 426
+    }
+   ]
+  },
+  {
+   "id": "demo-s23",
+   "name": "Eric K.",
+   "dealer": false,
+   "ageDays": 181,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 13 Pro",
+     "title": "iPhone 13 Pro 256GB",
+     "condition": "ex-uk",
+     "storage": "256GB",
+     "color": "Natural Titanium",
+     "price": 65500,
+     "county": "Machakos",
+     "constituency": "Mavoko",
+     "area": "Syokimau",
+     "description": "Ex-UK in very good condition, no scratches on the screen. Battery health 88%.",
+     "photos": [
+      "/images/phones/iphone-13-pro-1.webp",
+      "/images/phones/iphone-13-pro-2.webp",
+      "/images/phones/iphone-13-pro-3.webp",
+      "/images/phones/iphone-13-pro-4.webp"
+     ],
+     "package": "silver",
+     "ageHours": 225
+    }
+   ]
+  },
+  {
+   "id": "demo-s24",
+   "name": "Linda M.",
+   "dealer": false,
+   "ageDays": 191,
+   "listings": [
+    {
+     "brand": "itel",
+     "model": "S24",
+     "title": "itel S24 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Green",
+     "price": 12500,
+     "county": "Nakuru",
+     "constituency": "Nakuru Town East",
+     "area": "Nakuru CBD",
+     "description": "Brand new, sealed in the box. Comes with receipt.",
+     "photos": [
+      "/images/market/sample-itel-s24.webp"
+     ],
+     "package": "gold",
+     "ageHours": 218
+    }
+   ]
+  },
+  {
+   "id": "demo-s25",
+   "name": "Joseph M.",
+   "dealer": false,
+   "ageDays": 29,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 16",
+     "title": "iPhone 16 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Black",
+     "price": 107500,
+     "county": "Kisumu",
+     "constituency": "Kisumu Central",
+     "area": "Kisumu CBD",
+     "description": "New and unused, full box with charger cable.",
+     "photos": [
+      "/images/phones/iphone-16-1.webp",
+      "/images/phones/iphone-16-2.webp",
+      "/images/phones/iphone-16-3.webp",
+      "/images/phones/iphone-16-4.webp"
+     ],
+     "package": "bronze",
+     "ageHours": 190
+    }
+   ]
+  },
+  {
+   "id": "demo-d01",
+   "name": "Savanna Mobile",
+   "dealer": true,
+   "plan": "gold",
+   "ageDays": 72,
+   "listings": [
+    {
+     "brand": "Tecno",
+     "model": "Spark 30",
+     "title": "Tecno Spark 30 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Cream",
+     "price": 16000,
+     "county": "Nairobi",
+     "constituency": "Roysambu",
+     "area": "Roysambu",
+     "description": "Brand new, sealed in the box. Comes with receipt.",
+     "photos": [
+      "/images/market/sample-tecno-spark-30.webp"
+     ],
+     "package": null,
+     "ageHours": 231
+    },
+    {
+     "brand": "Apple",
+     "model": "iPhone 15 Pro Max",
+     "title": "iPhone 15 Pro Max 256GB",
+     "condition": "ex-uk",
+     "storage": "256GB",
+     "color": "Black",
+     "price": 93000,
+     "county": "Nairobi",
+     "constituency": "Westlands",
+     "area": "Westlands",
+     "description": "Ex-UK, minor marks on the frame. Comes with cable.",
+     "photos": [
+      "/images/phones/iphone-15-pro-max-1.webp",
+      "/images/phones/iphone-15-pro-max-2.webp",
+      "/images/phones/iphone-15-pro-max-3.webp",
+      "/images/phones/iphone-15-pro-max-4.webp"
+     ],
+     "package": null,
+     "ageHours": 280
+    }
+   ]
+  },
+  {
+   "id": "demo-d02",
+   "name": "Tausi Gadgets",
+   "dealer": true,
+   "plan": "silver",
+   "ageDays": 328,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 14 Pro Max",
+     "title": "iPhone 14 Pro Max 256GB",
+     "condition": "used",
+     "storage": "256GB",
+     "color": "Gold",
+     "price": 83500,
+     "county": "Meru",
+     "constituency": "North Imenti",
+     "area": "Meru Town",
+     "description": "Used for about a year, always in a case. Screen protector on since day one.",
+     "photos": [
+      "/images/phones/iphone-14-pro-max-1.webp",
+      "/images/phones/iphone-14-pro-max-2.webp",
+      "/images/phones/iphone-14-pro-max-3.webp",
+      "/images/phones/iphone-14-pro-max-4.webp"
+     ],
+     "package": null,
+     "ageHours": 318
+    },
+    {
+     "brand": "Infinix",
+     "model": "Hot 50",
+     "title": "Infinix Hot 50 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Purple",
+     "price": 17500,
+     "county": "Nairobi",
+     "constituency": "Starehe",
+     "area": "Nairobi CBD",
+     "description": "Sealed box. Selling because I received two as gifts.",
+     "photos": [
+      "/images/market/sample-infinix-hot-50.webp"
+     ],
+     "package": null,
+     "ageHours": 388
+    },
+    {
+     "brand": "Apple",
+     "model": "iPhone 12 Pro Max",
+     "title": "iPhone 12 Pro Max 256GB",
+     "condition": "damaged",
+     "storage": "256GB",
+     "color": "Blue",
+     "price": 25000,
+     "county": "Kakamega",
+     "constituency": "Lurambi",
+     "area": "Kakamega",
+     "description": "Back glass cracked, everything else works. Selling as is.",
+     "photos": [
+      "/images/phones/iphone-12-pro-max-1.webp",
+      "/images/phones/iphone-12-pro-max-2.webp",
+      "/images/phones/iphone-12-pro-max-3.webp",
+      "/images/phones/iphone-12-pro-max-4.webp"
+     ],
+     "package": null,
+     "ageHours": 341
+    }
+   ]
+  },
+  {
+   "id": "demo-d03",
+   "name": "Nyota Phones",
+   "dealer": true,
+   "plan": "gold",
+   "ageDays": 336,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 13 Pro",
+     "title": "iPhone 13 Pro 256GB",
+     "condition": "ex-uk",
+     "storage": "256GB",
+     "color": "Gold",
+     "price": 65500,
+     "county": "Nyeri",
+     "constituency": "Nyeri Town",
+     "area": "Nyeri",
+     "description": "Clean Ex-UK unit, fully tested. Face ID and cameras all working.",
+     "photos": [
+      "/images/phones/iphone-13-pro-1.webp",
+      "/images/phones/iphone-13-pro-2.webp",
+      "/images/phones/iphone-13-pro-3.webp",
+      "/images/phones/iphone-13-pro-4.webp"
+     ],
+     "package": null,
+     "ageHours": 354
+    },
+    {
+     "brand": "Xiaomi",
+     "model": "Redmi 13C",
+     "title": "Xiaomi Redmi 13C 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Purple",
+     "price": 13000,
+     "county": "Nairobi",
+     "constituency": "Embakasi East",
+     "area": "Utawala",
+     "description": "Sealed box. Selling because I received two as gifts.",
+     "photos": [
+      "/images/market/sample-xiaomi-redmi-13c.webp"
+     ],
+     "package": null,
+     "ageHours": 68
+    }
+   ]
+  },
+  {
+   "id": "demo-d04",
+   "name": "Baraka Mobile Centre",
+   "dealer": true,
+   "plan": "bronze",
+   "ageDays": 130,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 16",
+     "title": "iPhone 16 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Blue",
+     "price": 101500,
+     "county": "Nakuru",
+     "constituency": "Nakuru Town East",
+     "area": "Nakuru CBD",
+     "description": "Sealed box. Selling because I received two as gifts.",
+     "photos": [
+      "/images/phones/iphone-16-1.webp",
+      "/images/phones/iphone-16-2.webp",
+      "/images/phones/iphone-16-3.webp",
+      "/images/phones/iphone-16-4.webp"
+     ],
+     "package": null,
+     "ageHours": 82
+    },
+    {
+     "brand": "Apple",
+     "model": "iPhone 14",
+     "title": "iPhone 14 128GB",
+     "condition": "used",
+     "storage": "128GB",
+     "color": "Gold",
+     "price": 51500,
+     "county": "Nairobi",
+     "constituency": "Embakasi East",
+     "area": "Utawala",
+     "description": "Lightly used, everything works perfectly. Selling to upgrade.",
+     "photos": [
+      "/images/phones/iphone-14-1.webp",
+      "/images/phones/iphone-14-2.webp",
+      "/images/phones/iphone-14-3.webp",
+      "/images/phones/iphone-14-4.webp"
+     ],
+     "package": null,
+     "ageHours": 157
+    },
+    {
+     "brand": "Google",
+     "model": "Pixel 7",
+     "title": "Google Pixel 7 128GB",
+     "condition": "used",
+     "storage": "128GB",
+     "color": "Silver",
+     "price": 31500,
+     "county": "Nakuru",
+     "constituency": "Nakuru Town East",
+     "area": "Nakuru CBD",
+     "description": "Used for about a year, always in a case. Screen protector on since day one.",
+     "photos": [
+      "/images/market/sample-google-pixel-7.webp"
+     ],
+     "package": null,
+     "ageHours": 267
+    }
+   ]
+  },
+  {
+   "id": "demo-d05",
+   "name": "Simba Tech Phones",
+   "dealer": true,
+   "plan": "silver",
+   "ageDays": 43,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 17 Pro",
+     "title": "iPhone 17 Pro 256GB",
+     "condition": "new",
+     "storage": "256GB",
+     "color": "Black",
+     "price": 175500,
+     "county": "Kajiado",
+     "constituency": "Kajiado East",
+     "area": "Kitengela",
+     "description": "New and unused, full box with charger cable.",
+     "photos": [
+      "/images/phones/iphone-17-pro-1.webp",
+      "/images/phones/iphone-17-pro-2.webp",
+      "/images/phones/iphone-17-pro-3.webp"
+     ],
+     "package": null,
+     "ageHours": 455
+    },
+    {
+     "brand": "Apple",
+     "model": "iPhone 13",
+     "title": "iPhone 13 128GB",
+     "condition": "used",
+     "storage": "128GB",
+     "color": "Black",
+     "price": 48500,
+     "county": "Nairobi",
+     "constituency": "Kibra",
+     "area": "Kilimani",
+     "description": "Lightly used, everything works perfectly. Selling to upgrade.",
+     "photos": [
+      "/images/phones/iphone-13-1.webp",
+      "/images/phones/iphone-13-2.webp",
+      "/images/phones/iphone-13-3.webp",
+      "/images/phones/iphone-13-4.webp"
+     ],
+     "package": null,
+     "ageHours": 181
+    }
+   ]
+  },
+  {
+   "id": "demo-d06",
+   "name": "Pwani Phones",
+   "dealer": true,
+   "plan": "gold",
+   "ageDays": 296,
+   "listings": [
+    {
+     "brand": "Huawei",
+     "model": "Nova 12",
+     "title": "Huawei Nova 12 256GB",
+     "condition": "used",
+     "storage": "256GB",
+     "color": "Purple",
+     "price": 27000,
+     "county": "Nairobi",
+     "constituency": "Westlands",
+     "area": "Westlands",
+     "description": "Lightly used, everything works perfectly. Selling to upgrade.",
+     "photos": [
+      "/images/market/sample-huawei-nova-12.webp"
+     ],
+     "package": null,
+     "ageHours": 156
+    },
+    {
+     "brand": "Apple",
+     "model": "iPhone 14 Pro",
+     "title": "iPhone 14 Pro 256GB",
+     "condition": "used",
+     "storage": "256GB",
+     "color": "Blue",
+     "price": 77000,
+     "county": "Mombasa",
+     "constituency": "Nyali",
+     "area": "Nyali",
+     "description": "Good condition, small scratch on the back. Battery holds a full day.",
+     "photos": [
+      "/images/phones/iphone-14-pro-1.webp",
+      "/images/phones/iphone-14-pro-2.webp",
+      "/images/phones/iphone-14-pro-3.webp",
+      "/images/phones/iphone-14-pro-4.webp"
+     ],
+     "package": null,
+     "ageHours": 239
+    },
+    {
+     "brand": "Apple",
+     "model": "iPhone 12 Pro",
+     "title": "iPhone 12 Pro 128GB",
+     "condition": "used",
+     "storage": "128GB",
+     "color": "Graphite",
+     "price": 42500,
+     "county": "Nyeri",
+     "constituency": "Nyeri Town",
+     "area": "Nyeri",
+     "description": "Used for about a year, always in a case. Screen protector on since day one.",
+     "photos": [
+      "/images/phones/iphone-12-pro-1.webp",
+      "/images/phones/iphone-12-pro-2.webp",
+      "/images/phones/iphone-12-pro-3.webp",
+      "/images/phones/iphone-12-pro-4.webp"
+     ],
+     "package": null,
+     "ageHours": 303
+    }
+   ]
+  },
+  {
+   "id": "demo-d07",
+   "name": "Lakeside Mobiles",
+   "dealer": true,
+   "plan": "bronze",
+   "ageDays": 47,
+   "listings": [
+    {
+     "brand": "Nokia",
+     "model": "G42",
+     "title": "Nokia G42 128GB",
+     "condition": "used",
+     "storage": "128GB",
+     "color": "Silver",
+     "price": 11000,
+     "county": "Nairobi",
+     "constituency": "Roysambu",
+     "area": "Roysambu",
+     "description": "Good condition, small scratch on the back. Battery holds a full day.",
+     "photos": [
+      "/images/market/sample-nokia-g42.webp"
+     ],
+     "package": null,
+     "ageHours": 307
+    },
+    {
+     "brand": "Apple",
+     "model": "iPhone 14 Pro Max",
+     "title": "iPhone 14 Pro Max 256GB",
+     "condition": "used",
+     "storage": "256GB",
+     "color": "Silver",
+     "price": 88000,
+     "county": "Kiambu",
+     "constituency": "Ruiru",
+     "area": "Ruiru",
+     "description": "Lightly used, everything works perfectly. Selling to upgrade.",
+     "photos": [
+      "/images/phones/iphone-14-pro-max-1.webp",
+      "/images/phones/iphone-14-pro-max-2.webp",
+      "/images/phones/iphone-14-pro-max-3.webp",
+      "/images/phones/iphone-14-pro-max-4.webp"
+     ],
+     "package": null,
+     "ageHours": 205
+    }
+   ]
+  },
+  {
+   "id": "demo-d08",
+   "name": "Rift Gadgets",
+   "dealer": true,
+   "plan": "silver",
+   "ageDays": 360,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 16 Pro",
+     "title": "iPhone 16 Pro 256GB",
+     "condition": "ex-uk",
+     "storage": "256GB",
+     "color": "Silver",
+     "price": 120000,
+     "county": "Nairobi",
+     "constituency": "Roysambu",
+     "area": "Roysambu",
+     "description": "Ex-UK in very good condition, no scratches on the screen. Battery health 88%.",
+     "photos": [
+      "/images/phones/iphone-16-pro-1.webp",
+      "/images/phones/iphone-16-pro-2.webp",
+      "/images/phones/iphone-16-pro-3.webp"
+     ],
+     "package": null,
+     "ageHours": 332
+    },
+    {
+     "brand": "Samsung",
+     "model": "Galaxy A55",
+     "title": "Samsung Galaxy A55 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Black",
+     "price": 46000,
+     "county": "Uasin Gishu",
+     "constituency": "Kapseret",
+     "area": "Eldoret",
+     "description": "Sealed box. Selling because I received two as gifts.",
+     "photos": [
+      "/images/market/sample-samsung-galaxy-a55.webp"
+     ],
+     "package": null,
+     "ageHours": 97
+    },
+    {
+     "brand": "Apple",
+     "model": "iPhone 13 Pro",
+     "title": "iPhone 13 Pro 256GB",
+     "condition": "ex-uk",
+     "storage": "256GB",
+     "color": "Silver",
+     "price": 64000,
+     "county": "Kisumu",
+     "constituency": "Kisumu Central",
+     "area": "Kisumu CBD",
+     "description": "Ex-UK in very good condition, no scratches on the screen. Battery health 88%.",
+     "photos": [
+      "/images/phones/iphone-13-pro-1.webp",
+      "/images/phones/iphone-13-pro-2.webp",
+      "/images/phones/iphone-13-pro-3.webp",
+      "/images/phones/iphone-13-pro-4.webp"
+     ],
+     "package": null,
+     "ageHours": 67
+    }
+   ]
+  },
+  {
+   "id": "demo-d09",
+   "name": "Mlima Phones",
+   "dealer": true,
+   "plan": "bronze",
+   "ageDays": 169,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 17 Pro Max",
+     "title": "iPhone 17 Pro Max 256GB",
+     "condition": "new",
+     "storage": "256GB",
+     "color": "White",
+     "price": 183000,
+     "county": "Nakuru",
+     "constituency": "Nakuru Town East",
+     "area": "Nakuru CBD",
+     "description": "Sealed box. Selling because I received two as gifts.",
+     "photos": [
+      "/images/phones/iphone-17-pro-max-1.webp",
+      "/images/phones/iphone-17-pro-max-2.webp",
+      "/images/phones/iphone-17-pro-max-3.webp"
+     ],
+     "package": null,
+     "ageHours": 459
+    },
+    {
+     "brand": "Samsung",
+     "model": "Galaxy Z Flip5",
+     "title": "Samsung Galaxy Z Flip5 256GB",
+     "condition": "used",
+     "storage": "256GB",
+     "color": "Blue",
+     "price": 63000,
+     "county": "Nairobi",
+     "constituency": "Embakasi East",
+     "area": "Utawala",
+     "description": "Used for about a year, always in a case. Screen protector on since day one.",
+     "photos": [
+      "/images/market/sample-samsung-galaxy-z-flip5.webp"
+     ],
+     "package": null,
+     "ageHours": 200
+    }
+   ]
+  },
+  {
+   "id": "demo-d10",
+   "name": "Upendo Mobiles",
+   "dealer": true,
+   "plan": "silver",
+   "ageDays": 295,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 14",
+     "title": "iPhone 14 128GB",
+     "condition": "used",
+     "storage": "128GB",
+     "color": "Graphite",
+     "price": 49500,
+     "county": "Mombasa",
+     "constituency": "Mvita",
+     "area": "Mombasa CBD",
+     "description": "Used for about a year, always in a case. Screen protector on since day one.",
+     "photos": [
+      "/images/phones/iphone-14-1.webp",
+      "/images/phones/iphone-14-2.webp",
+      "/images/phones/iphone-14-3.webp",
+      "/images/phones/iphone-14-4.webp"
+     ],
+     "package": null,
+     "ageHours": 197
+    },
+    {
+     "brand": "Apple",
+     "model": "iPhone 15",
+     "title": "iPhone 15 128GB",
+     "condition": "ex-uk",
+     "storage": "128GB",
+     "color": "White",
+     "price": 71000,
+     "county": "Kiambu",
+     "constituency": "Kiambaa",
+     "area": "Ruaka",
+     "description": "Clean Ex-UK unit, fully tested. Face ID and cameras all working.",
+     "photos": [
+      "/images/phones/iphone-15-1.webp",
+      "/images/phones/iphone-15-2.webp",
+      "/images/phones/iphone-15-3.webp",
+      "/images/phones/iphone-15-4.webp"
+     ],
+     "package": null,
+     "ageHours": 238
+    },
+    {
+     "brand": "Tecno",
+     "model": "Spark 30",
+     "title": "Tecno Spark 30 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Silver",
+     "price": 15000,
+     "county": "Kisumu",
+     "constituency": "Kisumu Central",
+     "area": "Kisumu CBD",
+     "description": "Brand new, sealed in the box. Comes with receipt.",
+     "photos": [
+      "/images/market/sample-tecno-spark-30.webp"
+     ],
+     "package": null,
+     "ageHours": 167
+    }
+   ]
+  },
+  {
+   "id": "demo-d11",
+   "name": "Zuri Gadgets",
+   "dealer": true,
+   "plan": "gold",
+   "ageDays": 32,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 13",
+     "title": "iPhone 13 128GB",
+     "condition": "used",
+     "storage": "128GB",
+     "color": "Natural Titanium",
+     "price": 45000,
+     "county": "Kisumu",
+     "constituency": "Kisumu Central",
+     "area": "Kisumu CBD",
+     "description": "Lightly used, everything works perfectly. Selling to upgrade.",
+     "photos": [
+      "/images/phones/iphone-13-1.webp",
+      "/images/phones/iphone-13-2.webp",
+      "/images/phones/iphone-13-3.webp",
+      "/images/phones/iphone-13-4.webp"
+     ],
+     "package": null,
+     "ageHours": 408
+    },
+    {
+     "brand": "Apple",
+     "model": "iPhone 13 Pro Max",
+     "title": "iPhone 13 Pro Max 256GB",
+     "condition": "ex-uk",
+     "storage": "256GB",
+     "color": "Gold",
+     "price": 69000,
+     "county": "Kiambu",
+     "constituency": "Thika Town",
+     "area": "Thika",
+     "description": "Ex-UK in very good condition, no scratches on the screen. Battery health 88%.",
+     "photos": [
+      "/images/phones/iphone-13-pro-max-1.webp",
+      "/images/phones/iphone-13-pro-max-2.webp",
+      "/images/phones/iphone-13-pro-max-3.webp",
+      "/images/phones/iphone-13-pro-max-4.webp"
+     ],
+     "package": null,
+     "ageHours": 119
+    }
+   ]
+  },
+  {
+   "id": "demo-d12",
+   "name": "Amani Phone Store",
+   "dealer": true,
+   "plan": "bronze",
+   "ageDays": 305,
+   "listings": [
+    {
+     "brand": "Infinix",
+     "model": "Hot 50",
+     "title": "Infinix Hot 50 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Silver",
+     "price": 16500,
+     "county": "Nairobi",
+     "constituency": "Kibra",
+     "area": "Kilimani",
+     "description": "New and unused, full box with charger cable.",
+     "photos": [
+      "/images/market/sample-infinix-hot-50.webp"
+     ],
+     "package": null,
+     "ageHours": 280
+    },
+    {
+     "brand": "Apple",
+     "model": "iPhone 12 Pro",
+     "title": "iPhone 12 Pro 128GB",
+     "condition": "used",
+     "storage": "128GB",
+     "color": "White",
+     "price": 43000,
+     "county": "Kisii",
+     "constituency": "Nyaribari Chache",
+     "area": "Kisii Town",
+     "description": "Good condition, small scratch on the back. Battery holds a full day.",
+     "photos": [
+      "/images/phones/iphone-12-pro-1.webp",
+      "/images/phones/iphone-12-pro-2.webp",
+      "/images/phones/iphone-12-pro-3.webp",
+      "/images/phones/iphone-12-pro-4.webp"
+     ],
+     "package": null,
+     "ageHours": 434
+    },
+    {
+     "brand": "Apple",
+     "model": "iPhone 15 Pro Max",
+     "title": "iPhone 15 Pro Max 256GB",
+     "condition": "ex-uk",
+     "storage": "256GB",
+     "color": "Blue",
+     "price": 98500,
+     "county": "Nairobi",
+     "constituency": "Langata",
+     "area": "Karen",
+     "description": "Ex-UK, minor marks on the frame. Comes with cable.",
+     "photos": [
+      "/images/phones/iphone-15-pro-max-1.webp",
+      "/images/phones/iphone-15-pro-max-2.webp",
+      "/images/phones/iphone-15-pro-max-3.webp",
+      "/images/phones/iphone-15-pro-max-4.webp"
+     ],
+     "package": null,
+     "ageHours": 406
+    }
+   ]
+  },
+  {
+   "id": "demo-d13",
+   "name": "Bahari Mobiles",
+   "dealer": true,
+   "plan": "silver",
+   "ageDays": 167,
+   "listings": [
+    {
+     "brand": "Xiaomi",
+     "model": "Redmi 13C",
+     "title": "Xiaomi Redmi 13C 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Black",
+     "price": 13500,
+     "county": "Nairobi",
+     "constituency": "Roysambu",
+     "area": "Roysambu",
+     "description": "New and unused, full box with charger cable.",
+     "photos": [
+      "/images/market/sample-xiaomi-redmi-13c.webp"
+     ],
+     "package": null,
+     "ageHours": 285
+    },
+    {
+     "brand": "Apple",
+     "model": "iPhone 16 Pro",
+     "title": "iPhone 16 Pro 256GB",
+     "condition": "ex-uk",
+     "storage": "256GB",
+     "color": "Silver",
+     "price": 111500,
+     "county": "Nyeri",
+     "constituency": "Nyeri Town",
+     "area": "Nyeri",
+     "description": "Clean Ex-UK unit, fully tested. Face ID and cameras all working.",
+     "photos": [
+      "/images/phones/iphone-16-pro-1.webp",
+      "/images/phones/iphone-16-pro-2.webp",
+      "/images/phones/iphone-16-pro-3.webp"
+     ],
+     "package": null,
+     "ageHours": 289
+    }
+   ]
+  },
+  {
+   "id": "demo-d14",
+   "name": "Kito Phones",
+   "dealer": true,
+   "plan": "bronze",
+   "ageDays": 84,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 12 Pro Max",
+     "title": "iPhone 12 Pro Max 256GB",
+     "condition": "damaged",
+     "storage": "256GB",
+     "color": "Graphite",
+     "price": 25000,
+     "county": "Kisii",
+     "constituency": "Nyaribari Chache",
+     "area": "Kisii Town",
+     "description": "Back glass cracked, everything else works. Selling as is.",
+     "photos": [
+      "/images/phones/iphone-12-pro-max-1.webp",
+      "/images/phones/iphone-12-pro-max-2.webp",
+      "/images/phones/iphone-12-pro-max-3.webp",
+      "/images/phones/iphone-12-pro-max-4.webp"
+     ],
+     "package": null,
+     "ageHours": 50
+    },
+    {
+     "brand": "Google",
+     "model": "Pixel 7",
+     "title": "Google Pixel 7 128GB",
+     "condition": "used",
+     "storage": "128GB",
+     "color": "Blue",
+     "price": 30500,
+     "county": "Mombasa",
+     "constituency": "Mvita",
+     "area": "Mombasa CBD",
+     "description": "Used for about a year, always in a case. Screen protector on since day one.",
+     "photos": [
+      "/images/market/sample-google-pixel-7.webp"
+     ],
+     "package": null,
+     "ageHours": 389
+    },
+    {
+     "brand": "Apple",
+     "model": "iPhone 17 Pro Max",
+     "title": "iPhone 17 Pro Max 256GB",
+     "condition": "new",
+     "storage": "256GB",
+     "color": "Silver",
+     "price": 183500,
+     "county": "Kajiado",
+     "constituency": "Kajiado North",
+     "area": "Ngong",
+     "description": "Sealed box. Selling because I received two as gifts.",
+     "photos": [
+      "/images/phones/iphone-17-pro-max-1.webp",
+      "/images/phones/iphone-17-pro-max-2.webp",
+      "/images/phones/iphone-17-pro-max-3.webp"
+     ],
+     "package": null,
+     "ageHours": 323
+    }
+   ]
+  },
+  {
+   "id": "demo-d15",
+   "name": "Jiko Tech",
+   "dealer": true,
+   "plan": "silver",
+   "ageDays": 240,
+   "listings": [
+    {
+     "brand": "Apple",
+     "model": "iPhone 16",
+     "title": "iPhone 16 128GB",
+     "condition": "new",
+     "storage": "128GB",
+     "color": "Blue",
+     "price": 103500,
+     "county": "Nakuru",
+     "constituency": "Nakuru Town East",
+     "area": "Nakuru CBD",
+     "description": "Brand new, sealed in the box. Comes with receipt.",
+     "photos": [
+      "/images/phones/iphone-16-1.webp",
+      "/images/phones/iphone-16-2.webp",
+      "/images/phones/iphone-16-3.webp",
+      "/images/phones/iphone-16-4.webp"
+     ],
+     "package": null,
+     "ageHours": 150
+    },
+    {
+     "brand": "Huawei",
+     "model": "Nova 12",
+     "title": "Huawei Nova 12 256GB",
+     "condition": "used",
+     "storage": "256GB",
+     "color": "Blue",
+     "price": 26500,
+     "county": "Machakos",
+     "constituency": "Mavoko",
+     "area": "Syokimau",
+     "description": "Used for about a year, always in a case. Screen protector on since day one.",
+     "photos": [
+      "/images/market/sample-huawei-nova-12.webp"
+     ],
+     "package": null,
+     "ageHours": 8
+    }
+   ]
+  }
+ ]
+}
