@@ -1,0 +1,41 @@
+{
+  "packages": {
+    "individual": {
+      "bronze": {"name": "Bronze", "price": 450, "days": 30, "rank": 1, "blurb": "One phone, live for 30 days"},
+      "silver": {"name": "Silver", "price": 750, "days": 30, "rank": 2, "blurb": "One phone, 30 days, shown above Bronze"},
+      "gold": {"name": "Gold", "price": 950, "days": null, "rank": 3, "blurb": "One phone, live until it sells, shown at the top"}
+    },
+    "dealer": {
+      "bronze": {"name": "Dealer Bronze", "price": 1500, "days": 30, "rank": 1, "limit": 10, "blurb": "Up to 10 phones live, monthly"},
+      "silver": {"name": "Dealer Silver", "price": 2750, "days": 30, "rank": 2, "limit": 30, "blurb": "Up to 30 phones live, monthly, shown above Bronze"},
+      "gold": {"name": "Dealer Gold", "price": 5000, "days": 30, "rank": 3, "limit": null, "blurb": "Unlimited phones, monthly, shown at the top"}
+    }
+  },
+  "conditions": {
+    "new": "Brand new (sealed)",
+    "ex-uk": "Ex-UK / Refurbished",
+    "used": "Used",
+    "damaged": "Damaged / for parts"
+  },
+  "storage": ["16GB", "32GB", "64GB", "128GB", "256GB", "512GB", "1TB", "2TB"],
+  "maxPhotos": 8,
+  "brands": {
+    "Apple": ["iPhone 18 Pro Max", "iPhone 18 Pro", "iPhone Duo", "iPhone 17 Pro Max", "iPhone 17 Pro", "iPhone 17 Air", "iPhone 17", "iPhone 17e", "iPhone 16 Pro Max", "iPhone 16 Pro", "iPhone 16 Plus", "iPhone 16", "iPhone 16e", "iPhone 15 Pro Max", "iPhone 15 Pro", "iPhone 15 Plus", "iPhone 15", "iPhone 14 Pro Max", "iPhone 14 Pro", "iPhone 14 Plus", "iPhone 14", "iPhone 13 Pro Max", "iPhone 13 Pro", "iPhone 13", "iPhone 13 mini", "iPhone 12 Pro Max", "iPhone 12 Pro", "iPhone 12", "iPhone 12 mini", "iPhone 11 Pro Max", "iPhone 11 Pro", "iPhone 11", "iPhone SE (2022)", "iPhone SE (2020)", "iPhone XS Max", "iPhone XS", "iPhone XR", "iPhone X", "iPhone 8 Plus", "iPhone 8", "iPhone 7 Plus", "iPhone 7", "iPhone 6s Plus", "iPhone 6s", "iPhone 6"],
+    "Samsung": ["Galaxy S25 Ultra", "Galaxy S25+", "Galaxy S25", "Galaxy S24 Ultra", "Galaxy S24+", "Galaxy S24", "Galaxy S24 FE", "Galaxy S23 Ultra", "Galaxy S23+", "Galaxy S23", "Galaxy S23 FE", "Galaxy S22 Ultra", "Galaxy S22", "Galaxy S21 Ultra", "Galaxy S21", "Galaxy Z Fold6", "Galaxy Z Flip6", "Galaxy Z Fold5", "Galaxy Z Flip5", "Galaxy Note 20 Ultra", "Galaxy Note 10+", "Galaxy A56", "Galaxy A55", "Galaxy A36", "Galaxy A35", "Galaxy A26", "Galaxy A25", "Galaxy A16", "Galaxy A15", "Galaxy A06", "Galaxy A05s", "Galaxy M35", "Galaxy M15"],
+    "Tecno": ["Camon 40 Pro", "Camon 40", "Camon 30 Premier", "Camon 30 Pro", "Camon 30", "Phantom V Fold2", "Phantom V Flip2", "Spark 40 Pro", "Spark 40", "Spark 30 Pro", "Spark 30", "Spark 20 Pro", "Spark 20", "Pova 7", "Pova 6 Pro", "Pova 6", "Pop 9", "Pop 8"],
+    "Infinix": ["Zero 40", "Zero 30", "Note 50 Pro", "Note 50", "Note 40 Pro", "Note 40", "Note 30", "Hot 60", "Hot 50 Pro", "Hot 50", "Hot 40 Pro", "Hot 40", "Smart 9", "Smart 8", "GT 30 Pro", "GT 20 Pro"],
+    "Xiaomi": ["Xiaomi 15 Ultra", "Xiaomi 15", "Xiaomi 14T Pro", "Xiaomi 14T", "Xiaomi 13T", "Redmi Note 14 Pro+", "Redmi Note 14 Pro", "Redmi Note 14", "Redmi Note 13 Pro+", "Redmi Note 13 Pro", "Redmi Note 13", "Redmi Note 12", "Redmi 15", "Redmi 14C", "Redmi 13", "Redmi 13C", "Redmi A5", "Redmi A3", "Poco X7 Pro", "Poco X7", "Poco X6 Pro", "Poco F7", "Poco F6"],
+    "Google": ["Pixel 10 Pro XL", "Pixel 10 Pro", "Pixel 10", "Pixel 9 Pro XL", "Pixel 9 Pro", "Pixel 9", "Pixel 9a", "Pixel 8 Pro", "Pixel 8", "Pixel 8a", "Pixel 7 Pro", "Pixel 7", "Pixel 7a", "Pixel 6 Pro", "Pixel 6"],
+    "Oppo": ["Find X8 Pro", "Find X8", "Reno 14 Pro", "Reno 14", "Reno 13", "Reno 12", "A5 Pro", "A3", "A3x", "A60", "A40"],
+    "Vivo": ["X200 Pro", "X200", "V50", "V40", "Y39", "Y29", "Y28", "Y19s", "Y18"],
+    "Huawei": ["Pura 80 Pro", "Pura 70 Pro", "Mate X6", "Mate 60 Pro", "Nova 13 Pro", "Nova 13", "Nova 12", "Nova Y72", "Nova Y62"],
+    "Honor": ["Magic7 Pro", "Magic6 Pro", "400 Pro", "400", "200 Pro", "200", "X9c", "X9b", "X8c", "X7c", "X6c"],
+    "OnePlus": ["OnePlus 13", "OnePlus 13R", "OnePlus 12", "OnePlus 12R", "OnePlus Nord 5", "OnePlus Nord 4", "OnePlus Nord CE4"],
+    "Realme": ["GT 7 Pro", "GT 6", "14 Pro+", "14 Pro", "13 Pro+", "C75", "C67", "C65", "C61", "Note 60"],
+    "Nokia": ["G42", "G22", "C32", "C22", "C12", "X30", "105", "110"],
+    "itel": ["S25 Ultra", "S24", "P55", "A70", "A80", "Vision 3"],
+    "Motorola": ["Edge 50 Pro", "Edge 50", "Moto G85", "Moto G75", "Moto G55", "Moto G35", "Moto G24", "Moto E14"],
+    "Sony": ["Xperia 1 VI", "Xperia 10 VI", "Xperia 1 V", "Xperia 5 V"],
+    "Other": []
+  }
+}

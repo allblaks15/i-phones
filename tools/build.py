@@ -39,6 +39,7 @@ ICONS = {
     "camera": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>',
     "battery": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="7" width="17" height="10" rx="2.5"/><path d="M22 10.5v3M6 10v4M9.5 10v4M13 10v4"/></svg>',
     "bag": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 12.1a1 1 0 0 1-1 .9H7.2a1 1 0 0 1-1-.9L5 8z"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/></svg>',
+    "chat": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.7A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg>',
     "store": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9h16M9.5 20v-5h5v5"/></svg>',
     "menu": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>',
     "close": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>',
@@ -65,7 +66,7 @@ def is_ipad(p): return p.get("category") == "ipad"
 def series_label(p): return "iPad" if is_ipad(p) else f"iPhone {p['series']} series"
 def img(p, i=1): return f"images/phones/{p['slug']}-{i}.webp"
 
-def layout(*, base, title, desc, path, body, schema, og_image, page_js="", robots="index,follow", og_type="website", extra_head=""):
+def layout(*, base, title, desc, path, body, schema, og_image, page_js="", robots="index,follow", og_type="website", extra_head="", scripts=()):
     canonical = f"{URL}/{path}"
     schema_tags = "\n".join(f'<script type="application/ld+json">{json.dumps(s, ensure_ascii=False)}</script>' for s in schema)
     site_js = json.dumps({k: SITE[k] for k in ("brand", "whatsapp", "siteUrl", "shopCity", "shopAddress", "shopContact", "phoneDisplay", "deliveryAreas")}, ensure_ascii=False)
@@ -108,6 +109,8 @@ def layout(*, base, title, desc, path, body, schema, og_image, page_js="", robot
 </main>
 {footer(base)}
 <a class="shop-fab" href="{'#shop' if base == '' else base + '#shop'}" aria-label="Shop iPhones"><span class="fab-icon">{ICONS['bag']}</span><span class="fab-text"><b>Shop iPhones</b><small>from {ksh(min(from_price(p) for p in PRODUCTS if in_stock(p)))}</small></span></a>
+<div class="chat" id="chat" data-wa="{SITE['whatsapp']}"><button class="chat-fab" type="button" aria-label="Chat with us" aria-expanded="false">{ICONS['chat']}<span>Chat with us</span><i class="chat-dot" hidden></i></button>
+<section class="chat-panel" hidden aria-label="Chat with i-phones"><header><div><b>Chat with i-phones</b><small>We reply here as soon as we can</small></div><button type="button" class="chat-x" aria-label="Close chat">{ICONS['close']}</button></header><div class="chat-body"></div></section></div>
 <div class="inv-modal" id="invoice" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Your invoice">
   <div class="modal-bg" data-inv-close></div>
   <div class="inv-wrap"><div class="inv-card"><button class="modal-close" data-inv-close aria-label="Close invoice">{ICONS['close']}</button><div class="inv"></div></div></div>
@@ -123,14 +126,14 @@ def layout(*, base, title, desc, path, body, schema, og_image, page_js="", robot
 </div>
 <script>window.SITE={site_js};window.PRODUCTS={products_js};{page_js}</script>
 <script src="{base}assets/app.js" defer></script>
+<script src="{base}assets/chat.js" defer></script>{''.join(f'<script src="{base}assets/{x}" defer></script>' for x in scripts)}
 </body>
 </html>
 """
 
 def header(base):
-    links = [("#shop" if base == "" else base + "#shop", "Shop"), (base + "iphone-18-pro-max/", "iPhone 18"),
-             (base + "iphone-17-pro-max/", "iPhone 17"), (base + "blog/", "Blog"), (base + "wallpapers/", "Wallpapers"),
-             ("#faq" if base == "" else base + "#faq", "FAQ")]
+    links = [("#shop" if base == "" else base + "#shop", "Shop iPhones"), (base + "market/", "Marketplace"), (base + "sell/", "Sell your phone"),
+             (base + "iphone-18-pro-max/", "iPhone 18"), (base + "blog/", "Blog"), ("#faq" if base == "" else base + "#faq", "FAQ")]
     nav = "".join(f'<a href="{h}">{t}</a>' for h, t in links)
     return f"""<header class="header"><div class="wrap">
 <a class="logo" href="{base or './'}" aria-label="{e(SITE['brand'])} home"><span class="logo-mark">{ICONS['apple']}</span><span>{e(SITE['brandShort'])}<small>Kenya</small></span></a>
@@ -158,7 +161,7 @@ def footer(base):
 <li><a href="{base}?series=18#shop">iPhone 18 series</a></li><li><a href="{base}?series=17#shop">iPhone 17 series</a></li>
 <li><a href="{base}?series=16#shop">iPhone 16 series</a></li><li><a href="{base}?series=15#shop">iPhone 15 series</a></li>
 <li><a href="{base}?series=14#shop">iPhone 14 series</a></li><li><a href="{base}?series=13#shop">iPhone 13 series</a></li><li><a href="{base}?series=12#shop">iPhone 12 series</a></li><li><a href="{base}?series=ipad#shop">iPads</a></li>
-<li><a href="{base}?budget=under-80k#shop">iPhones under 80K</a></li><li><a href="{base}blog/">iPhone guides &amp; blog</a></li><li><a href="{base}wallpapers/">Free iPhone wallpapers</a></li></ul></div>
+<li><a href="{base}?budget=under-80k#shop">iPhones under 80K</a></li><li><a href="{base}market/">Phone marketplace</a></li><li><a href="{base}sell/">Sell your phone</a></li><li><a href="{base}blog/">iPhone guides &amp; blog</a></li><li><a href="{base}market/terms/">Marketplace rules</a></li><li><a href="{base}privacy/">Privacy policy</a></li><li><a href="{base}wallpapers/">Free iPhone wallpapers</a></li></ul></div>
 <div><h4>We deliver to</h4><p class="areas">{e(', '.join(SITE['deliveryAreas']))} and all 47 counties.</p></div>
 </div>
 <div class="footer-bottom"><span>© {datetime.date.today().year} {e(SITE['brand'])}. Prices in Kenya Shillings, updated {e(SITE['pricesUpdated'])}. Prices may change, so confirm on WhatsApp.</span>
@@ -679,6 +682,103 @@ def fmt_date(iso):
     d = datetime.date.fromisoformat(iso)
     return f"{d.day} {d.strftime('%B %Y')}"
 
+# ---------- marketplace ----------
+MARKET = json.load(open(os.path.join(ROOT, "data", "market", "market.json"), encoding="utf-8"))
+MARKET["locations"] = json.load(open(os.path.join(ROOT, "data", "market", "locations.json"), encoding="utf-8"))
+
+def packages_table():
+    ind = MARKET["packages"]["individual"]; dl = MARKET["packages"]["dealer"]
+    rows = "".join(f'<div class="mk-pkg mk-{k}"><span class="mk-pkg-name">{e(p["name"])}</span><b>{ksh(p["price"])}</b><small>{e(p["blurb"])}</small></div>' for k, p in ind.items())
+    drows = "".join(f'<div class="mk-pkg mk-{k}"><span class="mk-pkg-name">{e(p["name"])}</span><b>{ksh(p["price"])}<em>/month</em></b><small>{e(p["blurb"])}</small></div>' for k, p in dl.items())
+    return f'<h3>Selling one phone</h3><div class="mk-pkgs">{rows}</div><h3>Dealer accounts</h3><div class="mk-pkgs">{drows}</div>'
+
+def build_market():
+    pay = SITE["payment"]
+    cfg = {k: MARKET[k] for k in ("packages", "conditions", "storage", "maxPhotos", "brands", "locations")}
+    cfg["paybill"] = {"number": pay["paybill"], "account": pay["account"], "name": pay["accountName"], "bank": pay["bank"]}
+    cfg["site"] = {"url": URL, "whatsapp": SITE["whatsapp"]}
+    cfg["waIcon"] = ICONS["wa"]
+    write("api/_lib/market.json", json.dumps(cfg, ensure_ascii=False, separators=(",", ":")))
+    demo = os.path.join(ROOT, "data", "market", "demo.json")
+    if os.path.exists(demo):
+        shutil.copyfile(demo, os.path.join(ROOT, "api", "_lib", "demo.json"))
+
+    # server-rendered listing page template (filled in by api/m.js)
+    tpl = layout(base="../../", path="m/%%ID%%/", title="%%TITLE%%", desc="%%DESC%%", body="%%BODY%%", schema=[], og_image="%%OGIMG%%",
+                 robots="%%ROBOTS%%", og_type="product", extra_head="%%SCHEMA%%", scripts=("market.js",))
+    write("api/_lib/listing.html", tpl.replace(f"{URL}/%%OGIMG%%", "%%OGIMG%%"))
+
+    new_cta = f"""<div class="mk-banner"><div><b>Want a brand-new iPhone?</b><span>Skip the search. Buy new from i-phones, with a shop in Nairobi.</span></div>
+<a class="btn btn-wa btn-sm" href="{wa('Hello i-phones, I would like to buy a brand-new iPhone.')}" target="_blank" rel="noopener">{ICONS['wa']}Get a new iPhone</a></div>"""
+    brands = "".join(f'<option value="{e(b)}">{e(b)}</option>' for b in MARKET["brands"])
+    conds = "".join(f'<option value="{k}">{e(v)}</option>' for k, v in MARKET["conditions"].items())
+    counties = "".join(f'<option value="{e(c)}">{e(c)}</option>' for c in MARKET["locations"])
+    body = f"""<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>›</span><span>Marketplace</span></nav>
+<section class="mk-hero"><div><span class="eyebrow">Phone marketplace · Kenya</span><h1>Buy and sell phones in Kenya.</h1>
+<p>New, used, Ex-UK and damaged phones from sellers and dealers across all 47 counties: iPhone, Samsung, Tecno, Infinix, Xiaomi and more. Chat to sellers directly on WhatsApp.</p></div>
+<a class="btn btn-dark" href="../sell/">Sell your phone</a></section>
+{new_cta}
+<form class="mk-filters" id="mk-filters" role="search">
+  <input name="q" type="search" placeholder="Search phones, e.g. iPhone 13" aria-label="Search">
+  <select name="brand" aria-label="Brand"><option value="">All brands</option>{brands}</select>
+  <select name="model" aria-label="Model"><option value="">All models</option></select>
+  <select name="condition" aria-label="Condition"><option value="">Any condition</option>{conds}</select>
+  <select name="county" aria-label="County"><option value="">All of Kenya</option>{counties}</select>
+  <input name="min" type="number" inputmode="numeric" placeholder="Min KSh" aria-label="Minimum price">
+  <input name="max" type="number" inputmode="numeric" placeholder="Max KSh" aria-label="Maximum price">
+  <select name="sort" aria-label="Sort"><option value="">Featured</option><option value="new">Newest</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select>
+</form>
+<div class="mk-grid" id="mk-grid" aria-live="polite"></div>
+<p class="mk-status" id="mk-status"></p>
+<div style="text-align:center"><button class="btn btn-ghost" id="mk-more" hidden>Show more phones</button></div>
+<section class="section prose" style="padding-top:40px"><h2>Sell your phone fast in Kenya</h2>
+<p>List your phone in a few minutes: choose the brand and model, add photos, set your price and location, and pick a package. Buyers contact you directly on WhatsApp. Dealers can list many phones with a monthly plan. <a href="../sell/"><b>Start selling</b></a> or read the <a href="terms/"><b>marketplace rules</b></a>.</p></section>
+</div>"""
+    write("market/index.html", layout(base="../", path="market/", title=f"Buy & Sell Phones in Kenya: New, Used & Ex-UK | {SITE['brand']}",
+          desc="Buy and sell new, used, Ex-UK and damaged phones in Kenya. iPhone, Samsung, Tecno, Infinix and more from sellers in all 47 counties. Contact sellers on WhatsApp.",
+          body=body, schema=[], og_image="images/og.jpg", scripts=("market.js",)))
+
+    sell_body = f"""<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>›</span><a href="../market/">Marketplace</a><span>›</span><span>Sell your phone</span></nav>
+<section class="mk-hero"><div><span class="eyebrow">Sell on i-phones</span><h1>Sell your phone in Kenya.</h1>
+<p>New, used, Ex-UK or damaged: any brand. Create an account with your email, add photos and your price, and buyers contact you on WhatsApp.</p></div></section>
+<div class="sell-layout"><div id="sell-app" class="sell-app"><p class="mk-status">Loading…</p></div>
+<aside class="sell-side"><h2>Listing packages</h2>{packages_table()}
+<p class="mk-small">Pay by M-Pesa Paybill <b>{e(pay['paybill'])}</b>, account <b>{e(pay['account'])}</b> ({e(pay['accountName'])}, {e(pay['bank'])}), or online by M-Pesa or card. Listings go live once payment is confirmed and our team approves them. See the <a href="../market/terms/">marketplace rules</a>.</p></aside></div>
+</div>"""
+    write("sell/index.html", layout(base="../", path="sell/", title=f"Sell Your Phone in Kenya: List iPhone, Samsung & More | {SITE['brand']}",
+          desc="Sell your new, used, Ex-UK or damaged phone in Kenya. Listings from KSh 450, dealer plans from KSh 1,500 a month. Buyers contact you on WhatsApp.",
+          body=sell_body, schema=[], og_image="images/og.jpg", scripts=("sell.js",)))
+
+    write("admin/index.html", layout(base="../", path="admin/", title=f"Dashboard | {SITE['brand']}", desc="Staff dashboard.", robots="noindex,nofollow",
+          body='<div class="wrap"><div id="admin-app" class="admin-app"><p class="mk-status">Loading…</p></div></div>', schema=[], og_image="images/og.jpg", scripts=("admin.js",)))
+
+    terms = f"""<div class="wrap prose" style="padding:30px 0 10px">
+<h1 class="blog-title">Marketplace rules</h1>
+<p class="mk-small">Last updated {fmt_date(TODAY)}. Please read these before you list or buy.</p>
+<h2>What you can sell</h2><ul><li>Phones you own and have the right to sell: new, used, Ex-UK or damaged, of any brand.</li><li>No stolen, blacklisted, counterfeit or iCloud/Google-locked phones. We remove such listings and may report them.</li><li>Describe the condition honestly, including faults, repairs and battery health where you know it.</li></ul>
+<h2>Listing packages and fees</h2>{packages_table()}
+<p>Individual Bronze and Silver listings stay live for 30 days. Gold listings stay live until you mark the phone as sold. Dealer plans are billed monthly, and the number of live phones depends on the plan. A listing goes live after payment is confirmed and our team approves it.</p>
+<p>Pay by M-Pesa Paybill {e(pay['paybill'])}, account {e(pay['account'])}, or online through Paystack. Fees pay for advertising and are not refunded once a listing is approved, except where the law requires.</p>
+<h2>Buying safely</h2><ul><li>i-phones does not hold money or handle phones for marketplace sales. You deal directly with the seller.</li><li>Never pay before you have seen and tested the phone. Meet in a busy public place.</li><li>Check the IMEI (dial *#06#) and confirm the phone is signed out of iCloud or Google.</li></ul>
+<h2>Removing listings</h2><p>We may refuse or remove any listing that breaks these rules. Report a problem using the chat button or WhatsApp {e(SITE['phoneDisplay'])}.</p>
+</div>"""
+    write("market/terms/index.html", layout(base="../../", path="market/terms/", title=f"Marketplace Rules & Listing Fees | {SITE['brand']}",
+          desc="Rules, listing packages and safety tips for buying and selling phones on the i-phones marketplace in Kenya.", body=terms, schema=[], og_image="images/og.jpg"))
+
+    privacy = f"""<div class="wrap prose" style="padding:30px 0 10px">
+<h1 class="blog-title">Privacy policy</h1>
+<p class="mk-small">Last updated {fmt_date(TODAY)}.</p>
+<p>{e(SITE['brand'])} ({e(SITE['siteUrl'].replace('https://', ''))}) runs an iPhone shop and a phone marketplace in Kenya. This policy explains what personal data we collect and how we use it, in line with the Kenya Data Protection Act, 2019.</p>
+<h2>What we collect</h2><ul><li><b>Orders:</b> the details you enter when ordering on WhatsApp, such as your name, phone number and delivery area.</li><li><b>Seller accounts:</b> your email address, name and WhatsApp number, your listings and photos, and records of your payments.</li><li><b>Chat:</b> the messages you send us and any name or contact you give.</li><li><b>Payments:</b> processed by Paystack or through M-Pesa. We store the payment reference and amount, not your card details.</li></ul>
+<h2>How we use it</h2><ul><li>To process orders, publish listings, verify payments and reply to messages.</li><li>To show your name and let buyers contact you on WhatsApp when you list a phone. Your phone number is shared only when a buyer taps "Contact seller".</li><li>To prevent fraud and enforce our marketplace rules.</li></ul>
+<h2>Sharing</h2><p>We share data only with the services that run the site (hosting, email, payments) and when the law requires it. We do not sell personal data.</p>
+<h2>Your rights</h2><p>You can ask to see, correct or delete your data. Contact us on WhatsApp {e(SITE['phoneDisplay'])} or through the chat button.</p>
+</div>"""
+    write("privacy/index.html", layout(base="../", path="privacy/", title=f"Privacy Policy | {SITE['brand']}", desc="How i-phones collects and uses personal data for orders, seller accounts, payments and chat.", body=privacy, schema=[], og_image="images/og.jpg"))
+    print("Built marketplace pages.")
+
 def build_wallpapers():
     base = "../"
     items = "".join(f"""<figure id="{s}" class="reveal" style="margin:0"><a class="wall" href="{base}images/wallpapers/{s}.jpg" download="{s}-iphone-wallpaper-i-phones.jpg" aria-label="Download {e(n)} wallpaper"><img src="{base}images/wallpapers/{s}-thumb.webp" alt="{e(n)} iPhone wallpaper HD" width="360" height="780" loading="lazy"><span class="wall-time">9:41</span><span class="wall-name">{e(n)}{ICONS['download']}</span></a></figure>""" for s, n in WALLS)
@@ -697,11 +797,11 @@ def build_wallpapers():
     write("wallpapers/index.html", out)
 
 def build_misc():
-    urls = [("", "1.0", "daily")] + [(f"{p['slug']}/", "0.9", "weekly") for p in PRODUCTS] + [("wallpapers/", "0.5", "monthly"), ("blog/", "0.8", "weekly")] + [(f"blog/{b['slug']}/", "0.7", "monthly") for b in POSTS]
+    urls = [("", "1.0", "daily")] + [(f"{p['slug']}/", "0.9", "weekly") for p in PRODUCTS] + [("wallpapers/", "0.5", "monthly"), ("blog/", "0.8", "weekly"), ("market/", "0.9", "daily"), ("sell/", "0.8", "weekly"), ("market/terms/", "0.3", "yearly"), ("privacy/", "0.3", "yearly")] + [(f"blog/{b['slug']}/", "0.7", "monthly") for b in POSTS]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
         f"  <url><loc>{URL}/{u}</loc><lastmod>{TODAY}</lastmod><changefreq>{f}</changefreq><priority>{pr}</priority></url>\n" for u, pr, f in urls) + "</urlset>\n"
     write("sitemap.xml", sm)
-    write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {URL}/sitemap.xml\n")
+    write("robots.txt", f"User-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /api/\n\nSitemap: {URL}/sitemap.xml\nSitemap: {URL}/market-sitemap.xml\n")
     write("manifest.webmanifest", json.dumps({"name": SITE["brand"], "short_name": SITE["brandShort"], "start_url": "./", "display": "standalone",
         "background_color": "#f5f5f3", "theme_color": "#0d0d0f", "icons": [{"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png"}]}, indent=1))
     body = f"""<div class="wrap" style="text-align:center;padding:100px 0"><span class="eyebrow">404</span><h1 style="font-size:52px;letter-spacing:-.04em;margin:12px 0">This page went missing.</h1>
@@ -761,6 +861,7 @@ if __name__ == "__main__":
     for p in PRODUCTS: build_product(p)
     build_wallpapers()
     build_blog()
+    build_market()
     build_misc()
     build_catalog()
     print(f"Built {len(PRODUCTS)} product pages + home, wallpapers, sitemap.")

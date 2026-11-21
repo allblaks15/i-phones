@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 
 Sitemap: https://i-phones.co.ke/sitemap.xml
+Sitemap: https://i-phones.co.ke/market-sitemap.xml
