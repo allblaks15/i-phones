@@ -161,7 +161,7 @@ def footer(base):
 <li><a href="{base}?series=18#shop">iPhone 18 series</a></li><li><a href="{base}?series=17#shop">iPhone 17 series</a></li>
 <li><a href="{base}?series=16#shop">iPhone 16 series</a></li><li><a href="{base}?series=15#shop">iPhone 15 series</a></li>
 <li><a href="{base}?series=14#shop">iPhone 14 series</a></li><li><a href="{base}?series=13#shop">iPhone 13 series</a></li><li><a href="{base}?series=12#shop">iPhone 12 series</a></li><li><a href="{base}?series=ipad#shop">iPads</a></li>
-<li><a href="{base}?budget=under-80k#shop">iPhones under 80K</a></li><li><a href="{base}market/">Phone marketplace</a></li><li><a href="{base}sell/">Sell your phone</a></li><li><a href="{base}blog/">iPhone guides &amp; blog</a></li><li><a href="{base}market/terms/">Marketplace rules</a></li><li><a href="{base}privacy/">Privacy policy</a></li><li><a href="{base}wallpapers/">Free iPhone wallpapers</a></li></ul></div>
+<li><a href="{base}?budget=under-80k#shop">iPhones under 80K</a></li><li><a href="{base}market/">Phone marketplace</a></li><li><a href="{base}sell/">Sell your phone</a></li><li><a href="{base}blog/">iPhone guides &amp; blog</a></li><li><a href="{base}market/terms/">Marketplace rules</a></li><li><a href="{base}privacy/">Privacy policy</a></li><li><a href="{base}credits/">Image credits</a></li><li><a href="{base}wallpapers/">Free iPhone wallpapers</a></li></ul></div>
 <div><h4>We deliver to</h4><p class="areas">{e(', '.join(SITE['deliveryAreas']))} and all 47 counties.</p></div>
 </div>
 <div class="footer-bottom"><span>© {datetime.date.today().year} {e(SITE['brand'])}. Prices in Kenya Shillings, updated {e(SITE['pricesUpdated'])}. Prices may change, so confirm on WhatsApp.</span>
@@ -795,6 +795,15 @@ def build_market():
 <h2>Your rights</h2><p>You can ask to see, correct or delete your data. Contact us on WhatsApp {e(SITE['phoneDisplay'])} or through the chat button.</p>
 </div>"""
     write("privacy/index.html", layout(base="../", path="privacy/", title=f"Privacy Policy | {SITE['brand']}", desc="How i-phones collects and uses personal data for orders, seller accounts, payments and chat.", body=privacy, schema=[], og_image="images/og.jpg"))
+    cr_path = os.path.join(ROOT, "data", "market", "photo_credits.json")
+    if os.path.exists(cr_path):
+        cr = json.load(open(cr_path, encoding="utf-8"))
+        rows = "".join(f'<tr><td><img src="../{e(k.lstrip("/"))}" alt="" width="64" height="64" loading="lazy" style="border-radius:10px"></td><td><b>{e(c["brand"])} {e(c["model"])}</b><br><a href="{e(c["source"])}" rel="nofollow noopener" target="_blank">{e(c["file"].replace("File:", ""))}</a></td><td>{e(c["author"])}</td><td>' + (f'<a href="{e(c["licenceUrl"])}" rel="nofollow noopener" target="_blank">{e(c["licence"])}</a>' if c["licenceUrl"] else e(c["licence"])) + "</td></tr>" for k, c in cr.items())
+        credits = f"""<div class="wrap prose" style="padding:30px 0 10px">
+<h1 class="blog-title">Image credits</h1>
+<p>Photos of non-Apple phones in our sample marketplace listings come from <a href="https://commons.wikimedia.org/" rel="nofollow noopener" target="_blank">Wikimedia Commons</a> and are used under the licences below. We resized them and added a background; our versions are shared under the same licence as each original. iPhone product images are Apple's.</p>
+<div class="table-wrap"><table class="price-table"><thead><tr><th></th><th>Photo</th><th>Author</th><th>Licence</th></tr></thead><tbody>{rows}</tbody></table></div></div>"""
+        write("credits/index.html", layout(base="../", path="credits/", title=f"Image Credits | {SITE['brand']}", desc="Credits and licences for photos used on the i-phones marketplace.", body=credits, schema=[], og_image="images/og.jpg", robots="noindex,follow"))
     print("Built marketplace pages.")
 
 def build_wallpapers():

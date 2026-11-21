@@ -1,7 +1,8 @@
 // Insert SAMPLE sellers into the marketplace database (same rules as the admin "Load sample data" button).
 // Every row is flagged is_demo: labelled "Sample", not contactable, kept out of Google,
 // and removed by "Remove all sample data" in the dashboard.
-//   node tools/seed_samples.js [count]      (reads DATABASE_URL from the environment or .env.local)
+//   node tools/seed_samples.js [count] [--replace]   (reads DATABASE_URL from the environment or .env.local)
+//   --replace removes existing SAMPLE rows first (is_demo = 1 only; real sellers are never touched)
 const fs = require("fs"), path = require("path"), crypto = require("crypto");
 const ROOT = path.join(__dirname, "..");
 if (!process.env.DATABASE_URL && fs.existsSync(path.join(ROOT, ".env.local"))) {
@@ -15,7 +16,12 @@ const DEMO = require(path.join(ROOT, "api", "_lib", "demo.json"));
 const DAY = 86400000, id = (n) => crypto.randomBytes(16).toString("base64url").replace(/[-_]/g, "").slice(0, n).toLowerCase();
 
 (async () => {
-  const want = Number(process.argv[2] || 15);
+  const want = Number(process.argv.find((a) => /^\d+$/.test(a)) || 15);
+  if (process.argv.includes("--replace")) {
+    await q("DELETE FROM listings WHERE is_demo = 1", []);
+    await q("DELETE FROM subscriptions WHERE user_id IN (SELECT id FROM users WHERE is_demo = 1)", []);
+    await q("DELETE FROM users WHERE is_demo = 1", []);
+  }
   const picks = DEMO.sellers.filter((s) => !s.dealer).slice(0, want);
   const t = Date.now();
   let added = 0, listings = 0;

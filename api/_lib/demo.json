@@ -46,9 +46,9 @@
      "county": "Kiambu",
      "constituency": "Ruiru",
      "area": "Ruiru",
-     "description": "New and unused, full box with charger cable.",
+     "description": "New and unused, full box with charger cable. Photo: Captainmorlypogi1959 / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-samsung-galaxy-a55.webp"
+      "/images/market/photo-samsung-galaxy-a55.webp"
      ],
      "package": "silver",
      "ageHours": 402
@@ -91,19 +91,19 @@
    "ageDays": 78,
    "listings": [
     {
-     "brand": "Samsung",
-     "model": "Galaxy A15",
-     "title": "Samsung Galaxy A15 128GB",
+     "brand": "Tecno",
+     "model": "Camon 40 Pro",
+     "title": "Tecno Camon 40 Pro 256GB",
      "condition": "new",
-     "storage": "128GB",
+     "storage": "256GB",
      "color": "Blue",
-     "price": 18500,
+     "price": 36000,
      "county": "Mombasa",
      "constituency": "Nyali",
      "area": "Nyali",
-     "description": "Brand new, sealed in the box. Comes with receipt.",
+     "description": "Brand new, sealed in the box. Comes with receipt. Photo: Meniirtjakarintan / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-samsung-galaxy-a15.webp"
+      "/images/market/photo-tecno-camon-40-pro.webp"
      ],
      "package": "bronze",
      "ageHours": 57
@@ -146,19 +146,19 @@
    "ageDays": 96,
    "listings": [
     {
-     "brand": "Samsung",
-     "model": "Galaxy S22 Ultra",
-     "title": "Samsung Galaxy S22 Ultra 256GB",
-     "condition": "damaged",
+     "brand": "Infinix",
+     "model": "Note 50 Pro",
+     "title": "Infinix Note 50 Pro 256GB",
+     "condition": "new",
      "storage": "256GB",
      "color": "Blue",
-     "price": 24000,
+     "price": 32500,
      "county": "Machakos",
      "constituency": "Mavoko",
      "area": "Syokimau",
-     "description": "Back glass cracked, everything else works. Selling as is.",
+     "description": "New and unused, full box with charger cable. Photo: Meniirtjakarintan / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-samsung-galaxy-s22-ultra.webp"
+      "/images/market/photo-infinix-note-50-pro.webp"
      ],
      "package": "gold",
      "ageHours": 476
@@ -200,19 +200,19 @@
    "ageDays": 41,
    "listings": [
     {
-     "brand": "Tecno",
-     "model": "Spark 30",
-     "title": "Tecno Spark 30 128GB",
-     "condition": "new",
+     "brand": "OnePlus",
+     "model": "OnePlus Nord",
+     "title": "OnePlus Nord 128GB",
+     "condition": "damaged",
      "storage": "128GB",
      "color": "Purple",
-     "price": 15500,
+     "price": 7500,
      "county": "Nairobi",
      "constituency": "Kibra",
      "area": "Kilimani",
-     "description": "New and unused, full box with charger cable.",
+     "description": "Back glass cracked, everything else works. Selling as is. Photo: Kent Madsen / Wikimedia Commons (CC BY-SA 2.0).",
      "photos": [
-      "/images/market/sample-tecno-spark-30.webp"
+      "/images/market/photo-oneplus-oneplus-nord.webp"
      ],
      "package": "silver",
      "ageHours": 235
@@ -255,19 +255,19 @@
    "ageDays": 154,
    "listings": [
     {
-     "brand": "Infinix",
-     "model": "Note 40 Pro",
-     "title": "Infinix Note 40 Pro 256GB",
-     "condition": "new",
-     "storage": "256GB",
+     "brand": "Tecno",
+     "model": "Spark 20",
+     "title": "Tecno Spark 20 128GB",
+     "condition": "used",
+     "storage": "128GB",
      "color": "Green",
-     "price": 31000,
+     "price": 12500,
      "county": "Kajiado",
      "constituency": "Kajiado North",
      "area": "Ngong",
-     "description": "Brand new, sealed in the box. Comes with receipt.",
+     "description": "Used for about a year, always in a case. Screen protector on since day one. Photo: HOY16 / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-infinix-note-40-pro.webp"
+      "/images/market/photo-tecno-spark-20.webp"
      ],
      "package": "bronze",
      "ageHours": 205
@@ -310,19 +310,19 @@
    "ageDays": 112,
    "listings": [
     {
-     "brand": "Infinix",
-     "model": "Zero 30",
-     "title": "Infinix Zero 30 256GB",
-     "condition": "used",
-     "storage": "256GB",
+     "brand": "Xiaomi",
+     "model": "Redmi 15C",
+     "title": "Xiaomi Redmi 15C 128GB",
+     "condition": "new",
+     "storage": "128GB",
      "color": "Silver",
-     "price": 24000,
+     "price": 14500,
      "county": "Meru",
      "constituency": "North Imenti",
      "area": "Meru Town",
-     "description": "Lightly used, everything works perfectly. Selling to upgrade.",
+     "description": "Sealed box. Selling because I received two as gifts. Photo: JGBlue1509 / Wikimedia Commons (CC0).",
      "photos": [
-      "/images/market/sample-infinix-zero-30.webp"
+      "/images/market/photo-xiaomi-redmi-15c.webp"
      ],
      "package": "gold",
      "ageHours": 133
@@ -365,19 +365,19 @@
    "ageDays": 176,
    "listings": [
     {
-     "brand": "Xiaomi",
-     "model": "Redmi 13C",
-     "title": "Xiaomi Redmi 13C 128GB",
-     "condition": "new",
-     "storage": "128GB",
+     "brand": "Oppo",
+     "model": "Reno 6 Pro+",
+     "title": "Oppo Reno 6 Pro+ 256GB",
+     "condition": "used",
+     "storage": "256GB",
      "color": "Black",
-     "price": 14000,
+     "price": 31500,
      "county": "Nairobi",
      "constituency": "Embakasi East",
      "area": "Utawala",
-     "description": "Sealed box. Selling because I received two as gifts.",
+     "description": "Lightly used, everything works perfectly. Selling to upgrade. Photo: 30000lightyears / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-xiaomi-redmi-13c.webp"
+      "/images/market/photo-oppo-reno-6-pro.webp"
      ],
      "package": "silver",
      "ageHours": 455
@@ -420,19 +420,19 @@
    "ageDays": 125,
    "listings": [
     {
-     "brand": "Google",
-     "model": "Pixel 8 Pro",
-     "title": "Google Pixel 8 Pro 128GB",
-     "condition": "ex-uk",
+     "brand": "Vivo",
+     "model": "Y31d",
+     "title": "Vivo Y31d 128GB",
+     "condition": "new",
      "storage": "128GB",
      "color": "Black",
-     "price": 65000,
+     "price": 21500,
      "county": "Kiambu",
      "constituency": "Ruiru",
      "area": "Ruiru",
-     "description": "Clean Ex-UK unit, fully tested. Face ID and cameras all working.",
+     "description": "New and unused, full box with charger cable. Photo: JGBlue1509 / Wikimedia Commons (CC0).",
      "photos": [
-      "/images/market/sample-google-pixel-8-pro.webp"
+      "/images/market/photo-vivo-y31d.webp"
      ],
      "package": "bronze",
      "ageHours": 346
@@ -475,19 +475,19 @@
    "ageDays": 56,
    "listings": [
     {
-     "brand": "Oppo",
-     "model": "Reno 12",
-     "title": "Oppo Reno 12 256GB",
-     "condition": "new",
-     "storage": "256GB",
+     "brand": "Google",
+     "model": "Pixel 7",
+     "title": "Google Pixel 7 128GB",
+     "condition": "used",
+     "storage": "128GB",
      "color": "Purple",
-     "price": 43000,
+     "price": 32500,
      "county": "Kakamega",
      "constituency": "Lurambi",
      "area": "Kakamega",
-     "description": "New and unused, full box with charger cable.",
+     "description": "Good condition, small scratch on the back. Battery holds a full day. Photo: PantheraLeo1359531 / Wikimedia Commons (CC BY 4.0).",
      "photos": [
-      "/images/market/sample-oppo-reno-12.webp"
+      "/images/market/photo-google-pixel-7.webp"
      ],
      "package": "gold",
      "ageHours": 222
@@ -530,19 +530,19 @@
    "ageDays": 56,
    "listings": [
     {
-     "brand": "Huawei",
-     "model": "Nova 12",
-     "title": "Huawei Nova 12 256GB",
+     "brand": "Nokia",
+     "model": "G11 Plus",
+     "title": "Nokia G11 Plus 64GB",
      "condition": "used",
-     "storage": "256GB",
+     "storage": "64GB",
      "color": "Silver",
-     "price": 28000,
+     "price": 9500,
      "county": "Meru",
      "constituency": "North Imenti",
      "area": "Meru Town",
-     "description": "Good condition, small scratch on the back. Battery holds a full day.",
+     "description": "Good condition, small scratch on the back. Battery holds a full day. Photo: NKingz06 / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-huawei-nova-12.webp"
+      "/images/market/photo-nokia-g11-plus.webp"
      ],
      "package": "silver",
      "ageHours": 185
@@ -584,19 +584,19 @@
    "ageDays": 79,
    "listings": [
     {
-     "brand": "OnePlus",
-     "model": "OnePlus 12",
-     "title": "OnePlus 12 256GB",
-     "condition": "ex-uk",
-     "storage": "256GB",
+     "brand": "Samsung",
+     "model": "Galaxy A55",
+     "title": "Samsung Galaxy A55 128GB",
+     "condition": "new",
+     "storage": "128GB",
      "color": "Purple",
-     "price": 79500,
+     "price": 47000,
      "county": "Mombasa",
      "constituency": "Mvita",
      "area": "Mombasa CBD",
-     "description": "Ex-UK in very good condition, no scratches on the screen. Battery health 88%.",
+     "description": "Brand new, sealed in the box. Comes with receipt. Photo: Captainmorlypogi1959 / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-oneplus-oneplus-12.webp"
+      "/images/market/photo-samsung-galaxy-a55.webp"
      ],
      "package": "bronze",
      "ageHours": 426
@@ -639,19 +639,19 @@
    "ageDays": 191,
    "listings": [
     {
-     "brand": "itel",
-     "model": "S24",
-     "title": "itel S24 128GB",
+     "brand": "Tecno",
+     "model": "Camon 40 Pro",
+     "title": "Tecno Camon 40 Pro 256GB",
      "condition": "new",
-     "storage": "128GB",
+     "storage": "256GB",
      "color": "Green",
-     "price": 12500,
+     "price": 38000,
      "county": "Nakuru",
      "constituency": "Nakuru Town East",
      "area": "Nakuru CBD",
-     "description": "Brand new, sealed in the box. Comes with receipt.",
+     "description": "Brand new, sealed in the box. Comes with receipt. Photo: Meniirtjakarintan / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-itel-s24.webp"
+      "/images/market/photo-tecno-camon-40-pro.webp"
      ],
      "package": "gold",
      "ageHours": 218
@@ -695,19 +695,19 @@
    "ageDays": 72,
    "listings": [
     {
-     "brand": "Tecno",
-     "model": "Spark 30",
-     "title": "Tecno Spark 30 128GB",
-     "condition": "new",
+     "brand": "OnePlus",
+     "model": "OnePlus Nord",
+     "title": "OnePlus Nord 128GB",
+     "condition": "damaged",
      "storage": "128GB",
      "color": "Cream",
-     "price": 16000,
+     "price": 8000,
      "county": "Nairobi",
      "constituency": "Roysambu",
      "area": "Roysambu",
-     "description": "Brand new, sealed in the box. Comes with receipt.",
+     "description": "Cracked screen but the phone works and touch responds. Good for screen replacement or parts. Photo: Kent Madsen / Wikimedia Commons (CC BY-SA 2.0).",
      "photos": [
-      "/images/market/sample-tecno-spark-30.webp"
+      "/images/market/photo-oneplus-oneplus-nord.webp"
      ],
      "package": null,
      "ageHours": 231
@@ -764,19 +764,19 @@
      "ageHours": 318
     },
     {
-     "brand": "Infinix",
-     "model": "Hot 50",
-     "title": "Infinix Hot 50 128GB",
-     "condition": "new",
-     "storage": "128GB",
+     "brand": "Samsung",
+     "model": "Galaxy S23 Ultra",
+     "title": "Samsung Galaxy S23 Ultra 512GB",
+     "condition": "used",
+     "storage": "512GB",
      "color": "Purple",
-     "price": 17500,
+     "price": 92000,
      "county": "Nairobi",
      "constituency": "Starehe",
      "area": "Nairobi CBD",
-     "description": "Sealed box. Selling because I received two as gifts.",
+     "description": "Lightly used, everything works perfectly. Selling to upgrade. Photo: PantheraLeo1359531 / Wikimedia Commons (CC BY 4.0).",
      "photos": [
-      "/images/market/sample-infinix-hot-50.webp"
+      "/images/market/photo-samsung-galaxy-s23-ultra.webp"
      ],
      "package": null,
      "ageHours": 388
@@ -833,19 +833,19 @@
      "ageHours": 354
     },
     {
-     "brand": "Xiaomi",
-     "model": "Redmi 13C",
-     "title": "Xiaomi Redmi 13C 128GB",
-     "condition": "new",
-     "storage": "128GB",
+     "brand": "Oppo",
+     "model": "Reno 6 Pro+",
+     "title": "Oppo Reno 6 Pro+ 256GB",
+     "condition": "used",
+     "storage": "256GB",
      "color": "Purple",
-     "price": 13000,
+     "price": 29000,
      "county": "Nairobi",
      "constituency": "Embakasi East",
      "area": "Utawala",
-     "description": "Sealed box. Selling because I received two as gifts.",
+     "description": "Lightly used, everything works perfectly. Selling to upgrade. Photo: 30000lightyears / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-xiaomi-redmi-13c.webp"
+      "/images/market/photo-oppo-reno-6-pro.webp"
      ],
      "package": null,
      "ageHours": 68
@@ -902,19 +902,19 @@
      "ageHours": 157
     },
     {
-     "brand": "Google",
-     "model": "Pixel 7",
-     "title": "Google Pixel 7 128GB",
-     "condition": "used",
-     "storage": "128GB",
+     "brand": "itel",
+     "model": "A50",
+     "title": "itel A50 64GB",
+     "condition": "new",
+     "storage": "64GB",
      "color": "Silver",
-     "price": 31500,
+     "price": 9500,
      "county": "Nakuru",
      "constituency": "Nakuru Town East",
      "area": "Nakuru CBD",
-     "description": "Used for about a year, always in a case. Screen protector on since day one.",
+     "description": "Brand new, sealed in the box. Comes with receipt. Photo: JGBlue1509 / Wikimedia Commons (CC0).",
      "photos": [
-      "/images/market/sample-google-pixel-7.webp"
+      "/images/market/photo-itel-a50.webp"
      ],
      "package": null,
      "ageHours": 267
@@ -979,19 +979,19 @@
    "ageDays": 296,
    "listings": [
     {
-     "brand": "Huawei",
-     "model": "Nova 12",
-     "title": "Huawei Nova 12 256GB",
+     "brand": "Nokia",
+     "model": "G11 Plus",
+     "title": "Nokia G11 Plus 64GB",
      "condition": "used",
-     "storage": "256GB",
+     "storage": "64GB",
      "color": "Purple",
-     "price": 27000,
+     "price": 9000,
      "county": "Nairobi",
      "constituency": "Westlands",
      "area": "Westlands",
-     "description": "Lightly used, everything works perfectly. Selling to upgrade.",
+     "description": "Lightly used, everything works perfectly. Selling to upgrade. Photo: NKingz06 / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-huawei-nova-12.webp"
+      "/images/market/photo-nokia-g11-plus.webp"
      ],
      "package": null,
      "ageHours": 156
@@ -1048,19 +1048,19 @@
    "ageDays": 47,
    "listings": [
     {
-     "brand": "Nokia",
-     "model": "G42",
-     "title": "Nokia G42 128GB",
-     "condition": "used",
-     "storage": "128GB",
+     "brand": "Samsung",
+     "model": "Galaxy S23",
+     "title": "Samsung Galaxy S23 256GB",
+     "condition": "ex-uk",
+     "storage": "256GB",
      "color": "Silver",
-     "price": 11000,
+     "price": 58500,
      "county": "Nairobi",
      "constituency": "Roysambu",
      "area": "Roysambu",
-     "description": "Good condition, small scratch on the back. Battery holds a full day.",
+     "description": "Clean Ex-UK unit, fully tested. Face ID and cameras all working. Photo: Hajoon0102 / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-nokia-g42.webp"
+      "/images/market/photo-samsung-galaxy-s23.webp"
      ],
      "package": null,
      "ageHours": 307
@@ -1116,19 +1116,19 @@
      "ageHours": 332
     },
     {
-     "brand": "Samsung",
-     "model": "Galaxy A55",
-     "title": "Samsung Galaxy A55 128GB",
+     "brand": "Infinix",
+     "model": "Note 50 Pro",
+     "title": "Infinix Note 50 Pro 256GB",
      "condition": "new",
-     "storage": "128GB",
+     "storage": "256GB",
      "color": "Black",
-     "price": 46000,
+     "price": 33000,
      "county": "Uasin Gishu",
      "constituency": "Kapseret",
      "area": "Eldoret",
-     "description": "Sealed box. Selling because I received two as gifts.",
+     "description": "Sealed box. Selling because I received two as gifts. Photo: Meniirtjakarintan / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-samsung-galaxy-a55.webp"
+      "/images/market/photo-infinix-note-50-pro.webp"
      ],
      "package": null,
      "ageHours": 97
@@ -1184,19 +1184,19 @@
      "ageHours": 459
     },
     {
-     "brand": "Samsung",
-     "model": "Galaxy Z Flip5",
-     "title": "Samsung Galaxy Z Flip5 256GB",
-     "condition": "used",
-     "storage": "256GB",
+     "brand": "Google",
+     "model": "Pixel 8 Pro",
+     "title": "Google Pixel 8 Pro 128GB",
+     "condition": "ex-uk",
+     "storage": "128GB",
      "color": "Blue",
-     "price": 63000,
+     "price": 65000,
      "county": "Nairobi",
      "constituency": "Embakasi East",
      "area": "Utawala",
-     "description": "Used for about a year, always in a case. Screen protector on since day one.",
+     "description": "Ex-UK in very good condition, no scratches on the screen. Battery health 88%. Photo: SimonWaldherr / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-samsung-galaxy-z-flip5.webp"
+      "/images/market/photo-google-pixel-8-pro.webp"
      ],
      "package": null,
      "ageHours": 200
@@ -1253,19 +1253,19 @@
      "ageHours": 238
     },
     {
-     "brand": "Tecno",
-     "model": "Spark 30",
-     "title": "Tecno Spark 30 128GB",
+     "brand": "Xiaomi",
+     "model": "Redmi 15C",
+     "title": "Xiaomi Redmi 15C 128GB",
      "condition": "new",
      "storage": "128GB",
      "color": "Silver",
-     "price": 15000,
+     "price": 14000,
      "county": "Kisumu",
      "constituency": "Kisumu Central",
      "area": "Kisumu CBD",
-     "description": "Brand new, sealed in the box. Comes with receipt.",
+     "description": "Brand new, sealed in the box. Comes with receipt. Photo: JGBlue1509 / Wikimedia Commons (CC0).",
      "photos": [
-      "/images/market/sample-tecno-spark-30.webp"
+      "/images/market/photo-xiaomi-redmi-15c.webp"
      ],
      "package": null,
      "ageHours": 167
@@ -1331,19 +1331,19 @@
    "ageDays": 305,
    "listings": [
     {
-     "brand": "Infinix",
-     "model": "Hot 50",
-     "title": "Infinix Hot 50 128GB",
+     "brand": "Huawei",
+     "model": "Nova 15",
+     "title": "Huawei Nova 15 256GB",
      "condition": "new",
-     "storage": "128GB",
+     "storage": "256GB",
      "color": "Silver",
-     "price": 16500,
+     "price": 42500,
      "county": "Nairobi",
      "constituency": "Kibra",
      "area": "Kilimani",
-     "description": "New and unused, full box with charger cable.",
+     "description": "New and unused, full box with charger cable. Photo: 茅野ふたば / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-infinix-hot-50.webp"
+      "/images/market/photo-huawei-nova-15.webp"
      ],
      "package": null,
      "ageHours": 280
@@ -1400,19 +1400,19 @@
    "ageDays": 167,
    "listings": [
     {
-     "brand": "Xiaomi",
-     "model": "Redmi 13C",
-     "title": "Xiaomi Redmi 13C 128GB",
-     "condition": "new",
+     "brand": "Google",
+     "model": "Pixel 7",
+     "title": "Google Pixel 7 128GB",
+     "condition": "used",
      "storage": "128GB",
      "color": "Black",
-     "price": 13500,
+     "price": 32500,
      "county": "Nairobi",
      "constituency": "Roysambu",
      "area": "Roysambu",
-     "description": "New and unused, full box with charger cable.",
+     "description": "Good condition, small scratch on the back. Battery holds a full day. Photo: PantheraLeo1359531 / Wikimedia Commons (CC BY 4.0).",
      "photos": [
-      "/images/market/sample-xiaomi-redmi-13c.webp"
+      "/images/market/photo-google-pixel-7.webp"
      ],
      "package": null,
      "ageHours": 285
@@ -1468,19 +1468,19 @@
      "ageHours": 50
     },
     {
-     "brand": "Google",
-     "model": "Pixel 7",
-     "title": "Google Pixel 7 128GB",
+     "brand": "Samsung",
+     "model": "Galaxy S24 Ultra",
+     "title": "Samsung Galaxy S24 Ultra 256GB",
      "condition": "used",
-     "storage": "128GB",
+     "storage": "256GB",
      "color": "Blue",
-     "price": 30500,
+     "price": 107500,
      "county": "Mombasa",
      "constituency": "Mvita",
      "area": "Mombasa CBD",
-     "description": "Used for about a year, always in a case. Screen protector on since day one.",
+     "description": "Used for about a year, always in a case. Screen protector on since day one. Photo: Dinkun Chen / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-google-pixel-7.webp"
+      "/images/market/photo-samsung-galaxy-s24-ultra.webp"
      ],
      "package": null,
      "ageHours": 389
@@ -1536,19 +1536,19 @@
      "ageHours": 150
     },
     {
-     "brand": "Huawei",
-     "model": "Nova 12",
-     "title": "Huawei Nova 12 256GB",
-     "condition": "used",
+     "brand": "Tecno",
+     "model": "Camon 40 Pro",
+     "title": "Tecno Camon 40 Pro 256GB",
+     "condition": "new",
      "storage": "256GB",
      "color": "Blue",
-     "price": 26500,
+     "price": 37000,
      "county": "Machakos",
      "constituency": "Mavoko",
      "area": "Syokimau",
-     "description": "Used for about a year, always in a case. Screen protector on since day one.",
+     "description": "Brand new, sealed in the box. Comes with receipt. Photo: Meniirtjakarintan / Wikimedia Commons (CC BY-SA 4.0).",
      "photos": [
-      "/images/market/sample-huawei-nova-12.webp"
+      "/images/market/photo-tecno-camon-40-pro.webp"
      ],
      "package": null,
      "ageHours": 8
