@@ -35,6 +35,10 @@
   ],
   "rewrites": [
     {
+      "source": "/api/m/:path*/",
+      "destination": "/api/m?path=:path*"
+    },
+    {
       "source": "/api/m/:path*",
       "destination": "/api/m?path=:path*"
     },
