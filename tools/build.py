@@ -132,8 +132,8 @@ def layout(*, base, title, desc, path, body, schema, og_image, page_js="", robot
 """
 
 def header(base):
-    links = [("#shop" if base == "" else base + "#shop", "Shop iPhones"), (base + "market/", "Marketplace"), (base + "sell/", "Sell your phone"),
-             (base + "iphone-18-pro-max/", "iPhone 18"), (base + "blog/", "Blog"), ("#faq" if base == "" else base + "#faq", "FAQ")]
+    links = [("#shop" if base == "" else base + "#shop", "Shop"), (base + "market/", "Market"), (base + "sell/", "Sell your phone"),
+             (base + "blog/", "Blog"), ("#faq" if base == "" else base + "#faq", "FAQ")]
     nav = "".join(f'<a href="{h}">{t}</a>' for h, t in links)
     return f"""<header class="header"><div class="wrap">
 <a class="logo" href="{base or './'}" aria-label="{e(SITE['brand'])} home"><span class="logo-mark">{ICONS['apple']}</span><span>{e(SITE['brandShort'])}<small>Kenya</small></span></a>
@@ -269,15 +269,19 @@ Ask for {e(SITE['shopContact'])}"""
     body = f"""
 <section class="hero"><div class="wrap">
   <div>
-    <span class="eyebrow">iPhone 11 · 12 · 13 · 14 · 15 · 16 · 17 · 18</span>
-    <h1>iPhone prices <br>in <span class="serif">Kenya.</span></h1>
-    <p class="lead">Latest prices in Kenya Shillings for the iPhone 12, 13, 14, 15, 16, 17 and the new iPhone 18, plus iPads. Brand new and Ex-UK. Visit our Nairobi shop to pick and pay, or order on WhatsApp in under a minute.</p>
-    <div class="hero-price"><span class="from">iPhones from</span><strong>{ksh(lowest)}</strong></div>
-    <div class="hero-ctas">
-      <a class="btn btn-wa" href="#shop">{ICONS['wa']}Shop &amp; order</a>
-      <a class="btn btn-ghost" href="{hero['slug']}/">Explore iPhone 18 Pro Max</a>
+    <span class="eyebrow">iPhone prices in Kenya · Phone marketplace</span>
+    <h1>Buy &amp; sell <br>your <span class="serif">phone.</span></h1>
+    <p class="lead">Shop genuine brand-new and Ex-UK iPhones, from the iPhone 12 to the new iPhone 18, at our Nairobi shop. Or make money selling your phone: list any brand and buyers across Kenya contact you on WhatsApp.</p>
+    <div class="hero-split">
+      <a class="hero-path" href="#shop"><small>Buy</small><b>iPhones from {ksh(lowest)}</b><span>New &amp; Ex-UK, pick &amp; pay at our shop</span></a>
+      <a class="hero-path sell" href="sell/"><small>Sell</small><b>List your phone from {ksh(min(p["price"] for p in MARKET["packages"]["individual"].values()))}</b><span>Any brand, any condition</span></a>
     </div>
-    <div class="hero-stats"><div><b>{len(PRODUCTS)}</b>iPhone &amp; iPad models</div><div><b>Same-day</b>Nairobi delivery</div><div><b>47</b>counties served</div></div>
+    <div class="hero-ctas">
+      <a class="btn btn-wa" href="#shop">{ICONS['wa']}Shop iPhones</a>
+      <a class="btn btn-dark" href="sell/">Sell your phone</a>
+      <a class="btn btn-ghost" href="market/">Browse marketplace</a>
+    </div>
+    <div class="hero-stats"><div><b>{len(PRODUCTS)}</b>iPhone &amp; iPad models</div><div><b>Any brand</b>to sell</div><div><b>47</b>counties</div></div>
   </div>
   <a class="hero-visual" href="{hero['slug']}/" aria-label="iPhone 18 Pro Max"><img src="{img(hero)}" alt="iPhone 18 Pro Max in Burgundy, price in Kenya" width="800" height="800" fetchpriority="high"></a>
 </div></section>
@@ -298,6 +302,20 @@ Ask for {e(SITE['shopContact'])}"""
   </div>
   <div class="grid" id="grid">{cards}<p class="empty" id="empty" hidden>No iPhones match those filters. <button class="link-arrow" data-filter="series:all">Show all →</button></p></div>
 </div></section>
+
+
+<section class="section" id="market" style="padding-top:0"><div class="wrap">
+  <div class="section-head"><div><span class="eyebrow">Phone marketplace</span><h2>Phones from sellers across Kenya.</h2><p>Used, Ex-UK, new and damaged phones of every brand: iPhone, Samsung, Tecno, Infinix and more. Chat to sellers directly on WhatsApp.</p></div><a class="link-arrow" href="market/">Browse all phones →</a></div>
+  <div class="mk-grid" id="mk-latest"></div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="sell-band reveal">
+  <div class="sell-band-copy"><span class="eyebrow">Sell on i-phones</span><h2>Make money selling your phone.</h2>
+  <p>Turn the phone in your drawer into cash. Any brand, any condition, anywhere in Kenya.</p>
+  <ol class="sell-band-steps"><li><b>Add your phone</b>Brand, model, photos, price and your town.</li><li><b>Choose a package &amp; pay</b>From {ksh(min(p["price"] for p in MARKET["packages"]["individual"].values()))}, or a dealer plan from {ksh(min(p["price"] for p in MARKET["packages"]["dealer"].values()))}/month. M-Pesa or card.</li><li><b>Buyers WhatsApp you</b>You agree the deal and get paid directly.</li></ol>
+  <div class="hero-ctas"><a class="btn btn-wa" href="sell/">Start selling</a><a class="btn btn-ghost btn-light" href="market/terms/">Packages &amp; rules</a></div></div>
+  <div class="sell-band-pkgs">{packages_table()}</div>
+</div></div></section>
 
 <section class="section" style="padding-top:0"><div class="wrap">
   <div class="section-head"><div><span class="eyebrow">Shop by budget</span><h2>An iPhone for every budget.</h2></div></div>
@@ -353,7 +371,7 @@ Ask for {e(SITE['shopContact'])}"""
     out = layout(base=base, path="",
                  title=f"iPhone Prices in Kenya {datetime.date.today().year}: iPhone 11 to 18 | {SITE['brand']}",
                  desc=f"iPhone prices in Kenya for iPhone 11, 12, 13, 14, 15, 16, 17 and 18. Brand new and Ex-UK from {ksh(lowest)}. Visit our Nairobi shop or WhatsApp {SITE['phoneDisplay']}.",
-                 body=body, schema=schema, og_image="images/og.jpg")
+                 body=body, schema=schema, og_image="images/og.jpg", scripts=("market.js",))
     write("index.html", out)
 
 def cta_band(base, p):

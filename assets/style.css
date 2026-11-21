@@ -655,3 +655,31 @@ input,select,textarea{font:inherit;color:inherit}
 .btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
 .sell-head a.btn,.adm-head a.btn{color:#fff}
 body:has(#admin-app) .chat,body:has(#admin-app) .shop-fab{display:none}
+
+/* home: buy & sell */
+.hero-split{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 22px;max-width:560px}
+.hero-path{display:grid;gap:2px;padding:14px 16px;border-radius:18px;background:var(--surface);border:1px solid var(--line);transition:transform .2s,box-shadow .2s}
+.hero-path:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.hero-path small{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--wa-dark)}
+.hero-path.sell small{color:var(--gold)}
+.hero-path b{font-size:17px;letter-spacing:-.02em;line-height:1.2}
+.hero-path span{font-size:12.5px;color:var(--muted)}
+.sell-band{background:linear-gradient(125deg,#0d0d0f 0%,#1d1a16 55%,#3a2c1b 100%);color:#fff;border-radius:32px;padding:44px;display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center}
+.sell-band h2{font-size:clamp(30px,4vw,46px);letter-spacing:-.035em;line-height:1.05;margin:10px 0 10px}
+.sell-band p{color:#cfc9bf;margin:0 0 18px}
+.sell-band .eyebrow{color:#d6b07a}
+.sell-band-steps{list-style:none;counter-reset:s;padding:0;margin:0 0 22px;display:grid;gap:12px}
+.sell-band-steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;column-gap:12px;color:#cfc9bf;font-size:14.5px}
+.sell-band-steps li::before{content:counter(s);grid-row:1/3;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#d6b07a;color:#14110d;font-weight:800}
+.sell-band-steps b{color:#fff;font-size:15.5px}
+.sell-band-pkgs h3{color:#bdb6ab;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 6px}
+.sell-band-pkgs .mk-pkg{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:#fff}
+.sell-band-pkgs .mk-pkg small,.sell-band-pkgs .mk-pkg em{color:#bdb6ab}
+.sell-band-pkgs .mk-pkg.mk-gold{background:rgba(214,176,122,.16);border-color:#d6b07a}
+.sell-steps{display:flex;gap:6px;list-style:none;padding:0;margin:0 0 14px;counter-reset:st;flex-wrap:wrap}
+.sell-steps li{counter-increment:st;font-size:12.5px;font-weight:700;color:var(--muted);background:#f1f0ec;border-radius:999px;padding:5px 12px}
+.sell-steps li::before{content:counter(st) ". "}
+.sell-steps li[aria-current="step"]{background:var(--ink);color:#fff}
+.sell-steps li.done{background:#e3f5ea;color:var(--wa-dark)}
+@media (max-width:860px){.sell-band{grid-template-columns:1fr;padding:30px 22px}.hero-split{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.hero-split{grid-template-columns:1fr}}

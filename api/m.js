@@ -288,9 +288,9 @@ on("POST", "listings", async ({ user, body }) => {
       else fail(400, `Your ${plan.name} plan allows ${plan.limit} live phones. Mark one as sold or upgrade your plan.`);
     }
   } else {
-    pkg = clean(body.package, 10);
-    if (!pkgFor("individual", pkg)) fail(400, "Choose a listing package.");
-    rank = pkgFor("individual", pkg).rank;
+    // individuals pick their package on the payment step; accept one here if sent
+    pkg = pkgFor("individual", clean(body.package, 10)) ? clean(body.package, 10) : null;
+    rank = pkg ? pkgFor("individual", pkg).rank : 1;
   }
   const lid = id(8);
   await q(`INSERT INTO listings (id, user_id, brand, model, title, condition, storage, color, price, county, constituency, area, description, photos, imei, package, rank, status, expires_at, approved_at, created_at, updated_at)
@@ -352,8 +352,11 @@ on("POST", "pay/start", async ({ user, body }) => {
     kind = "dealer"; target = sub.id; amount = plan.price;
   } else {
     const l = await one("SELECT * FROM listings WHERE id = $1 AND user_id = $2", [clean(body.listingId, 20), user.id]);
+    if (l && ["expired", "rejected"].includes(l.status)) { await q("UPDATE listings SET status = 'pending_payment', updated_at = $1 WHERE id = $2", [now(), l.id]); l.status = "pending_payment"; }
     if (!l || l.status !== "pending_payment") fail(400, "This listing does not need payment.");
-    const plan = pkgFor("individual", l.package); if (!plan) fail(400, "Choose a listing package first.");
+    const chosen = clean(body.package, 10);
+    if (pkgFor("individual", chosen)) { await q("UPDATE listings SET package = $1, rank = $2 WHERE id = $3", [chosen, pkgFor("individual", chosen).rank, l.id]); l.package = chosen; }
+    const plan = pkgFor("individual", l.package); if (!plan) fail(400, "Choose a listing package.");
     kind = "listing"; target = l.id; pkgKey = l.package; amount = plan.price;
   }
   if (body.method === "mpesa") {

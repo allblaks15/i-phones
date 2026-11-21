@@ -62,6 +62,14 @@
     load(true);
   }
 
+  /* ---------- homepage: latest marketplace phones ---------- */
+  var latest = $("#mk-latest");
+  if (latest) {
+    api("listings/?per=8").then(function (r) {
+      latest.innerHTML = r.listings.length ? r.listings.map(card).join("") : '<div class="mk-empty"><b>Be the first to sell your phone here.</b><a class="btn btn-dark btn-sm" href="' + BASE + 'sell/">Sell your phone</a></div>';
+    }).catch(function (e) { if (e.status === 503) soon(latest); else latest.innerHTML = ""; });
+  }
+
   /* ---------- listing page ---------- */
   var main = $("#gallery-main");
   if (main && $(".mk-photo")) {

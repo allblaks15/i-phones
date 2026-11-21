@@ -93,11 +93,11 @@
   });
 
   function viewForm(existing) {
-    var l = existing || {}, dealer = me.user.accountType === "dealer";
+    var l = existing || {}, dealer = me.user.accountType === "dealer", live = dealer && me.subscription;
     state.photos = (l.photos || []).slice();
     var brands = Object.keys(cfg.brands), conds = Object.keys(cfg.conditions).map(function (k) { return [k, cfg.conditions[k]]; });
-    var pk = cfg.packages.individual;
-    app.innerHTML = '<div class="sell-card wide"><h2>' + (existing ? "Edit your listing" : "Post a phone for sale") + '</h2><form id="f-list" novalidate>' +
+    app.innerHTML = '<div class="sell-card wide">' + (existing ? "" : '<ol class="sell-steps"><li aria-current="step">Add your phone</li><li>' + (dealer ? "Dealer plan" : "Choose package") + "</li><li>Pay</li></ol>") +
+      "<h2>" + (existing ? "Edit your listing" : "Add your phone") + '</h2><form id="f-list" novalidate>' +
       '<div class="grid2"><label class="field"><span>Brand</span><select name="brand" required>' + options(brands, l.brand, "Choose brand") + "</select></label>" +
       '<label class="field"><span>Model</span><select name="model" required></select></label></div>' +
       '<label class="field" id="other-wrap" hidden><span>Type the model</span><input name="model_other" maxlength="60" placeholder="e.g. Galaxy S10"></label>' +
@@ -111,8 +111,7 @@
       '<label class="field"><span>Description</span><textarea name="description" rows="4" maxlength="2000" placeholder="Condition, battery health, what is in the box, any faults or repairs">' + esc(l.description || "") + "</textarea></label>" +
       '<label class="field"><span>IMEI <small>(optional, private: helps us check for stolen phones)</small></span><input name="imei" inputmode="numeric" maxlength="17" value="' + esc(l.imei || "") + '"></label>' +
       '<div class="field"><span>Photos <small>(up to ' + cfg.maxPhotos + '; the first is the cover)</small></span><div class="sell-photos" id="photos"></div><label class="btn btn-ghost btn-sm sell-add"><input type="file" accept="image/*" multiple hidden id="file">+ Add photos</label><small class="sell-upl"></small></div>' +
-      (!existing && !dealer ? '<div class="field"><span>Package</span><div class="sell-pkgs">' + Object.keys(pk).map(function (k, i) { return '<label class="option sell-radio"><input type="radio" name="package" value="' + k + '"' + (i === 2 ? " checked" : "") + "><b>" + esc(pk[k].name) + " · " + ksh(pk[k].price) + "</b><small>" + esc(pk[k].blurb) + "</small></label>"; }).join("") + "</div></div>" : "") +
-      '<button class="btn btn-dark btn-block" type="submit">' + (existing ? "Save changes" : dealer ? "Post phone" : "Continue to payment") + '</button><p class="sell-msg"></p></form><button class="link-arrow" type="button" onclick="location.hash=\'\'">← Back</button></div>';
+      '<button class="btn btn-dark btn-block" type="submit">' + (existing ? "Save changes" : live ? "Post phone" : dealer ? "Next: choose a dealer plan →" : "Next: choose a package →") + '</button><p class="sell-msg"></p></form><button class="link-arrow" type="button" onclick="location.hash=\'\'">← Back</button></div>';
     var f = $("#f-list");
     function models() {
       var list = cfg.brands[f.brand.value] || [];
@@ -132,10 +131,10 @@
       e.preventDefault();
       if (state.uploading) { msg("Wait for your photos to finish uploading."); return; }
       var data = { brand: f.brand.value, model: f.model.value, model_other: f.model_other.value, condition: f.condition.value, storage: f.storage.value, price: f.price.value, color: f.color.value,
-        county: f.county.value, constituency: f.constituency.value, area: f.area.value, description: f.description.value, imei: f.imei.value, photos: state.photos, package: f.package ? f.package.value : "" };
+        county: f.county.value, constituency: f.constituency.value, area: f.area.value, description: f.description.value, imei: f.imei.value, photos: state.photos };
       var b = $('button[type="submit"]', f); busy(b, true, "Saving…");
       (existing ? api("listings/" + existing.id + "/update/", data) : api("listings/", data))
-        .then(function (r) { if (existing || r.status === "active") { go(""); route(); } else go("pay/" + r.id); })
+        .then(function (r) { if (existing || r.status === "active") { go(""); route(); } else if (dealer) refresh().then(function () { go("plan"); }); else go("pay/" + r.id); })
         .catch(function (er) { msg(er.message); busy(b, false); });
     });
   }
@@ -182,7 +181,7 @@
     var plan, amount, title;
     if (kind === "dealer") {
       var dp = cfg.packages.dealer, cur = (me.pendingSubscription && me.pendingSubscription.plan) || "gold";
-      app.innerHTML = '<div class="sell-card wide"><h2>Choose a dealer plan</h2><p class="mk-small">Plans run for 30 days. Your phones go live as soon as the plan is approved.</p><form id="f-plan"><div class="sell-pkgs">' +
+      app.innerHTML = '<div class="sell-card wide"><ol class="sell-steps"><li class="done">Add your phone</li><li aria-current="step">Dealer plan</li><li>Pay</li></ol><h2>Choose your dealer plan</h2><p class="mk-small">Plans run for 30 days. All your phones go live as soon as the plan is approved.</p><form id="f-plan"><div class="sell-pkgs">' +
         Object.keys(dp).map(function (k) { return '<label class="option sell-radio"><input type="radio" name="plan" value="' + k + '"' + (k === cur ? " checked" : "") + "><b>" + esc(dp[k].name) + " · " + ksh(dp[k].price) + "/month</b><small>" + esc(dp[k].blurb) + "</small></label>"; }).join("") +
         '</div><div id="pay-box"></div></form><button class="link-arrow" type="button" onclick="location.hash=\'\'">← Back</button></div>';
       var f = $("#f-plan");
@@ -191,14 +190,13 @@
       return;
     }
     var pk = cfg.packages.individual;
-    app.innerHTML = '<div class="sell-card wide"><h2>Publish your listing</h2><p class="mk-small">' + esc(listing.title) + " · " + ksh(listing.price) + '</p><form id="f-pkg"><div class="sell-pkgs">' +
-      Object.keys(pk).map(function (k) { return '<label class="option sell-radio"><input type="radio" name="package" value="' + k + '"' + (k === (listing.package || "gold") ? " checked" : "") + "><b>" + esc(pk[k].name) + " · " + ksh(pk[k].price) + "</b><small>" + esc(pk[k].blurb) + "</small></label>"; }).join("") +
+    app.innerHTML = '<div class="sell-card wide"><ol class="sell-steps"><li class="done">Add your phone</li><li aria-current="step">Choose package</li><li>Pay</li></ol><h2>Choose your package</h2><p class="mk-small">' + esc(listing.title) + " · " + ksh(listing.price) + " · " + esc(listing.area) + '</p><form id="f-pkg"><div class="sell-pkgs">' +
+      Object.keys(pk).map(function (k) { return '<label class="option sell-radio"><input type="radio" name="package" value="' + k + '"' + (k === (listing.package || "silver") ? " checked" : "") + "><b>" + esc(pk[k].name) + " · " + ksh(pk[k].price) + "</b><small>" + esc(pk[k].blurb) + "</small></label>"; }).join("") +
       '</div><div id="pay-box"></div></form><button class="link-arrow" type="button" onclick="location.hash=\'\'">← Back to my listings</button></div>';
     var fp = $("#f-pkg");
     var drawL = function () {
       var k = fp.package.value;
-      api("listings/" + listing.id + "/package/", { package: k }).catch(function () {});
-      payBox({ kind: "listing", listingId: listing.id }, pk[k].price, pk[k].name);
+      payBox({ kind: "listing", listingId: listing.id, package: k }, pk[k].price, pk[k].name);
     };
     fp.onchange = drawL; drawL();
   }
